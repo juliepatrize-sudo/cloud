@@ -1,0 +1,234 @@
+<meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Foursight Collective · Official Website</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+
+
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="nav-links">
+      <a onclick="showPage('home')">Home</a>
+      <a onclick="goToSection('about')">About</a>
+      <a onclick="goToSection('project')">Project</a>
+      <a onclick="goToSection('contact')">Contact</a>
+    </div>
+  </nav>
+
+  <!-- HOME PAGE -->
+  <div id="page-home" class="page-container active">
+
+    <!-- HERO SECTION -->
+    <header class="hero">
+      <h1>THE HUBAGANG</h1>
+      <p>Four minds. One vision.</p>
+    </header>
+
+    <!-- TEAM SHOWCASE -->
+    <div class="team-showcase">
+
+      <div class="showcase-card" onclick="showProject('charls')">
+        <div class="showcase-img">
+          <img src="http://wordpresslaragon.test/wp-content/uploads/2026/11/charls-Photoroom.png" alt="Charls">
+        </div>
+        <h3>Charls Sylwen L. Bernales</h3>
+        <span>Project Analyst</span>
+        <span class="click-hint">
+          <i class="fas fa-folder-open"></i> View Details
+        </span>
+      </div>
+
+      <div class="showcase-card" onclick="showProject('jerwin')">
+        <div class="showcase-img">
+          <img src="http://wordpresslaragon.test/wp-content/uploads/2026/11/jerwin.jpg" alt="Jerwin">
+        </div>
+        <h3>Jerwin G. Buray</h3>
+        <span>Programmer</span>
+        <span class="click-hint">
+          <i class="fas fa-folder-open"></i> View Details
+        </span>
+      </div>
+
+      <div class="showcase-card" onclick="showProject('kharrel')">
+        <div class="showcase-img">
+          <img src="http://wordpresslaragon.test/wp-content/uploads/2026/11/kharrel.jpg" alt="Kharrel">
+        </div>
+        <h3>Kharrel Jhaiane N. Mugot</h3>
+        <span>Project Manager</span>
+        <span class="click-hint">
+          <i class="fas fa-folder-open"></i> View Details
+        </span>
+      </div>
+
+      <div class="showcase-card" onclick="showProject('julie')">
+        <div class="showcase-img">
+          <img src="http://wordpresslaragon.test/wp-content/uploads/2026/11/julie.jpg" alt="Julie">
+        </div>
+        <h3>Julie Patrize Edralin</h3>
+        <span>Technical Writer</span>
+        <span class="click-hint">
+          <i class="fas fa-folder-open"></i> View Details
+        </span>
+      </div>
+
+    </div>
+
+    <!-- ABOUT SECTION -->
+    <section id="about" class="section">
+      <div class="section-header">
+        <h2><i class="fas fa-users"></i> About Us</h2>
+        <p>Who we are and what drives us</p>
+      </div>
+
+      <div class="about-content">
+        <div class="about-text">
+          <p>We are a group of four passionate creators, developers, and strategists who came together through a shared vision: to build meaningful digital experiences.</p>
+          <p>Our collaboration started in 2023 during a hackathon, and we’ve been creating side-by-side ever since. We believe in open communication, rapid iteration, and the power of interdisciplinary thinking.</p>
+        </div>
+
+        <div class="about-stats">
+
+          <div class="stat-box">
+            <i class="fas fa-code"></i>
+            <h4>4 Experts</h4>
+            <span>Developers &amp; Designers</span>
+          </div>
+
+          <div class="stat-box">
+            <i class="fas fa-rocket"></i>
+            <h4>12+ Projects</h4>
+            <span>Successfully Shipped</span>
+          </div>
+
+          <div class="stat-box">
+            <i class="fas fa-handshake"></i>
+            <h4>100%</h4>
+            <span>Collaborative</span>
+          </div>
+
+          <div class="stat-box">
+            <i class="fas fa-globe"></i>
+            <h4>Remote</h4>
+            <span>First Team</span>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECT SECTION -->
+<section id="project" class="section section-alt">
+  <div class="section-header">
+    <h2>Projects</h2>
+    <p>A glimpse of what each member brings to the team</p>
+  </div>
+
+  <div class="project-slider">
+
+    <button class="slider-btn prev-btn" onclick="changeSlide(-1)">
+      <i class="fas fa-chevron-left"></i>
+    </button>
+
+    <div class="project-slide">
+      <div class="slide-image">
+        <img id="slide-image" src="http://wordpresslaragon.test/wp-content/uploads/2026/11/charls-Photoroom.png" alt="Charls">
+      </div>
+
+      <div class="slide-content">
+        <span id="slide-number">01 / 04</span>
+        <h3 id="slide-name">Charls</h3>
+        <h4 id="slide-role">Project Analyst</h4>
+        <p id="slide-description">
+          Strategy games &amp; long-distance running.
+        </p>
+        <span class="slide-tag" id="slide-tag">
+          ♟️ Chess · 🏃 Running
+        </span>
+      </div>
+    </div>
+
+    <button class="slider-btn next-btn" onclick="changeSlide(1)">
+      <i class="fas fa-chevron-right"></i>
+    </button>
+
+  </div>
+
+  <div class="slider-dots">
+    <span class="dot active" onclick="goToSlide(0)"></span>
+    <span class="dot" onclick="goToSlide(1)"></span>
+    <span class="dot" onclick="goToSlide(2)"></span>
+    <span class="dot" onclick="goToSlide(3)"></span>
+  </div>
+</section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="section">
+      <div class="section-header">
+        <h2><i class="fas fa-envelope"></i> Contact Us</h2>
+        <p>Have a project, a question, or just want to say hi?</p>
+      </div>
+
+      <div class="contact-layout">
+        <div class="contact-info">
+          <h3>Let's connect</h3>
+
+          <div class="contact-item">
+            <i class="fas fa-envelope"></i>
+            <div>
+              <strong>Email</strong>
+              <span>hello@foursight.group</span>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <i class="fas fa-phone-alt"></i>
+            <div>
+              <strong>Phone</strong>
+              <span>+1 (555) 274-8890</span>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <i class="fas fa-map-pin"></i>
+            <div>
+              <strong>Location</strong>
+              <span>Remote · worldwide</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    
+
+  </div>
+
+  <!-- PROJECT PAGE -->
+  <div id="page-project" class="page-container">
+
+    <div class="project-page">
+
+      <button class="back-btn" onclick="showPage('home')">
+        <i class="fas fa-arrow-left"></i> Back to Home
+      </button>
+
+      <div class="project-header">
+        <img id="project-img" src="http://wordpresslaragon.test/wp-content/uploads/2026/11/charls.jpg" alt="Member Image" class="project-header-img">
+
+        <div class="project-header-info">
+          <h1 id="project-name">Name</h1>
+          <p id="project-role">Role</p>
+        </div>
+      </div>
+
+      <div class="project-list" id="project-list"></div>
+
+    </div>
+
+ 
+
+  </div>
+
+  <script src="script.js"></script>
