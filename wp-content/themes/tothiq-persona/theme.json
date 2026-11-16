@@ -1,0 +1,410 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/theme.json",
+	"version": 3,
+	"settings": {
+		"appearanceTools": true,
+		"useRootPaddingAwareAlignments": true,
+		"layout": {
+			"contentSize": "720px",
+			"wideSize": "1200px"
+		},
+		"color": {
+			"defaultPalette": false,
+			"defaultGradients": false,
+			"defaultDuotone": false,
+			"palette": [
+				{
+					"slug": "base",
+					"color": "#FAFBFC",
+					"name": "Base"
+				},
+				{
+					"slug": "surface",
+					"color": "#FFFFFF",
+					"name": "Surface"
+				},
+				{
+					"slug": "soft",
+					"color": "#F5F7FA",
+					"name": "Soft"
+				},
+				{
+					"slug": "divider",
+					"color": "#E5EAF0",
+					"name": "Divider"
+				},
+				{
+					"slug": "ink",
+					"color": "#0B1730",
+					"name": "Ink"
+				},
+				{
+					"slug": "muted",
+					"color": "#536075",
+					"name": "Muted text"
+				},
+				{
+					"slug": "accent",
+					"color": "#2563EB",
+					"name": "Accent"
+				},
+				{
+					"slug": "accent-dark",
+					"color": "#1D4ED8",
+					"name": "Accent dark"
+				},
+				{
+					"slug": "contrast",
+					"color": "#061A3A",
+					"name": "Deep navy"
+				},
+				{
+					"slug": "contrast-hover",
+					"color": "#0D2A5C",
+					"name": "Deep navy hover"
+				}
+			]
+		},
+		"typography": {
+			"fluid": true,
+			"defaultFontSizes": false,
+			"fontFamilies": [
+				{
+					"slug": "body",
+					"name": "Almarai",
+					"fontFamily": "Almarai, -apple-system, BlinkMacSystemFont, \"Segoe UI\", \"Noto Sans Arabic\", Tahoma, sans-serif",
+					"fontFace": [
+						{
+							"fontFamily": "Almarai",
+							"fontStyle": "normal",
+							"fontWeight": "400",
+							"fontDisplay": "swap",
+							"unicodeRange": "U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD",
+							"src": [
+								"file:./assets/fonts/almarai-latin-400-normal.woff2"
+							]
+						},
+						{
+							"fontFamily": "Almarai",
+							"fontStyle": "normal",
+							"fontWeight": "700",
+							"fontDisplay": "swap",
+							"unicodeRange": "U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD",
+							"src": [
+								"file:./assets/fonts/almarai-latin-700-normal.woff2"
+							]
+						},
+						{
+							"fontFamily": "Almarai",
+							"fontStyle": "normal",
+							"fontWeight": "400",
+							"fontDisplay": "swap",
+							"unicodeRange": "U+0600-06FF,U+0750-077F,U+0870-088E,U+0890-0891,U+0897-08E1,U+08E3-08FF,U+200C-200E,U+2010-2011,U+204F,U+2E41,U+FB50-FDFF,U+FE70-FEFC",
+							"src": [
+								"file:./assets/fonts/almarai-arabic-400-normal.woff2"
+							]
+						},
+						{
+							"fontFamily": "Almarai",
+							"fontStyle": "normal",
+							"fontWeight": "700",
+							"fontDisplay": "swap",
+							"unicodeRange": "U+0600-06FF,U+0750-077F,U+0870-088E,U+0890-0891,U+0897-08E1,U+08E3-08FF,U+200C-200E,U+2010-2011,U+204F,U+2E41,U+FB50-FDFF,U+FE70-FEFC",
+							"src": [
+								"file:./assets/fonts/almarai-arabic-700-normal.woff2"
+							]
+						}
+					]
+				}
+			],
+			"fontSizes": [
+				{
+					"slug": "small",
+					"name": "Small",
+					"size": "0.875rem",
+					"fluid": false
+				},
+				{
+					"slug": "medium",
+					"name": "Medium",
+					"size": "1.0625rem",
+					"fluid": false
+				},
+				{
+					"slug": "large",
+					"name": "Large",
+					"size": "1.1875rem",
+					"fluid": {
+						"min": "1.0625rem",
+						"max": "1.1875rem"
+					}
+				},
+				{
+					"slug": "x-large",
+					"name": "X Large",
+					"size": "1.375rem",
+					"fluid": {
+						"min": "1.125rem",
+						"max": "1.375rem"
+					}
+				},
+				{
+					"slug": "xx-large",
+					"name": "XX Large",
+					"size": "2.5rem",
+					"fluid": {
+						"min": "1.75rem",
+						"max": "2.5rem"
+					}
+				},
+				{
+					"slug": "display",
+					"name": "Display",
+					"size": "3.5rem",
+					"fluid": {
+						"min": "2.25rem",
+						"max": "3.5rem"
+					}
+				}
+			]
+		},
+		"spacing": {
+			"units": [
+				"px",
+				"rem",
+				"%",
+				"vw",
+				"vh"
+			],
+			"spacingScale": {
+				"steps": 0
+			},
+			"spacingSizes": [
+				{
+					"slug": "10",
+					"name": "1",
+					"size": "0.5rem"
+				},
+				{
+					"slug": "20",
+					"name": "2",
+					"size": "1rem"
+				},
+				{
+					"slug": "30",
+					"name": "3",
+					"size": "1.5rem"
+				},
+				{
+					"slug": "40",
+					"name": "4",
+					"size": "clamp(2rem, 4vw, 3rem)"
+				},
+				{
+					"slug": "50",
+					"name": "5",
+					"size": "clamp(3rem, 5vw, 4.25rem)"
+				},
+				{
+					"slug": "60",
+					"name": "6",
+					"size": "clamp(4rem, 7vw, 6rem)"
+				}
+			]
+		},
+		"border": {
+			"color": true,
+			"radius": true,
+			"style": true,
+			"width": true
+		},
+		"shadow": {
+			"defaultPresets": false,
+			"presets": [
+				{
+					"slug": "card",
+					"name": "Card",
+					"shadow": "0 1px 2px rgba(11,23,48,.04), 0 12px 32px -18px rgba(11,23,48,.18)"
+				}
+			]
+		}
+	},
+	"styles": {
+		"color": {
+			"background": "var(--wp--preset--color--base)",
+			"text": "var(--wp--preset--color--ink)"
+		},
+		"typography": {
+			"fontFamily": "var(--wp--preset--font-family--body)",
+			"fontSize": "var(--wp--preset--font-size--medium)",
+			"lineHeight": "1.65"
+		},
+		"spacing": {
+			"blockGap": "var(--wp--preset--spacing--30)",
+			"padding": {
+				"left": "clamp(1.25rem, 5vw, 2.5rem)",
+				"right": "clamp(1.25rem, 5vw, 2.5rem)"
+			}
+		},
+		"elements": {
+			"link": {
+				"color": {
+					"text": "var(--wp--preset--color--accent)"
+				},
+				":hover": {
+					"color": {
+						"text": "var(--wp--preset--color--accent-dark)"
+					}
+				}
+			},
+			"heading": {
+				"typography": {
+					"fontWeight": "700",
+					"lineHeight": "1.12",
+					"letterSpacing": "-0.02em"
+				},
+				"color": {
+					"text": "var(--wp--preset--color--ink)"
+				}
+			},
+			"h1": {
+				"typography": {
+					"fontSize": "var(--wp--preset--font-size--display)"
+				}
+			},
+			"h2": {
+				"typography": {
+					"fontSize": "var(--wp--preset--font-size--xx-large)"
+				}
+			},
+			"h3": {
+				"typography": {
+					"fontSize": "var(--wp--preset--font-size--x-large)",
+					"lineHeight": "1.3",
+					"letterSpacing": "-0.01em"
+				}
+			},
+			"button": {
+				"color": {
+					"background": "var(--wp--preset--color--contrast)",
+					"text": "var(--wp--preset--color--surface)"
+				},
+				"typography": {
+					"fontWeight": "700",
+					"fontSize": "0.9375rem",
+					"lineHeight": "1"
+				},
+				"border": {
+					"radius": "8px",
+					"width": "1px",
+					"style": "solid",
+					"color": "transparent"
+				},
+				"spacing": {
+					"padding": {
+						"top": "0.95em",
+						"bottom": "0.95em",
+						"left": "1.4em",
+						"right": "1.4em"
+					}
+				},
+				":hover": {
+					"color": {
+						"background": "var(--wp--preset--color--contrast-hover)",
+						"text": "var(--wp--preset--color--surface)"
+					}
+				},
+				":focus": {
+					"outline": {
+						"color": "var(--wp--preset--color--accent)",
+						"style": "solid",
+						"width": "2px",
+						"offset": "3px"
+					}
+				}
+			}
+		},
+		"blocks": {
+			"core/site-title": {
+				"typography": {
+					"fontWeight": "700"
+				}
+			},
+			"core/quote": {
+				"border": {
+					"left": {
+						"color": "var(--wp--preset--color--accent)",
+						"style": "solid",
+						"width": "2px"
+					}
+				}
+			}
+		}
+	},
+	"templateParts": [
+		{
+			"name": "header",
+			"title": "Header",
+			"area": "header"
+		},
+		{
+			"name": "footer",
+			"title": "Footer",
+			"area": "footer"
+		},
+		{
+			"name": "actions",
+			"title": "Book and WhatsApp bar",
+			"area": "uncategorized"
+		},
+		{
+			"name": "header-landing",
+			"title": "Header — landing page",
+			"area": "header"
+		}
+	],
+	"customTemplates": [
+		{
+			"name": "page-wide",
+			"title": "Full width",
+			"postTypes": [
+				"page"
+			]
+		},
+		{
+			"name": "page-course",
+			"title": "Course page",
+			"postTypes": [
+				"page"
+			]
+		},
+		{
+			"name": "page-webinar",
+			"title": "Webinar page",
+			"postTypes": [
+				"page"
+			]
+		},
+		{
+			"name": "page-book",
+			"title": "Book page",
+			"postTypes": [
+				"page"
+			]
+		},
+		{
+			"name": "page-perfume",
+			"title": "Perfume page",
+			"postTypes": [
+				"page"
+			]
+		},
+		{
+			"name": "page-lipstick",
+			"title": "Lipstick page",
+			"postTypes": [
+				"page"
+			]
+		}
+	]
+}

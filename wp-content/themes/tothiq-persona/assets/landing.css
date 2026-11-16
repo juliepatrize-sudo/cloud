@@ -1,0 +1,1944 @@
+/*
+ * Tothiq Persona — landing pages (Course, Webinar, Book).
+ * Loaded only on pages that use one of the three templates. Each page type
+ * re-points the theme's colour tokens, so the header, buttons and footer
+ * follow its colours without extra rules.
+ */
+
+/* ---------- Colours per page type ---------- */
+
+body:has(.tothiq-landing--course),
+.tothiq-landing--course {
+	--wp--preset--color--base: #fafbfc;
+	--wp--preset--color--accent: #4f46e5;
+	--wp--preset--color--accent-dark: #4338ca;
+	--wp--preset--color--contrast: #1e1b4b;
+	--wp--preset--color--contrast-hover: #2e2a6b;
+	--tothiq-amber: #f5b301;
+	--tothiq-tint: #eef0ff;
+}
+
+body:has(.tothiq-landing--webinar),
+.tothiq-landing--webinar {
+	--wp--preset--color--base: #070b14;
+	--wp--preset--color--surface: #0f1626;
+	--wp--preset--color--soft: #0c1322;
+	--wp--preset--color--divider: #1e2940;
+	--wp--preset--color--ink: #e8ecf5;
+	--wp--preset--color--muted: #9aa5bd;
+	--wp--preset--color--accent: #22d3ee;
+	--wp--preset--color--accent-dark: #67e8f9;
+	--wp--preset--color--contrast: #22d3ee;
+	--wp--preset--color--contrast-hover: #67e8f9;
+	color: #e8ecf5;
+}
+
+body:has(.tothiq-landing--book),
+.tothiq-landing--book {
+	--wp--preset--color--base: #fbf6ef;
+	--wp--preset--color--soft: #f4ebdf;
+	--wp--preset--color--divider: #eadfd2;
+	--wp--preset--color--ink: #2a1a17;
+	--wp--preset--color--muted: #6f5d56;
+	--wp--preset--color--accent: #7a1f2b;
+	--wp--preset--color--accent-dark: #5e1620;
+	--wp--preset--color--contrast: #7a1f2b;
+	--wp--preset--color--contrast-hover: #5e1620;
+	--tothiq-gold: #d9a441;
+}
+
+.tothiq-landing--webinar :where(h1, h2, h3, strong) {
+	color: #fff;
+}
+
+.tothiq-landing > * {
+	margin-block-start: 0;
+}
+
+.tothiq-landing h1 {
+	margin: 0.9rem 0 1.1rem;
+	font-size: clamp(2.25rem, 5vw, 3.25rem);
+	line-height: 1.12;
+}
+
+.tothiq-landing h2 {
+	margin: 0 0 1.75rem;
+	font-size: clamp(1.75rem, 3.4vw, 2.375rem);
+}
+
+.tothiq-landing .tothiq-lead {
+	max-width: 40rem;
+}
+
+.tothiq-landing-head.is-centered {
+	text-align: center;
+}
+
+.tothiq-landing-head.is-centered h2 {
+	margin-inline: auto;
+}
+
+.tothiq-tag {
+	display: inline-block;
+	margin: 0;
+	padding: 0.25rem 0.8rem;
+	border-radius: 99px;
+	background: var(--tothiq-tint, var(--wp--preset--color--soft));
+	color: var(--wp--preset--color--accent);
+	font-size: 0.8125rem;
+	font-weight: 700;
+}
+
+.tothiq-muted {
+	color: var(--wp--preset--color--muted);
+}
+
+/* ---------- Header ---------- */
+
+.tothiq-landing-header {
+	padding-block: 1.25rem;
+}
+
+.tothiq-landing-header__name {
+	margin: 0;
+	font-size: 1.125rem;
+	font-weight: 700;
+}
+
+.tothiq-landing-header__name a {
+	color: inherit;
+	text-decoration: none;
+}
+
+/* ---------- Buttons ---------- */
+
+.tothiq-landing .tothiq-btn .wp-block-button__link {
+	border-radius: 12px;
+	font-weight: 700;
+}
+
+.tothiq-btn--whatsapp .wp-block-button__link {
+	background: #128c7e !important;
+	color: #fff !important;
+}
+
+.tothiq-btn--whatsapp .wp-block-button__link:hover {
+	background: #0e7468 !important;
+}
+
+.tothiq-btn--amber .wp-block-button__link {
+	background: var(--tothiq-amber, #f5b301) !important;
+	color: #1e1b4b !important;
+}
+
+.tothiq-btn--cta .wp-block-button__link {
+	background: #22d3ee !important;
+	color: #04121a !important;
+}
+
+.tothiq-btn--cta .wp-block-button__link:hover {
+	background: #67e8f9 !important;
+}
+
+.tothiq-btn--ghost-dark .wp-block-button__link {
+	border: 1px solid #26314a !important;
+	background: transparent !important;
+	color: #fff !important;
+}
+
+.tothiq-btn--ghost-dark .wp-block-button__link:hover {
+	border-color: #fff !important;
+}
+
+.tothiq-btn--book .wp-block-button__link {
+	background: var(--wp--preset--color--accent) !important;
+	color: #fff !important;
+}
+
+.tothiq-btn--book .wp-block-button__link:hover {
+	background: var(--wp--preset--color--accent-dark) !important;
+}
+
+/* ---------- Closing band (all three) ---------- */
+
+.tothiq-landing-cta__band {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-between;
+	gap: 1.5rem;
+	padding: clamp(1.75rem, 4vw, 3rem);
+	border-radius: 24px;
+	background: var(--wp--preset--color--contrast);
+	color: #fff;
+}
+
+.tothiq-landing-cta__band h2 {
+	margin: 0;
+	color: #fff;
+}
+
+.tothiq-landing-cta__lead {
+	margin: 0.5rem 0 0;
+	color: #c7c9f0;
+}
+
+.tothiq-landing-cta__band .wp-block-buttons {
+	margin: 0;
+}
+
+/* ============ COURSE ============ */
+
+.tothiq-course {
+	padding-block: 0;
+	background: linear-gradient(180deg, var(--tothiq-tint) 0, var(--wp--preset--color--base) 34rem);
+}
+
+.tothiq-course__grid {
+	display: grid;
+	grid-template-columns: minmax(0, 1.35fr) minmax(0, 0.9fr);
+	gap: 3rem;
+	align-items: start;
+}
+
+.tothiq-course__grid > * {
+	margin: 0 !important;
+}
+
+.tothiq-course-hero {
+	padding-block: 2.5rem 4rem;
+}
+
+.tothiq-course-meta {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1.75rem;
+	margin: 1.75rem 0;
+}
+
+.tothiq-course-meta__item {
+	margin: 0 !important;
+	color: var(--wp--preset--color--muted);
+	font-size: 0.875rem;
+	line-height: 1.4;
+}
+
+.tothiq-course-meta__item strong {
+	color: var(--wp--preset--color--ink);
+	font-size: 1.375rem;
+}
+
+.tothiq-byline,
+.tothiq-instructor,
+.tothiq-speaker,
+.tothiq-author {
+	display: flex;
+	align-items: center;
+	gap: 0.875rem;
+}
+
+.tothiq-byline > *,
+.tothiq-instructor > *,
+.tothiq-speaker > *,
+.tothiq-author > * {
+	margin: 0 !important;
+}
+
+.tothiq-byline__photo img {
+	width: 52px;
+	height: 52px;
+	border-radius: 50%;
+	object-fit: cover;
+	object-position: top;
+}
+
+.tothiq-byline__name,
+.tothiq-instructor__name,
+.tothiq-speaker__name {
+	margin: 0;
+	font-weight: 700;
+}
+
+.tothiq-byline__role,
+.tothiq-speaker__role {
+	margin: 0;
+	color: var(--wp--preset--color--muted);
+	font-size: 0.875rem;
+}
+
+.tothiq-landing-block {
+	padding-bottom: 4rem;
+}
+
+.tothiq-learn {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 0.875rem;
+}
+
+.tothiq-learn__item {
+	display: flex;
+	gap: 0.75rem;
+	margin: 0 !important;
+	padding: 1rem 1.125rem;
+	border: 1px solid var(--wp--preset--color--divider);
+	border-radius: 14px;
+	background: #fff;
+}
+
+.tothiq-learn__item::before {
+	content: "";
+	flex: none;
+	width: 22px;
+	height: 22px;
+	margin-top: 0.15em;
+	border-radius: 50%;
+	background: var(--tothiq-amber) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='m4 8.5 2.5 2.5L12 5.5' fill='none' stroke='%231e1b4b' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / 14px no-repeat;
+}
+
+.tothiq-modules {
+	max-width: 760px;
+}
+
+.tothiq-module {
+	margin: 0 0 0.75rem !important;
+	border: 1px solid var(--wp--preset--color--divider);
+	border-radius: 16px;
+	background: #fff;
+}
+
+.tothiq-module summary {
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+	padding: 1.125rem 1.25rem;
+	font-weight: 700;
+	cursor: pointer;
+	list-style: none;
+}
+
+.tothiq-module summary::-webkit-details-marker {
+	display: none;
+}
+
+.tothiq-module__n {
+	display: grid;
+	place-items: center;
+	flex: none;
+	width: 34px;
+	height: 34px;
+	border-radius: 10px;
+	background: var(--tothiq-tint);
+	color: var(--wp--preset--color--accent);
+	font-size: 0.875rem;
+}
+
+.tothiq-module__title small {
+	display: block;
+	color: var(--wp--preset--color--accent);
+	font-size: 0.75rem;
+	font-weight: 700;
+}
+
+.tothiq-module__meta {
+	margin-inline-start: auto;
+	color: var(--wp--preset--color--muted);
+	font-size: 0.875rem;
+	font-weight: 400;
+	white-space: nowrap;
+}
+
+.tothiq-module__lessons {
+	margin: 0;
+	padding-block: 0 1.125rem;
+	padding-inline: 4.375rem 1.25rem;
+	color: var(--wp--preset--color--muted);
+	font-size: 0.9375rem;
+}
+
+.tothiq-instructor {
+	gap: 1.375rem;
+	padding: 1.5rem;
+	border: 1px solid var(--wp--preset--color--divider);
+	border-radius: 20px;
+	background: #fff;
+}
+
+.tothiq-instructor__photo img {
+	width: 120px;
+	height: 120px;
+	border-radius: 18px;
+	background: #e6e8f5;
+	object-fit: cover;
+	object-position: top;
+}
+
+.tothiq-instructor__text p {
+	margin: 0 0 0.35rem;
+}
+
+.tothiq-lcards {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 0.875rem;
+	margin-top: 1.375rem;
+}
+
+.tothiq-lcard {
+	margin: 0 !important;
+	padding: 1.25rem;
+	border: 1px solid var(--wp--preset--color--divider);
+	border-radius: 16px;
+	background: #fff;
+	font-size: 0.9375rem;
+}
+
+.tothiq-lcard p {
+	margin: 0;
+}
+
+.tothiq-lcard__by {
+	margin-top: 0.625rem !important;
+	font-size: 0.875rem;
+	font-weight: 700;
+}
+
+/* The price card stays beside the page while it scrolls. */
+.tothiq-course__aside {
+	position: sticky;
+	top: 1.5rem;
+	margin-top: 2.5rem !important;
+}
+
+.admin-bar .tothiq-course__aside {
+	top: calc(32px + 1.5rem);
+}
+
+.tothiq-price-card {
+	overflow: hidden;
+	border: 1px solid var(--wp--preset--color--divider);
+	border-radius: 22px;
+	background: #fff;
+	box-shadow: 0 30px 70px -35px rgb(30 27 75 / 0.45);
+}
+
+.tothiq-price-card__cover {
+	position: relative;
+	display: grid;
+	place-items: center;
+	height: 170px;
+	margin: 0;
+	padding: 1rem;
+	background:
+		radial-gradient(circle at 80% 20%, rgb(255 255 255 / 0.25), transparent 50%),
+		linear-gradient(135deg, #1e1b4b, #4338ca);
+	color: #fff;
+	font-size: 0.9375rem;
+	font-weight: 700;
+	letter-spacing: 0.1em;
+	text-align: center;
+	text-transform: uppercase;
+}
+
+.tothiq-lang-ar .tothiq-price-card__cover {
+	letter-spacing: 0;
+}
+
+.tothiq-price-card__body {
+	padding: 1.5rem;
+}
+
+.tothiq-price-card__body > * {
+	margin-block: 0;
+}
+
+.tothiq-price-card__price,
+.tothiq-mbar__price {
+	display: flex;
+	align-items: baseline;
+	gap: 0.625rem;
+	margin: 0;
+}
+
+.tothiq-price-card__price strong {
+	font-size: 2.5rem;
+	line-height: 1.1;
+}
+
+.tothiq-price-card__price s,
+.tothiq-mbar__price s {
+	color: var(--wp--preset--color--muted);
+}
+
+.tothiq-price-card__seats {
+	margin-top: 0.875rem !important;
+	font-size: 0.875rem;
+}
+
+.tothiq-seatbar {
+	position: relative;
+	height: 8px;
+	margin: 0.375rem 0 1.125rem !important;
+	overflow: hidden;
+	border-radius: 9px;
+	background: #eceef8;
+}
+
+.tothiq-seatbar::before {
+	content: "";
+	position: absolute;
+	inset-block: 0;
+	inset-inline-start: 0;
+	width: var(--tothiq-seats, 50%);
+	background: var(--tothiq-amber);
+}
+
+.tothiq-price-card__cta,
+.tothiq-price-card__cta .wp-block-button,
+.tothiq-price-card__cta .wp-block-button__link {
+	width: 100%;
+	justify-content: center;
+}
+
+.tothiq-price-card__call {
+	justify-content: center;
+	margin-top: 0.75rem !important;
+	font-size: 0.9375rem;
+}
+
+.tothiq-price-card__list {
+	margin: 1.125rem 0 0 !important;
+	padding: 0;
+	font-size: 0.9375rem;
+	list-style: none;
+}
+
+.tothiq-price-card__list li {
+	display: flex;
+	gap: 0.625rem;
+	padding-block: 0.375rem;
+}
+
+.tothiq-price-card__list li::before {
+	content: "✓";
+	color: var(--wp--preset--color--accent);
+	font-weight: 700;
+}
+
+/* Phone: price and Enrol stay at the bottom of the screen. */
+.tothiq-mbar {
+	display: none;
+}
+
+@media (max-width: 781px) {
+	.tothiq-course__grid,
+	.tothiq-learn,
+	.tothiq-lcards {
+		grid-template-columns: 1fr;
+	}
+
+	/* The price card comes right after the course title. */
+	.tothiq-course__grid {
+		display: flex;
+		flex-direction: column;
+		align-items: stretch;
+		gap: 0;
+	}
+
+	.tothiq-course__main {
+		display: contents;
+	}
+
+	.tothiq-course__aside {
+		position: static;
+		order: 1;
+		margin: 0 0 3.5rem !important;
+	}
+
+	.tothiq-course__main > .tothiq-landing-block {
+		order: 2;
+	}
+
+	.tothiq-course-hero {
+		padding-bottom: 2.5rem;
+	}
+
+	.tothiq-instructor {
+		flex-direction: column;
+		align-items: flex-start;
+	}
+
+	.tothiq-mbar {
+		position: fixed;
+		z-index: 20;
+		inset-inline: 0;
+		bottom: 0;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 0.75rem;
+		padding: 0.625rem 1rem;
+		border-top: 1px solid var(--wp--preset--color--divider);
+		background: #fff;
+	}
+
+	.tothiq-mbar > * {
+		margin: 0 !important;
+	}
+
+	.tothiq-mbar__price strong {
+		font-size: 1.375rem;
+	}
+
+	.tothiq-mbar .wp-block-button__link {
+		padding: 0.75rem 1.125rem !important;
+	}
+
+	body:has(.tothiq-mbar) {
+		padding-bottom: 4.5rem;
+	}
+
+	.tothiq-landing-cta__band {
+		flex-direction: column;
+		align-items: flex-start;
+	}
+}
+
+/* ============ WEBINAR ============ */
+
+.tothiq-webinar-hero {
+	position: relative;
+	overflow: hidden;
+	padding-block: 2.5rem 5rem;
+}
+
+.tothiq-webinar-hero::before {
+	content: "";
+	position: absolute;
+	top: -40%;
+	inset-inline-end: -10%;
+	width: 900px;
+	height: 900px;
+	background: radial-gradient(circle, rgb(34 211 238 / 0.18), transparent 60%);
+	pointer-events: none;
+}
+
+.tothiq-webinar-hero > * {
+	position: relative;
+}
+
+.tothiq-webinar-hero h1 {
+	max-width: 880px;
+	font-size: clamp(2.25rem, 5.5vw, 3.75rem);
+}
+
+.tothiq-tag--live {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.5rem;
+	border: 1px solid rgb(34 211 238 / 0.3);
+	background: rgb(34 211 238 / 0.12);
+	color: #67e8f9;
+}
+
+.tothiq-tag--live::before {
+	content: "";
+	width: 8px;
+	height: 8px;
+	border-radius: 50%;
+	background: #22d3ee;
+	box-shadow: 0 0 0 4px rgb(34 211 238 / 0.25);
+}
+
+.tothiq-webinar-facts {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.75rem;
+	margin: 1.875rem 0;
+}
+
+.tothiq-webinar-fact {
+	margin: 0 !important;
+	padding: 0.875rem 1.125rem;
+	border: 1px solid #1e2940;
+	border-radius: 14px;
+	background: #0f1626;
+	color: #9aa5bd;
+	font-size: 0.8125rem;
+	line-height: 1.5;
+}
+
+.tothiq-webinar-fact strong {
+	font-size: 1.125rem;
+}
+
+.tothiq-countdown-slot {
+	margin: 0 0 1.75rem !important;
+}
+
+.tothiq-countdown {
+	display: flex;
+	gap: 0.625rem;
+}
+
+.tothiq-countdown__part {
+	width: 86px;
+	padding-block: 0.75rem;
+	border: 1px solid #1e2940;
+	border-radius: 14px;
+	background: linear-gradient(180deg, #131c30, #0c1322);
+	text-align: center;
+}
+
+.tothiq-countdown__part b {
+	display: block;
+	color: #fff;
+	font-size: 2.125rem;
+	line-height: 1.2;
+	font-variant-numeric: tabular-nums;
+}
+
+.tothiq-countdown__part small {
+	color: #9aa5bd;
+	font-size: 0.75rem;
+	letter-spacing: 0.1em;
+	text-transform: uppercase;
+}
+
+.tothiq-lang-ar .tothiq-countdown__part small {
+	letter-spacing: 0;
+}
+
+.tothiq-webinar-note {
+	margin-top: 1rem;
+	color: var(--wp--preset--color--muted);
+	font-size: 0.875rem;
+}
+
+.tothiq-speakers {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 1rem;
+}
+
+.tothiq-speaker {
+	margin: 0 !important;
+	padding: 1.375rem;
+	border: 1px solid #1e2940;
+	border-radius: 18px;
+	background: #0f1626;
+}
+
+.tothiq-speaker__photo img,
+.tothiq-speaker__avatar {
+	width: 64px;
+	height: 64px;
+	border-radius: 50%;
+	object-fit: cover;
+	object-position: top;
+}
+
+.tothiq-speaker__avatar {
+	display: grid;
+	place-items: center;
+	flex: none;
+	margin: 0;
+	background: linear-gradient(135deg, #22d3ee, #6366f1);
+	color: #04121a;
+	font-size: 1.5rem;
+	font-weight: 700;
+}
+
+.tothiq-agenda {
+	max-width: 820px;
+	margin-inline: auto;
+	padding-inline-start: 1.75rem;
+	border-inline-start: 2px solid #1e2940;
+}
+
+.tothiq-agenda__item {
+	position: relative;
+	margin: 0 !important;
+	padding-bottom: 1.75rem;
+}
+
+.tothiq-agenda__item::before {
+	content: "";
+	position: absolute;
+	top: 6px;
+	inset-inline-start: calc(-1.75rem - 8px);
+	width: 14px;
+	height: 14px;
+	border: 2px solid #22d3ee;
+	border-radius: 50%;
+	background: #070b14;
+}
+
+.tothiq-agenda__item > * {
+	margin: 0;
+}
+
+.tothiq-agenda__time {
+	color: #67e8f9;
+	font-size: 0.875rem;
+	font-weight: 700;
+}
+
+.tothiq-agenda__item h3 {
+	margin: 0.25rem 0;
+	font-size: 1.25rem;
+}
+
+.tothiq-audience {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 1rem;
+}
+
+.tothiq-audience__item {
+	margin: 0 !important;
+	padding-top: 1rem;
+	border-top: 2px solid #22d3ee;
+	color: #9aa5bd;
+}
+
+.tothiq-audience__item strong {
+	display: inline-block;
+	margin-bottom: 0.375rem;
+}
+
+.tothiq-webinar-cta .tothiq-landing-cta__band {
+	flex-direction: column;
+	justify-content: center;
+	padding-block: 3.5rem;
+	border: 1px solid #1e2940;
+	background: radial-gradient(circle at 50% 0, rgb(34 211 238 / 0.15), transparent 60%), #0c1322;
+	text-align: center;
+}
+
+.tothiq-webinar-cta .tothiq-landing-cta__lead {
+	color: #9aa5bd;
+}
+
+.tothiq-landing--webinar .tothiq-footer {
+	border-color: #1e2940;
+}
+
+@media (max-width: 781px) {
+	.tothiq-speakers,
+	.tothiq-audience {
+		grid-template-columns: 1fr;
+	}
+
+	.tothiq-countdown__part {
+		width: 70px;
+	}
+
+	.tothiq-countdown__part b {
+		font-size: 1.75rem;
+	}
+}
+
+/* ============ BOOK ============ */
+
+.tothiq-book-hero {
+	padding-block: 2rem 5rem;
+}
+
+.tothiq-book-hero__grid {
+	display: grid;
+	grid-template-columns: 0.9fr 1.1fr;
+	gap: 4rem;
+	align-items: center;
+}
+
+.tothiq-book-hero__grid > * {
+	margin: 0 !important;
+}
+
+.tothiq-book-hero__cover {
+	display: grid;
+	place-items: center;
+	padding: 1.875rem;
+	perspective: 1400px;
+}
+
+/* The cover is drawn: no image to design or upload. */
+.tothiq-book-cover {
+	position: relative;
+	width: 300px;
+	height: 440px;
+	padding: 2.125rem 1.875rem;
+	border-radius: 4px 14px 14px 4px;
+	background: linear-gradient(160deg, var(--wp--preset--color--accent), #4a0f18);
+	color: #f6e9d7;
+	box-shadow: 24px 30px 60px -20px rgb(60 20 25 / 0.55), inset 10px 0 18px -10px rgb(0 0 0 / 0.5);
+	transform: rotateY(-18deg);
+}
+
+.tothiq-lang-ar .tothiq-book-cover {
+	border-radius: 14px 4px 4px 14px;
+	transform: rotateY(18deg);
+}
+
+.tothiq-book-cover::before {
+	content: "";
+	position: absolute;
+	inset-block: 0;
+	inset-inline-start: 0;
+	width: 14px;
+	background: linear-gradient(90deg, rgb(0 0 0 / 0.35), transparent);
+}
+
+.tothiq-lang-ar .tothiq-book-cover::before {
+	background: linear-gradient(-90deg, rgb(0 0 0 / 0.35), transparent);
+}
+
+.tothiq-book-cover::after {
+	content: "";
+	position: absolute;
+	top: 90px;
+	inset-inline: 30px;
+	height: 2px;
+	background: var(--tothiq-gold);
+}
+
+.tothiq-book-cover > * {
+	margin: 0;
+}
+
+.tothiq-book-cover__author {
+	font-size: 0.6875rem;
+	letter-spacing: 0.2em;
+	opacity: 0.8;
+	text-transform: uppercase;
+}
+
+.tothiq-book-cover__title {
+	margin: 7.5rem 0 0.875rem !important;
+	font-size: 2.125rem;
+	font-weight: 700;
+	line-height: 1.1;
+}
+
+.tothiq-lang-ar .tothiq-book-cover__author {
+	letter-spacing: 0;
+	font-size: 0.8125rem;
+}
+
+.tothiq-lang-ar .tothiq-book-cover__title {
+	line-height: 1.4;
+}
+
+.tothiq-book-cover__sub {
+	font-size: 0.875rem;
+	opacity: 0.85;
+}
+
+.tothiq-book-hero h1 {
+	font-size: clamp(2.25rem, 5vw, 3.375rem);
+}
+
+.tothiq-book-rating {
+	margin: 1.25rem 0 0;
+}
+
+.tothiq-stars {
+	color: var(--tothiq-gold);
+	letter-spacing: 2px;
+}
+
+.tothiq-book-hero .tothiq-actions-row {
+	margin-top: 1.5rem;
+}
+
+.tothiq-formats {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 1rem;
+}
+
+.tothiq-format {
+	margin: 0 !important;
+	padding: 1.375rem;
+	border: 1px solid var(--wp--preset--color--divider);
+	border-radius: 18px;
+	background: #fff;
+	font-weight: 700;
+	line-height: 1.5;
+}
+
+.tothiq-format:first-child {
+	border: 2px solid var(--wp--preset--color--accent);
+}
+
+.tothiq-format strong {
+	display: inline-block;
+	margin: 0.375rem 0;
+	font-size: 1.75rem;
+}
+
+.tothiq-format span {
+	color: var(--wp--preset--color--muted);
+	font-size: 0.9375rem;
+	font-weight: 400;
+}
+
+.tothiq-chapters {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 0 3rem;
+}
+
+.tothiq-chapter {
+	position: relative;
+	margin: 0 !important;
+	padding-block: 1.125rem;
+	padding-inline-start: 4.125rem;
+	border-top: 1px solid var(--wp--preset--color--divider);
+	color: var(--wp--preset--color--muted);
+	font-size: 0.9375rem;
+}
+
+.tothiq-chapter strong {
+	color: var(--wp--preset--color--ink);
+	font-size: 1.0625rem;
+}
+
+.tothiq-chapter__n {
+	position: absolute;
+	top: 1.125rem;
+	inset-inline-start: 0;
+	color: var(--wp--preset--color--accent);
+	font-size: 2.125rem;
+	font-weight: 700;
+	line-height: 1;
+}
+
+.tothiq-book-quote__band {
+	padding: clamp(2rem, 5vw, 3.5rem);
+	border-radius: 26px;
+	background: var(--wp--preset--color--accent);
+	color: #fbeee2;
+	text-align: center;
+}
+
+.tothiq-book-quote__text {
+	max-width: 820px;
+	margin: 0 auto;
+	font-size: clamp(1.375rem, 3vw, 1.875rem);
+	font-weight: 700;
+	line-height: 1.45;
+}
+
+.tothiq-book-quote__cite {
+	margin: 1.125rem 0 0;
+	color: #e7c9b4;
+	font-size: 0.9375rem;
+}
+
+.tothiq-endorsements {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 1rem;
+}
+
+.tothiq-endorsement {
+	margin: 0 !important;
+	padding: 0.25rem 1.125rem;
+	border-inline-start: 3px solid var(--tothiq-gold);
+}
+
+.tothiq-endorsement strong {
+	display: inline-block;
+	margin-top: 0.625rem;
+	font-size: 0.875rem;
+}
+
+.tothiq-author {
+	gap: 2rem;
+}
+
+.tothiq-author__photo img {
+	width: 200px;
+	height: 230px;
+	border-radius: 18px;
+	background: #efe3d3;
+	object-fit: cover;
+	object-position: top;
+}
+
+.tothiq-author__text h2 {
+	margin: 0 0 0.75rem;
+}
+
+@media (max-width: 781px) {
+	.tothiq-book-hero__grid,
+	.tothiq-formats,
+	.tothiq-chapters,
+	.tothiq-endorsements {
+		grid-template-columns: 1fr;
+	}
+
+	.tothiq-book-hero__grid {
+		gap: 1.5rem;
+	}
+
+	.tothiq-book-cover {
+		width: 220px;
+		height: 320px;
+		padding: 1.5rem;
+	}
+
+	.tothiq-book-cover::after {
+		top: 70px;
+	}
+
+	.tothiq-book-cover__title {
+		margin-top: 5rem !important;
+		font-size: 1.5rem;
+	}
+
+	.tothiq-author {
+		flex-direction: column;
+		align-items: flex-start;
+	}
+}
+
+/* ============ PRODUCTS: PERFUME AND LIPSTICK ============ */
+
+/* A serif for the perfume page only; the files load only where it is used. */
+@font-face {
+	font-family: "Tothiq Serif";
+	src: url("fonts/cormorant-garamond-latin-500-normal.woff2") format("woff2");
+	font-weight: 500;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Tothiq Serif";
+	src: url("fonts/cormorant-garamond-latin-600-normal.woff2") format("woff2");
+	font-weight: 600;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Tothiq Serif";
+	src: url("fonts/amiri-arabic-400-normal.woff2") format("woff2");
+	font-weight: 500;
+	font-display: swap;
+	unicode-range: U+0600-06FF, U+FE70-FEFF;
+}
+
+@font-face {
+	font-family: "Tothiq Serif";
+	src: url("fonts/amiri-arabic-700-normal.woff2") format("woff2");
+	font-weight: 600;
+	font-display: swap;
+	unicode-range: U+0600-06FF, U+FE70-FEFF;
+}
+
+body:has(.tothiq-landing--perfume),
+.tothiq-landing--perfume {
+	--wp--preset--color--base: #f7f2ea;
+	--wp--preset--color--surface: #fbf8f3;
+	--wp--preset--color--soft: #ebe3d7;
+	--wp--preset--color--divider: #e3d9ca;
+	--wp--preset--color--ink: #1f1a16;
+	--wp--preset--color--muted: #75695e;
+	--wp--preset--color--accent: #8a5a2b;
+	--wp--preset--color--accent-dark: #6d4520;
+	--wp--preset--color--contrast: #1f1a16;
+	--wp--preset--color--contrast-hover: #3a3129;
+}
+
+body:has(.tothiq-landing--lipstick),
+.tothiq-landing--lipstick {
+	--wp--preset--color--base: #fff;
+	--wp--preset--color--surface: #fff;
+	--wp--preset--color--soft: #f5f0ed;
+	--wp--preset--color--divider: #ece6e3;
+	--wp--preset--color--ink: #1a1416;
+	--wp--preset--color--muted: #6f6468;
+	--wp--preset--color--accent: #1a1416;
+	--wp--preset--color--accent-dark: #000;
+	--wp--preset--color--contrast: #1a1416;
+	--wp--preset--color--contrast-hover: #3a2f33;
+	--tothiq-shade: #b8436a;
+}
+
+.tothiq-serif {
+	font-family: "Tothiq Serif", Georgia, serif !important;
+	font-weight: 500 !important;
+	letter-spacing: 0 !important;
+}
+
+.tothiq-landing--perfume .tothiq-eyebrow,
+.tothiq-landing--lipstick .tothiq-eyebrow {
+	color: var(--wp--preset--color--accent);
+}
+
+.tothiq-landing--lipstick .tothiq-eyebrow {
+	color: var(--wp--preset--color--muted);
+}
+
+.tothiq-landing--perfume h2.tothiq-serif {
+	font-size: clamp(2.25rem, 4vw, 3rem);
+	line-height: 1.1;
+}
+
+.tothiq-lang-ar h2.tothiq-serif,
+.tothiq-lang-ar .tothiq-serif {
+	line-height: 1.45;
+}
+
+/* ---------- Product top (both) ---------- */
+
+.tothiq-product-hero {
+	padding-block: 2.5rem 5.5rem;
+}
+
+.tothiq-product {
+	display: grid;
+	grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+	gap: clamp(2rem, 5vw, 4.5rem);
+	align-items: center;
+}
+
+.tothiq-product > * {
+	margin: 0 !important;
+}
+
+.tothiq-product__stage {
+	position: relative;
+	display: grid;
+	place-items: center;
+	min-height: 640px;
+	background: linear-gradient(180deg, #ebe3d7, #e2d7c6);
+}
+
+.tothiq-product__stage::after {
+	content: "";
+	position: absolute;
+	bottom: 12%;
+	width: 42%;
+	height: 18px;
+	border-radius: 50%;
+	background: rgb(60 40 20 / 0.18);
+	filter: blur(7px);
+}
+
+.tothiq-product__photo {
+	position: relative;
+	z-index: 1;
+	margin: 0 !important;
+}
+
+.tothiq-product__stage .tothiq-product__photo img {
+	width: 250px;
+	max-width: 60vw;
+	height: auto;
+}
+
+.tothiq-product__info > * {
+	margin-block: 0;
+}
+
+.tothiq-product__kicker {
+	color: var(--wp--preset--color--muted);
+	font-size: 0.75rem;
+	letter-spacing: 0.24em;
+	text-transform: uppercase;
+}
+
+.tothiq-lang-ar .tothiq-product__kicker {
+	font-size: 0.875rem;
+	letter-spacing: 0;
+}
+
+.tothiq-product__name {
+	margin: 0.75rem 0 0.25rem !important;
+	font-size: clamp(3.75rem, 8vw, 6rem) !important;
+	line-height: 1 !important;
+}
+
+.tothiq-lang-ar .tothiq-product__name {
+	font-size: clamp(3.25rem, 7vw, 5rem) !important;
+	line-height: 1.3 !important;
+}
+
+.tothiq-product__type {
+	color: var(--wp--preset--color--muted);
+	font-size: 0.9375rem;
+}
+
+.tothiq-product__family {
+	margin-top: 1.125rem !important;
+	font-size: 1.5rem;
+}
+
+.tothiq-product__lead {
+	margin: 0.4rem 0 1.6rem !important;
+	color: var(--wp--preset--color--muted);
+}
+
+.tothiq-product__label {
+	margin: 0 0 0.625rem !important;
+	font-size: 0.875rem;
+	font-weight: 700;
+}
+
+.tothiq-product__label span {
+	color: var(--wp--preset--color--muted);
+	font-weight: 400;
+}
+
+.tothiq-product__label.is-small {
+	margin-top: 1.25rem !important;
+	color: var(--wp--preset--color--muted);
+	font-size: 0.8125rem;
+	font-weight: 400;
+}
+
+.tothiq-product__buy,
+.tothiq-product__buy .wp-block-button,
+.tothiq-product__buy .wp-block-button__link {
+	width: 100%;
+	justify-content: center;
+}
+
+.tothiq-product__buy {
+	margin-top: 1.375rem !important;
+}
+
+.tothiq-landing--perfume .tothiq-btn--buy .wp-block-button__link {
+	padding-block: 1.1em !important;
+	border-radius: 2px !important;
+}
+
+.tothiq-landing--lipstick .tothiq-btn--buy .wp-block-button__link {
+	border-radius: 4px !important;
+}
+
+.tothiq-product__sample {
+	justify-content: center;
+	margin: 0.875rem 0 1.5rem !important;
+	font-size: 0.875rem;
+}
+
+.tothiq-product__sample .wp-block-button__link {
+	text-decoration: underline !important;
+	text-underline-offset: 4px;
+}
+
+.tothiq-product__sample .wp-block-button__link::after {
+	display: none;
+}
+
+.tothiq-product__more {
+	margin: 0 !important;
+	padding-block: 1rem;
+	border-top: 1px solid var(--wp--preset--color--divider);
+}
+
+.tothiq-product__more:last-child {
+	border-bottom: 1px solid var(--wp--preset--color--divider);
+}
+
+.tothiq-product__more summary {
+	display: flex;
+	justify-content: space-between;
+	font-size: 0.9375rem;
+	font-weight: 700;
+	cursor: pointer;
+	list-style: none;
+}
+
+.tothiq-product__more summary::-webkit-details-marker {
+	display: none;
+}
+
+.tothiq-product__more summary::after {
+	content: "+";
+	font-weight: 400;
+}
+
+.tothiq-product__more[open] summary::after {
+	content: "−";
+}
+
+.tothiq-product__more p {
+	margin: 0.625rem 0 0;
+	color: var(--wp--preset--color--muted);
+	font-size: 0.9375rem;
+}
+
+/* Sizes */
+.tothiq-sizes {
+	display: flex;
+	gap: 0.5rem;
+}
+
+.tothiq-size {
+	flex: 1;
+	padding: 0.75rem 0.5rem;
+	border: 1px solid var(--wp--preset--color--divider);
+	background: var(--wp--preset--color--surface);
+	color: var(--wp--preset--color--muted);
+	font: inherit;
+	font-size: 0.8125rem;
+	line-height: 1.4;
+	cursor: pointer;
+}
+
+.tothiq-size strong {
+	display: block;
+	color: var(--wp--preset--color--ink);
+	font-size: 1rem;
+}
+
+.tothiq-size.is-on {
+	border-color: var(--wp--preset--color--ink);
+	background: #fff;
+	box-shadow: inset 0 0 0 1px var(--wp--preset--color--ink);
+}
+
+.tothiq-size:focus-visible,
+.tothiq-swatch:focus-visible,
+.tothiq-shade-card:focus-visible,
+.tothiq-chips button:focus-visible {
+	outline: 2px solid var(--wp--preset--color--ink);
+	outline-offset: 2px;
+}
+
+/* ---------- Perfume sections ---------- */
+
+.tothiq-notes {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	border-top: 1px solid var(--wp--preset--color--ink);
+}
+
+.tothiq-note {
+	margin: 0 !important;
+	padding: 1.875rem 1.75rem 0.5rem;
+	border-inline-end: 1px solid var(--wp--preset--color--divider);
+}
+
+.tothiq-note:first-child {
+	padding-inline-start: 0;
+}
+
+.tothiq-note:last-child {
+	border: 0;
+}
+
+.tothiq-note > * {
+	margin-block: 0;
+}
+
+.tothiq-note__tier {
+	color: var(--wp--preset--color--accent);
+	font-size: 0.75rem;
+	font-weight: 700;
+	letter-spacing: 0.2em;
+	text-transform: uppercase;
+}
+
+.tothiq-lang-ar .tothiq-note__tier {
+	font-size: 0.875rem;
+	letter-spacing: 0;
+}
+
+.tothiq-note h3 {
+	margin: 0.5rem 0 0.875rem;
+	font-size: 1.875rem;
+}
+
+.tothiq-note__list {
+	margin: 0;
+	padding: 0;
+	color: var(--wp--preset--color--muted);
+	list-style: none;
+}
+
+.tothiq-note__list li {
+	padding-block: 0.3rem;
+}
+
+.tothiq-perfume-story {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	min-height: 520px;
+}
+
+.tothiq-perfume-story > * {
+	margin: 0 !important;
+}
+
+.tothiq-perfume-story__image {
+	background: linear-gradient(200deg, #c9a57a, #7a5232 70%, #4a3020);
+	background-size: cover;
+	background-position: center;
+}
+
+.tothiq-perfume-story__text {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	padding: clamp(2.5rem, 6vw, 4.5rem) clamp(1.5rem, 5vw, 4rem);
+	background: var(--wp--preset--color--soft);
+}
+
+.tothiq-perfume-story__text h2 {
+	margin-bottom: 1.125rem;
+}
+
+.tothiq-perfume-story__lead {
+	margin: 0;
+	color: #4d433b;
+	font-size: 1.125rem;
+}
+
+.tothiq-pfacts {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1.25rem 2.5rem;
+	margin-top: 1.75rem !important;
+	padding-top: 1.375rem;
+	border-top: 1px solid #d6c9b6;
+}
+
+.tothiq-pfact {
+	margin: 0 !important;
+	color: var(--wp--preset--color--muted);
+	font-size: 0.8125rem;
+}
+
+.tothiq-pfact strong {
+	color: var(--wp--preset--color--ink);
+	font-size: 1.625rem;
+	font-weight: 600 !important;
+}
+
+.tothiq-sets,
+.tothiq-pquotes {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 1.5rem;
+}
+
+.tothiq-set,
+.tothiq-pquote {
+	margin: 0 !important;
+}
+
+.tothiq-set > * {
+	margin-block: 0;
+}
+
+.tothiq-set__photo {
+	display: grid !important;
+	place-items: center;
+	aspect-ratio: 4 / 3;
+	margin: 0 !important;
+	background: linear-gradient(180deg, #ebe3d7, #e0d4c2);
+}
+
+.tothiq-set__photo img {
+	width: 28%;
+	height: auto;
+}
+
+.tothiq-set__name {
+	display: flex;
+	justify-content: space-between;
+	gap: 1rem;
+	margin-top: 0.875rem !important;
+}
+
+.tothiq-set__name span {
+	font-weight: 700;
+}
+
+.tothiq-set__note {
+	color: var(--wp--preset--color--muted);
+	font-size: 0.875rem;
+}
+
+.tothiq-set__note a {
+	color: var(--wp--preset--color--accent);
+}
+
+.tothiq-reviews-head {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: baseline;
+	justify-content: space-between;
+	gap: 0.5rem;
+	margin-bottom: 1.75rem;
+}
+
+.tothiq-reviews-head > * {
+	margin: 0 !important;
+}
+
+.tothiq-reviews-head__rating {
+	font-weight: 700;
+}
+
+.tothiq-landing--perfume .tothiq-stars {
+	color: var(--wp--preset--color--accent);
+	letter-spacing: 3px;
+}
+
+.tothiq-pquote > * {
+	margin-block: 0;
+}
+
+.tothiq-pquote__text {
+	margin: 0.625rem 0 0.875rem !important;
+	font-size: 1.5rem;
+	line-height: 1.35;
+}
+
+.tothiq-lang-ar .tothiq-pquote__text {
+	font-size: 1.3125rem;
+	line-height: 1.7;
+}
+
+.tothiq-pquote__by {
+	color: var(--wp--preset--color--muted);
+	font-size: 0.8125rem;
+	font-weight: 700;
+}
+
+/* ---------- Lipstick ---------- */
+
+.tothiq-product-hero--lipstick .tothiq-product {
+	align-items: start;
+}
+
+.tothiq-product-hero--lipstick .tothiq-product__stage {
+	position: sticky;
+	top: 1.5rem;
+	min-height: 0;
+	aspect-ratio: 4 / 5;
+	background: var(--wp--preset--color--soft);
+}
+
+.admin-bar .tothiq-product-hero--lipstick .tothiq-product__stage {
+	top: calc(32px + 1.5rem);
+}
+
+.tothiq-product-hero--lipstick .tothiq-product__stage::after {
+	display: none;
+}
+
+.tothiq-product__canvas {
+	display: grid;
+	place-items: center;
+	width: 100%;
+	height: 100%;
+}
+
+.tothiq-lipstick {
+	width: 150px;
+	filter: drop-shadow(14px 20px 22px rgb(0 0 0 / 0.22));
+	transform: rotate(-10deg);
+}
+
+.tothiq-lipstick__bullet {
+	fill: var(--tothiq-shade);
+	transition: fill 0.3s ease;
+}
+
+.tothiq-product__canvas img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.tothiq-product__title {
+	margin: 0 0 0.375rem !important;
+	font-size: clamp(1.75rem, 3vw, 2rem) !important;
+}
+
+.tothiq-product__rating {
+	color: var(--wp--preset--color--muted);
+	font-size: 0.875rem;
+}
+
+.tothiq-product__rating .tothiq-stars {
+	color: var(--wp--preset--color--ink);
+	letter-spacing: 2px;
+}
+
+.tothiq-product__price {
+	margin: 0.875rem 0 0.5rem !important;
+	font-size: 1.5rem;
+	font-weight: 700;
+}
+
+.tothiq-landing--lipstick .tothiq-product__lead {
+	margin-bottom: 1.375rem !important;
+}
+
+.tothiq-shades {
+	display: grid;
+	gap: 0.625rem;
+}
+
+.tothiq-shade-family {
+	display: grid;
+	grid-template-columns: 4.5rem 1fr;
+	align-items: center;
+	gap: 0.625rem;
+}
+
+.tothiq-shade-family > span {
+	color: var(--wp--preset--color--muted);
+	font-size: 0.8125rem;
+}
+
+.tothiq-shade-family > div {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.625rem;
+}
+
+.tothiq-swatch {
+	width: 36px;
+	height: 36px;
+	padding: 0;
+	border: 2px solid #fff;
+	border-radius: 50%;
+	background: var(--tothiq-swatch);
+	box-shadow: 0 0 0 1px var(--wp--preset--color--divider);
+	cursor: pointer;
+}
+
+.tothiq-swatch.is-on {
+	box-shadow: 0 0 0 2px var(--wp--preset--color--ink);
+}
+
+.tothiq-tones {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 6px;
+}
+
+.tothiq-tone {
+	position: relative;
+	display: grid;
+	place-items: center;
+	height: 64px;
+}
+
+.tothiq-tone span {
+	position: absolute;
+	bottom: 4px;
+	inset-inline-start: 6px;
+	color: rgb(0 0 0 / 0.55);
+	font-size: 0.6875rem;
+}
+
+.tothiq-tone.is-deep span {
+	color: rgb(255 255 255 / 0.75);
+}
+
+.tothiq-stroke {
+	width: 78%;
+}
+
+.tothiq-tone .tothiq-stroke path {
+	fill: var(--tothiq-shade);
+	opacity: 0.92;
+	transition: fill 0.3s ease;
+}
+
+.tothiq-product__note {
+	margin: 0.625rem 0 1.375rem !important;
+	color: var(--wp--preset--color--muted);
+	font-size: 0.8125rem;
+	text-align: center;
+}
+
+.tothiq-shade-grid {
+	display: grid;
+	grid-template-columns: repeat(6, 1fr);
+	gap: 1.125rem;
+}
+
+.tothiq-shade-card {
+	display: block;
+	padding: 0;
+	border: 0;
+	background: none;
+	color: inherit;
+	font: inherit;
+	text-align: start;
+	cursor: pointer;
+}
+
+.tothiq-shade-card__skin {
+	display: grid;
+	place-items: center;
+	aspect-ratio: 2 / 1;
+}
+
+.tothiq-shade-card .tothiq-stroke {
+	width: 70%;
+}
+
+.tothiq-shade-card strong {
+	display: block;
+	margin-top: 0.5rem;
+	font-size: 0.875rem;
+}
+
+.tothiq-shade-card small {
+	color: var(--wp--preset--color--muted);
+	font-size: 0.75rem;
+}
+
+.tothiq-shade-card:hover strong {
+	text-decoration: underline;
+}
+
+.tothiq-chips {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.5rem;
+	margin-bottom: 1.5rem;
+}
+
+.tothiq-chips button {
+	padding: 0.375rem 0.875rem;
+	border: 1px solid var(--wp--preset--color--divider);
+	border-radius: 99px;
+	background: #fff;
+	color: var(--wp--preset--color--ink);
+	font: inherit;
+	font-size: 0.8125rem;
+	cursor: pointer;
+}
+
+.tothiq-chips button.is-on {
+	border-color: var(--wp--preset--color--ink);
+	background: var(--wp--preset--color--ink);
+	color: #fff;
+}
+
+.tothiq-lreviews {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 1.25rem;
+}
+
+.tothiq-lreview {
+	padding: 1.375rem;
+	border: 1px solid var(--wp--preset--color--divider);
+}
+
+.tothiq-lreview p {
+	margin: 0 0 0.75rem;
+}
+
+.tothiq-lreview__meta {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+	color: var(--wp--preset--color--muted);
+	font-size: 0.75rem;
+}
+
+.tothiq-lreview__meta i {
+	width: 14px;
+	height: 14px;
+	border-radius: 50%;
+}
+
+.tothiq-lreview__by {
+	margin: 0 !important;
+	font-size: 0.8125rem;
+	font-weight: 700;
+}
+
+.tothiq-soft-band {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-between;
+	gap: 1.25rem;
+	padding: 2.125rem 2.5rem;
+	background: var(--wp--preset--color--soft);
+}
+
+.tothiq-soft-band > *,
+.tothiq-soft-band__text > * {
+	margin: 0 !important;
+}
+
+.tothiq-soft-band h2 {
+	font-size: 1.625rem;
+}
+
+.tothiq-landing--perfume .tothiq-footer,
+.tothiq-landing--lipstick .tothiq-footer {
+	border-color: var(--wp--preset--color--divider);
+}
+
+@media (max-width: 781px) {
+	.tothiq-product,
+	.tothiq-notes,
+	.tothiq-perfume-story,
+	.tothiq-sets,
+	.tothiq-pquotes,
+	.tothiq-lreviews {
+		grid-template-columns: 1fr;
+	}
+
+	.tothiq-product-hero {
+		padding-top: 0;
+	}
+
+	.tothiq-product__stage {
+		min-height: 420px;
+		margin-inline: calc(var(--wp--style--root--padding-left, 1.25rem) * -1) !important;
+	}
+
+	.tothiq-product-hero--lipstick .tothiq-product__stage {
+		position: static;
+		aspect-ratio: 1;
+	}
+
+	.tothiq-product__stage .tothiq-product__photo img {
+		width: 170px;
+	}
+
+	.tothiq-lipstick {
+		width: 110px;
+	}
+
+	.tothiq-note,
+	.tothiq-note:first-child {
+		padding: 1.375rem 0;
+		border-inline-end: 0;
+		border-bottom: 1px solid var(--wp--preset--color--divider);
+	}
+
+	.tothiq-perfume-story__image {
+		min-height: 260px;
+	}
+
+	.tothiq-shade-grid {
+		grid-template-columns: repeat(3, 1fr);
+	}
+
+	.tothiq-soft-band {
+		flex-direction: column;
+		align-items: flex-start;
+		padding: 1.625rem 1.375rem;
+	}
+}

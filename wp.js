@@ -1,32 +1,44 @@
 const memberData = {
   charls: {
-    name: "Charls Sylwen L. Bernales",
-    role: "Project Analyst",
-    img: "http://wordpresslaragon.test/wp-content/uploads/2026/11/charls-Photoroom.png",
-   
- projects: [
-      {
-        title: "FinTech Dashboard Redesign",
-        date: "2024 - Present",
-        desc: "Led the complete overhaul of a banking dashboard, increasing user retention by 35% through improved UX and intuitive data visualization."
-      },
-      {
-        title: "E-Commerce Platform Launch",
-        date: "2023",
-        desc: "Managed the roadmap and cross-functional team for a new e-commerce platform, shipping on time and under budget."
-      },
-      {
-        title: "Internal Team Wiki",
-        date: "2023",
-        desc: "Built a centralized knowledge base to improve onboarding and documentation processes for remote team members."
-      }
-    ]
-  },
+  name: "Charls Sylwen L. Bernales",
+  role: "Project Analyst",
+  img: "http://wordpresslaragon.test/wp-content/uploads/2026/11/charls-Photoroom.png",
 
+ facebook: "https://www.facebook.com/nishinoyayuu01",
+  instagram: "https://www.instagram.com/sylwenniedapooh",
+  email: "mailto:charlssylwenlimbaco@gmail.com",
+
+  details: [
+    {
+      title: "About Me",
+      desc: "Hi! I'm Charls Sylwen L. Bernales. I'm a funny and outgoing person who enjoys having fun, meeting people, and trying new experiences. I love learning new things and challenging myself to become a better person. I believe that life is not just about working hard but also about enjoying every moment and making good memories."
+    },
+    {
+      title: "Hobbies & Interests",
+      desc: "Gaming, watching movies, and playing football. These are some of the things I enjoy doing during my free time."
+    },
+    {
+      title: "Personal Strengths",
+      desc: "Patient, responsible, willing to learn, and competitive. I always try to stay focused, accept challenges, and give my best in everything I do."
+    },
+    {
+      title: "Goals & Aspirations",
+      desc: "My goal is to become a successful IT professional. I want to improve my technical skills, gain more knowledge and experience, and build a career that I can be proud of. I also want to make my family proud and achieve my dreams through hard work and determination."
+    },
+    {
+      title: "Personal Motto",
+      desc: "\"Pressure is a privilege.\" I believe that pressure and challenges are opportunities to grow, improve myself, and prove what I am capable of."
+    }
+  ]
+},
   jerwin: {
     name: "Jerwin",
     role: "Programmer",
     img: "http://wordpresslaragon.test/wp-content/uploads/2026/11/jerwin.jpg",
+
+  facebook: "https://www.facebook.com/jerwin.buray.3",
+  instagram: "https://www.instagram.com/xenon_kiryu",
+  email: "mailto:occ.edralin.juliepatrize@gmail.com",
     projects: [
       {
         title: "Interactive Portfolio Website",
@@ -50,6 +62,11 @@ const memberData = {
     name: "Kharrel",
     role: "Project Manager",
     img: "http://wordpresslaragon.test/wp-content/uploads/2026/11/kharrel.jpg",
+
+  facebook: "https://www.facebook.com/kharrel.mugot",
+  instagram: "https://www.instagram.com/k.jiyahn/",
+  email: "mailto:occ.edralin.juliepatrize@gmail.com",
+
     projects: [
       {
         title: "User Persona Development",
@@ -70,27 +87,37 @@ const memberData = {
   },
 
   julie: {
-    name: "Julie",
-    role: "Technical Writer",
-    img: "http://wordpresslaragon.test/wp-content/uploads/2026/11/julie.jpg",
-    projects: [
-      {
-        title: "Brand Identity Design",
-        date: "2024",
-        desc: "Created a complete brand identity system including logo, typography, and color palette for a local coffee shop."
-      },
-      {
-        title: "Mobile App UI Kit",
-        date: "2023",
-        desc: "Designed a comprehensive UI kit and design system in Figma for a cross-platform mobile app."
-      },
-      {
-        title: "Marketing Campaign Assets",
-        date: "2023",
-        desc: "Designed high-converting social media graphics and banner ads for a digital marketing campaign."
-      }
-    ]
-  }
+  name: "Julie Patrize Edralin",
+  role: "Technical Writer",
+  img: "http://wordpresslaragon.test/wp-content/uploads/2026/11/julie.jpg",
+
+  facebook: "https://www.facebook.com/juliepatrize",
+  instagram: "https://www.instagram.com/ptrize",
+  email: "mailto:occ.edralin.juliepatrize@gmail.com",
+
+  details: [
+    {
+      title: "About Me",
+      desc: "Hi! I'm Julie Patrize Edralin. I'm a friendly and approachable person who enjoys connecting with others. I can also be shy and quiet at times, but I always try to be kind and respectful to the people around me. I enjoy learning new things and discovering experiences that help me grow."
+    },
+    {
+      title: "Hobbies & Interests",
+      desc: "I enjoy watching movies and reading books during my free time. These activities allow me to relax, explore different stories, and learn new perspectives."
+    },
+    {
+      title: "Personal Strengths",
+      desc: "I consider myself a willing learner, patient, and responsible person. I always try to understand things carefully, complete my tasks, and improve my skills whenever I have the opportunity."
+    },
+    {
+      title: "Goals & Aspirations",
+      desc: "My goals are to become financially independent and continue learning and improving myself. I want to gain more knowledge, develop my abilities, and build a better future through hard work and determination."
+    },
+    {
+      title: "Personal Motto",
+      desc: "\"Trust in the Lord with all your heart, and lean not on your own understanding.\" This reminds me to put my trust in God, especially when facing challenges and making difficult decisions. I believe that with faith, patience, and determination, everything will happen at the right time."
+    }
+  ]
+}
 };
 
 function showPage(pageId) {
@@ -100,10 +127,20 @@ function showPage(pageId) {
 
   document.getElementById("page-" + pageId).classList.add("active");
   window.scrollTo(0, 0);
+
+if (pageId === "home") {
+    setActiveNav("home");
+} else if (pageId === "project") {
+    setActiveNav("about");
 }
+}
+
 
 function goToSection(sectionId) {
   showPage("home");
+if (sectionId) {
+    setActiveNav(sectionId);
+}
 
   if (sectionId) {
     setTimeout(() => {
@@ -130,58 +167,84 @@ function showProject(memberKey) {
   document.getElementById("project-name").textContent = data.name;
   document.getElementById("project-role").textContent = data.role;
 
+  // SOCIAL MEDIA
+  const socials = document.getElementById("profile-socials");
+
+  socials.innerHTML = `
+    ${data.facebook ? `
+      <a href="${data.facebook}" target="_blank" rel="noopener noreferrer">
+        <i class="fab fa-facebook-f"></i>
+      </a>` : ''}
+
+    ${data.instagram ? `
+      <a href="${data.instagram}" target="_blank" rel="noopener noreferrer">
+        <i class="fab fa-instagram"></i>
+      </a>` : ''}
+
+    ${data.email ? `
+      <a href="${data.email}">
+        <i class="fas fa-envelope"></i>
+      </a>` : ''}
+  `;
+
+  // PERSONAL DETAILS / PROJECTS
   const projectList = document.getElementById("project-list");
   projectList.innerHTML = "";
 
-  data.projects.forEach(project => {
-    const card = document.createElement("div");
+  const items = data.details || data.projects || [];
 
+  items.forEach(item => {
+    const card = document.createElement("div");
     card.className = "project-card";
 
-    card.innerHTML = `
-      <h3>${project.title}</h3>
-      <span class="project-date">
-        <i class="far fa-calendar-alt"></i> ${project.date}
-      </span>
-      <p>${project.desc}</p>
-    `;
+    const title = document.createElement("h3");
+    title.textContent = item.title;
 
+    const desc = document.createElement("p");
+    desc.textContent = item.desc;
+
+    card.appendChild(title);
+
+    if (item.date) {
+      const date = document.createElement("span");
+      date.className = "project-date";
+      date.textContent = item.date;
+      card.appendChild(date);
+    }
+
+    card.appendChild(desc);
     projectList.appendChild(card);
   });
 
   showPage("project");
 }
-
-/* PROJECT SLIDER */
+ 
 
 const projectSlides = [
   {
-    name: "Charls",
-    role: "Project Analyst",
-    image: "http://wordpresslaragon.test/wp-content/uploads/2026/11/charls.jpg",
-    description: "Strategy games & long-distance running.",
-    tag: "♟️ Chess · 🏃 Running"
+    name: "Charls' Individual Project",
+    role: "Individual Project",
+    image: "http://wordpresslaragon.test/wp-content/uploads/2026/11/charls.jpg"
   },
   {
-    name: "Jerwin",
-    role: "Programmer",
-    image: "http://wordpresslaragon.test/wp-content/uploads/2026/11/jerwin.jpg",
-    description: "Film photography and urban sketching.",
-    tag: "📷 Photography · ✏️ Sketching"
+    name: "Jerwin's Individual Project",
+    role: "Individual Project",
+    image: "http://wordpresslaragon.test/wp-content/uploads/2026/11/jerwin.jpg"
   },
   {
-    name: "Kharrel",
-    role: "Project Manager",
-    image: "http://wordpresslaragon.test/wp-content/uploads/2026/11/kharrel.jpg",
-    description: "Sci-fi novels and cooking experiments.",
-    tag: "📚 Reading · 🍳 Cooking"
+    name: "Kharrel's Individual Project",
+    role: "Individual Project",
+    image: "http://wordpresslaragon.test/wp-content/uploads/2026/11/kharrel.jpg"
   },
   {
-    name: "Julie",
-    role: "Technical Writer",
-    image: "http://wordpresslaragon.test/wp-content/uploads/2026/11/julie.jpg",
-    description: "Vinyl collecting and gardening.",
-    tag: "🎵 Vinyl · 🌱 Gardening"
+    name: "Julie's Individual Project",
+    role: "Individual Project",
+    image: "http://wordpresslaragon.test/wp-content/uploads/2026/11/julie.jpg"
+  },
+  {
+    name: "Our Team Project",
+    role: "Team Project · 4 Members",
+    image: "http://wordpresslaragon.test/wp-content/uploads/2026/11/charls.jpg"
   }
 ];
 
@@ -193,10 +256,9 @@ function updateSlide() {
   document.getElementById("slide-image").src = slide.image;
   document.getElementById("slide-name").textContent = slide.name;
   document.getElementById("slide-role").textContent = slide.role;
-  document.getElementById("slide-description").textContent = slide.description;
-  document.getElementById("slide-tag").textContent = slide.tag;
+
   document.getElementById("slide-number").textContent =
-    `0${currentSlide + 1} / 04`;
+    `0${currentSlide + 1} / 05`;
 
   document.querySelectorAll(".dot").forEach((dot, index) => {
     dot.classList.toggle("active", index === currentSlide);
@@ -231,3 +293,41 @@ function goToSlide(index) {
 setInterval(() => {
   changeSlide(1);
 }, 3000);
+
+/* NAVBAR ACTIVE UNDERLINE */
+
+function setActiveNav(activePage) {
+    document.querySelectorAll(".nav-links a").forEach(link => {
+        link.classList.remove("active");
+    });
+
+    const links = document.querySelectorAll(".nav-links a");
+
+    const navPages = ["home", "about", "project", "contact"];
+    const index = navPages.indexOf(activePage);
+
+    if (index !== -1) {
+        links[index].classList.add("active");
+    }
+}
+
+/* UPDATE ACTIVE LINK WHILE SCROLLING */
+
+window.addEventListener("scroll", () => {
+    const sections = ["about", "project", "contact"];
+
+    let currentPage = "home";
+    const scrollPosition = window.scrollY + 180;
+
+    sections.forEach(sectionId => {
+        const section = document.getElementById(sectionId);
+
+        if (section && section.offsetTop <= scrollPosition) {
+            currentPage = sectionId;
+        }
+    });
+
+    if (document.getElementById("page-home").classList.contains("active")) {
+        setActiveNav(currentPage);
+    }
+});

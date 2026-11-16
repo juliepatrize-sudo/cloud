@@ -1,0 +1,1070 @@
+/*
+ * Tothiq Persona — layout and details theme.json cannot express.
+ * Colours, type and spacing come from theme.json tokens; this file only
+ * arranges the pattern sections. Every rule is keyed to a class the
+ * patterns set, so owner-built pages are not affected.
+ */
+
+/* ---------- Base ---------- */
+
+:root {
+	--tothiq-accent-rgb: 37, 99, 235;
+	--tothiq-accent-light-rgb: 96, 165, 250;
+	--tothiq-ink-rgb: 11, 23, 48;
+	--tothiq-radius: 20px;
+	--tothiq-section: clamp(3rem, 5vw, 4.25rem);
+}
+
+body {
+	-webkit-font-smoothing: antialiased;
+	text-rendering: optimizeLegibility;
+}
+
+body .wp-site-blocks > *,
+.tothiq-home > * {
+	margin-block-start: 0;
+}
+
+:where(h1, h2, h3) {
+	text-wrap: balance;
+}
+
+.tothiq-ltr-number {
+	direction: ltr;
+	unicode-bidi: isolate;
+	white-space: nowrap;
+}
+
+/* A range such as 9:00 – 13:00 follows the reading direction: on Arabic
+   pages it starts on the right. Kept whole, never split across lines. */
+.tothiq-range {
+	unicode-bidi: isolate;
+	white-space: nowrap;
+}
+
+:where(a, button, input, select, textarea, summary, [tabindex]):focus-visible {
+	outline: 2px solid var(--wp--preset--color--accent);
+	outline-offset: 3px;
+	border-radius: 3px;
+}
+
+::selection {
+	background: rgba(var(--tothiq-accent-rgb), 0.16);
+}
+
+/* Arabic: taller lines, no negative tracking, no uppercase. */
+.is-arabic,
+.tothiq-lang-ar {
+	line-height: 1.9;
+}
+
+.is-arabic :is(h1, h2, h3, .tothiq-statement__quote),
+.tothiq-lang-ar :is(h1, h2, h3, .tothiq-statement__quote) {
+	line-height: 1.4;
+	letter-spacing: 0;
+}
+
+/* ---------- Shared pieces ---------- */
+
+.tothiq-section {
+	padding-block: var(--tothiq-section);
+}
+
+.tothiq-section-head {
+	margin-bottom: clamp(2rem, 4vw, 3rem);
+}
+
+.tothiq-section-head > * {
+	margin-block: 0;
+}
+
+.tothiq-section-head h2 {
+	max-width: 22ch;
+}
+
+.tothiq-eyebrow {
+	margin: 0 0 1rem;
+	color: var(--wp--preset--color--accent);
+	font-size: 0.75rem;
+	font-weight: 700;
+	letter-spacing: 0.14em;
+	text-transform: uppercase;
+}
+
+.is-arabic .tothiq-eyebrow,
+.tothiq-lang-ar .tothiq-eyebrow {
+	font-size: 0.9375rem;
+	letter-spacing: 0;
+}
+
+.tothiq-lead {
+	color: var(--wp--preset--color--muted);
+	font-size: var(--wp--preset--font-size--large);
+	max-width: 62ch;
+}
+
+mark.has-accent-color {
+	background: none;
+	color: var(--wp--preset--color--accent);
+}
+
+/* ---------- Buttons ---------- */
+
+.tothiq-btn .wp-block-button__link {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.6em;
+	transition: background-color 0.18s ease, color 0.18s ease, border-color 0.18s ease;
+}
+
+/* The arrow is drawn, not an icon font or image, so it follows the text colour. */
+.tothiq-btn .wp-block-button__link::after {
+	content: "";
+	width: 0.95em;
+	height: 0.95em;
+	flex: none;
+	background: currentColor;
+	-webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M1 8h13M9 3l5 5-5 5' fill='none' stroke='%23000' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / contain no-repeat;
+	mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M1 8h13M9 3l5 5-5 5' fill='none' stroke='%23000' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / contain no-repeat;
+	transition: transform 0.18s ease;
+}
+
+.tothiq-btn .wp-block-button__link:hover::after {
+	transform: translateX(3px);
+}
+
+[dir="rtl"] .tothiq-btn .wp-block-button__link::after,
+.tothiq-lang-ar .tothiq-btn .wp-block-button__link::after {
+	transform: scaleX(-1);
+}
+
+[dir="rtl"] .tothiq-btn .wp-block-button__link:hover::after,
+.tothiq-lang-ar .tothiq-btn .wp-block-button__link:hover::after {
+	transform: scaleX(-1) translateX(3px);
+}
+
+.tothiq-btn--ghost .wp-block-button__link {
+	background: transparent !important;
+	color: var(--wp--preset--color--ink) !important;
+	border-color: var(--wp--preset--color--divider) !important;
+}
+
+.tothiq-btn--ghost .wp-block-button__link:hover {
+	border-color: var(--wp--preset--color--ink) !important;
+}
+
+.tothiq-btn--light .wp-block-button__link {
+	background: var(--wp--preset--color--surface) !important;
+	color: var(--wp--preset--color--contrast) !important;
+}
+
+.tothiq-btn--light .wp-block-button__link:hover {
+	background: #eef2f8 !important;
+}
+
+.tothiq-btn--outline-light .wp-block-button__link {
+	background: transparent !important;
+	color: #fff !important;
+	border-color: rgb(255 255 255 / 0.35) !important;
+}
+
+.tothiq-btn--outline-light .wp-block-button__link:hover {
+	border-color: #fff !important;
+}
+
+.tothiq-btn--link .wp-block-button__link {
+	padding: 0 !important;
+	background: none !important;
+	color: var(--wp--preset--color--accent) !important;
+	border: 0 !important;
+}
+
+.tothiq-btn--link .wp-block-button__link:hover {
+	color: var(--wp--preset--color--accent-dark) !important;
+}
+
+.tothiq-actions-row {
+	gap: 0.75rem !important;
+}
+
+/* ---------- Header ---------- */
+
+.wp-block-template-part:has(> .tothiq-header) {
+	position: sticky;
+	top: 0;
+	z-index: 50;
+}
+
+.admin-bar .wp-block-template-part:has(> .tothiq-header) {
+	top: var(--wp-admin--admin-bar--height, 32px);
+}
+
+.tothiq-header {
+	background: rgb(250 251 252 / 0.86);
+	-webkit-backdrop-filter: saturate(180%) blur(12px);
+	backdrop-filter: saturate(180%) blur(12px);
+	border-bottom: 1px solid var(--wp--preset--color--divider);
+}
+
+.tothiq-header__inner {
+	min-height: 76px;
+	gap: 1.5rem;
+}
+
+.tothiq-brand {
+	gap: 0.7rem !important;
+}
+
+.tothiq-brand__text > * {
+	margin: 0;
+}
+
+.tothiq-brand__name {
+	font-size: 0.9375rem;
+	font-weight: 700;
+	letter-spacing: 0.06em;
+	line-height: 1.2;
+	text-transform: uppercase;
+}
+
+.tothiq-brand__role {
+	color: var(--wp--preset--color--muted);
+	font-size: 0.6875rem;
+	letter-spacing: 0.12em;
+	line-height: 1.4;
+	text-transform: uppercase;
+}
+
+.tothiq-lang-ar .tothiq-brand__name,
+.is-arabic .tothiq-brand__name {
+	font-size: 1.0625rem;
+	letter-spacing: 0;
+}
+
+.tothiq-lang-ar .tothiq-brand__role,
+.is-arabic .tothiq-brand__role {
+	font-size: 0.8125rem;
+	letter-spacing: 0;
+}
+
+.tothiq-nav {
+	gap: clamp(1rem, 2.2vw, 2rem);
+	font-size: 0.9375rem;
+}
+
+.tothiq-nav a {
+	color: var(--wp--preset--color--ink);
+}
+
+.tothiq-nav a:hover {
+	color: var(--wp--preset--color--accent);
+}
+
+.tothiq-header__end {
+	gap: 1rem !important;
+}
+
+.tothiq-lang-switch {
+	margin: 0;
+}
+
+.tothiq-lang-switch:empty {
+	display: none;
+}
+
+.tothiq-lang-switch a {
+	display: inline-block;
+	padding: 0.3rem 0.8rem;
+	border: 1px solid var(--wp--preset--color--divider);
+	border-radius: 999px;
+	color: var(--wp--preset--color--ink);
+	font-size: 0.875rem;
+	font-weight: 700;
+	text-decoration: none;
+}
+
+.tothiq-lang-switch a:hover {
+	border-color: var(--wp--preset--color--ink);
+}
+
+.tothiq-header__cta .wp-block-button__link {
+	padding: 0.8em 1.2em;
+}
+
+/* Phone menu: a clean white panel with large links. */
+.tothiq-nav .wp-block-navigation__responsive-container.is-menu-open {
+	padding: 1.25rem 1.5rem 6rem;
+}
+
+.tothiq-nav .is-menu-open .wp-block-navigation__responsive-container-content {
+	align-items: stretch !important;
+	padding-top: 3.5rem !important;
+}
+
+.tothiq-nav .is-menu-open .wp-block-navigation__container {
+	width: 100%;
+	gap: 0 !important;
+	align-items: stretch !important;
+}
+
+.tothiq-nav .is-menu-open .wp-block-navigation-item {
+	width: 100%;
+	border-bottom: 1px solid var(--wp--preset--color--divider);
+}
+
+.tothiq-nav .is-menu-open .wp-block-navigation-item__content {
+	display: block;
+	width: 100%;
+	padding-block: 1rem !important;
+	font-size: 1.375rem;
+	font-weight: 700;
+	text-align: start;
+}
+
+html.has-modal-open .tothiq-actions {
+	position: fixed;
+	inset-inline: 0;
+	bottom: 0;
+	z-index: 100001;
+}
+
+/* ---------- Hero ---------- */
+
+.tothiq-hero {
+	--tothiq-glow-fade: left;
+	position: relative;
+	isolation: isolate;
+	overflow: clip;
+	padding-block: clamp(2rem, 4vw, 3.5rem) clamp(1.5rem, 3vw, 2.25rem);
+	background: linear-gradient(180deg, #fff 0%, var(--wp--preset--color--base) 60%);
+}
+
+[dir="rtl"] .tothiq-hero,
+.tothiq-hero.tothiq-lang-ar {
+	--tothiq-glow-fade: right;
+}
+
+/* The eyebrow owns the first row alone, so the portrait and the headline
+   share the second: the top of the portrait lands on the headline whatever
+   its length or language. */
+.tothiq-hero__inner {
+	display: grid;
+	grid-template-columns: minmax(0, 1.32fr) minmax(0, 0.68fr);
+	grid-template-rows: auto 1fr;
+	align-items: start;
+	column-gap: clamp(2rem, 4vw, 3rem);
+}
+
+.tothiq-hero__inner > * {
+	margin: 0 !important;
+}
+
+.tothiq-hero__eyebrow {
+	grid-column: 1;
+	grid-row: 1;
+	margin-bottom: 1rem !important;
+}
+
+.tothiq-hero__copy {
+	grid-column: 1;
+	grid-row: 2;
+	min-width: 0;
+}
+
+.tothiq-hero__copy > * {
+	margin-block: 0;
+}
+
+.tothiq-hero__title {
+	max-width: 17ch;
+	margin-bottom: clamp(1.25rem, 2.5vw, 1.75rem) !important;
+}
+
+.tothiq-hero__lead {
+	max-width: 48ch;
+	margin-bottom: clamp(2rem, 4vw, 3rem) !important;
+}
+
+.tothiq-hero .tothiq-actions-row {
+	margin-bottom: clamp(2.25rem, 4vw, 3.25rem) !important;
+}
+
+.tothiq-facts {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+	gap: clamp(1.25rem, 2.5vw, 1.75rem);
+	padding-top: clamp(1.25rem, 2.5vw, 1.75rem);
+	border-top: 1px solid var(--wp--preset--color--divider);
+}
+
+.tothiq-facts > *,
+.tothiq-fact > * {
+	margin: 0 !important;
+}
+
+.tothiq-fact__title {
+	font-size: 0.9375rem;
+	font-weight: 700;
+	text-wrap: balance;
+}
+
+.tothiq-fact__sub {
+	color: var(--wp--preset--color--muted);
+	font-size: 0.8125rem;
+}
+
+.tothiq-hero__portrait {
+	position: relative;
+	grid-column: 2;
+	grid-row: 2;
+	align-self: start;
+	margin-top: calc(var(--wp--preset--font-size--display) * 0.3) !important;
+}
+
+.tothiq-hero__portrait img {
+	display: block;
+	width: 100%;
+	max-width: 420px;
+	margin-inline-start: auto;
+	-webkit-mask-image: linear-gradient(180deg, #000 78%, transparent 99%);
+	mask-image: linear-gradient(180deg, #000 78%, transparent 99%);
+}
+
+/* Ambient light, not a disc: two layers of very faint radial light drifting
+   on their own clocks, both masked so the colour fades toward the copy.
+   Every gradient runs its falloff to 100% through several stops — a stop
+   that ends early leaves a visible ring. */
+.tothiq-hero::after {
+	content: "";
+	position: absolute;
+	inset: -14% -8%;
+	z-index: -1;
+	pointer-events: none;
+	background:
+		radial-gradient(52% 44% at 80% 18%,
+			rgba(var(--tothiq-accent-rgb), 0.085) 0%,
+			rgba(var(--tothiq-accent-rgb), 0.045) 38%,
+			rgba(var(--tothiq-accent-rgb), 0.014) 66%,
+			rgba(var(--tothiq-accent-rgb), 0) 100%),
+		radial-gradient(46% 40% at 92% 82%,
+			rgba(var(--tothiq-accent-light-rgb), 0.06) 0%,
+			rgba(var(--tothiq-accent-light-rgb), 0.03) 40%,
+			rgba(var(--tothiq-accent-light-rgb), 0.009) 70%,
+			rgba(var(--tothiq-accent-light-rgb), 0) 100%);
+	-webkit-mask-image: linear-gradient(to var(--tothiq-glow-fade), #000 0%, #000 22%, rgba(0, 0, 0, 0.45) 58%, rgba(0, 0, 0, 0) 92%);
+	mask-image: linear-gradient(to var(--tothiq-glow-fade), #000 0%, #000 22%, rgba(0, 0, 0, 0.45) 58%, rgba(0, 0, 0, 0) 92%);
+}
+
+.tothiq-hero__portrait::before {
+	content: "";
+	position: absolute;
+	z-index: -1;
+	inset: -26% -20% -14% -20%;
+	pointer-events: none;
+	background: radial-gradient(closest-side circle at 52% 46%,
+		rgba(var(--tothiq-accent-rgb), 0.105) 0%,
+		rgba(var(--tothiq-accent-rgb), 0.08) 22%,
+		rgba(var(--tothiq-accent-rgb), 0.05) 42%,
+		rgba(var(--tothiq-accent-rgb), 0.026) 60%,
+		rgba(var(--tothiq-accent-rgb), 0.01) 78%,
+		rgba(var(--tothiq-accent-rgb), 0.003) 90%,
+		rgba(var(--tothiq-accent-rgb), 0) 100%);
+	-webkit-mask-image: linear-gradient(to var(--tothiq-glow-fade), #000 0%, #000 26%, rgba(0, 0, 0, 0.5) 62%, rgba(0, 0, 0, 0) 94%);
+	mask-image: linear-gradient(to var(--tothiq-glow-fade), #000 0%, #000 26%, rgba(0, 0, 0, 0.5) 62%, rgba(0, 0, 0, 0) 94%);
+}
+
+[dir="rtl"] .tothiq-hero::after,
+.tothiq-hero.tothiq-lang-ar::after {
+	background:
+		radial-gradient(52% 44% at 20% 18%,
+			rgba(var(--tothiq-accent-rgb), 0.085) 0%,
+			rgba(var(--tothiq-accent-rgb), 0.045) 38%,
+			rgba(var(--tothiq-accent-rgb), 0.014) 66%,
+			rgba(var(--tothiq-accent-rgb), 0) 100%),
+		radial-gradient(46% 40% at 8% 82%,
+			rgba(var(--tothiq-accent-light-rgb), 0.06) 0%,
+			rgba(var(--tothiq-accent-light-rgb), 0.03) 40%,
+			rgba(var(--tothiq-accent-light-rgb), 0.009) 70%,
+			rgba(var(--tothiq-accent-light-rgb), 0) 100%);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+	.tothiq-hero::after {
+		animation: tothiq-wisp-a 15s ease-in-out infinite alternate;
+	}
+
+	.tothiq-hero__portrait::before {
+		animation: tothiq-wisp-b 12s ease-in-out infinite alternate;
+	}
+}
+
+@keyframes tothiq-wisp-a {
+	to {
+		transform: translate3d(30px, -20px, 0);
+	}
+}
+
+@keyframes tothiq-wisp-b {
+	to {
+		transform: translate3d(-22px, 16px, 0);
+	}
+}
+
+/* ---------- Clients ---------- */
+
+.tothiq-clients {
+	padding-block: clamp(1.25rem, 2.5vw, 1.75rem);
+	border-bottom: 1px solid var(--wp--preset--color--divider);
+	background: linear-gradient(180deg, var(--wp--preset--color--base) 0%, var(--wp--preset--color--soft) 55%);
+}
+
+.tothiq-clients > * {
+	max-width: var(--wp--style--global--wide-size) !important;
+}
+
+.tothiq-clients__label {
+	margin: 0 0 1rem !important;
+	color: var(--wp--preset--color--accent);
+	font-size: 0.9375rem;
+	font-weight: 700;
+}
+
+.tothiq-clients__list {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+	gap: 0.75rem clamp(1.75rem, 4.5vw, 3.5rem);
+	margin: 0 !important;
+	padding: 0;
+	list-style: none;
+}
+
+.tothiq-clients__list li {
+	margin: 0;
+	color: #7a8699;
+	font-size: clamp(1rem, 1.6vw, 1.1875rem);
+	font-weight: 700;
+	letter-spacing: -0.01em;
+	white-space: nowrap;
+}
+
+/* ---------- Statement ---------- */
+
+.tothiq-statement__cols {
+	gap: clamp(2rem, 4vw, 3rem) !important;
+}
+
+.tothiq-statement__quote {
+	margin: 0;
+	font-size: clamp(1.75rem, 3.4vw, 2.5rem);
+	font-weight: 700;
+	letter-spacing: -0.02em;
+	line-height: 1.15;
+}
+
+.tothiq-statement__body {
+	padding-inline-start: clamp(2rem, 4vw, 3rem);
+	border-inline-start: 1px solid var(--wp--preset--color--divider);
+}
+
+.tothiq-statement__body > * {
+	margin-block: 0 0.75rem;
+}
+
+/* ---------- Services ---------- */
+
+.tothiq-services__grid {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	gap: clamp(2rem, 4vw, 3rem);
+}
+
+/* An odd last card spans the row instead of sitting alone. */
+.tothiq-service:last-child:nth-child(odd) {
+	grid-column: 1 / -1;
+}
+
+.tothiq-service {
+	display: flex;
+	flex-direction: column;
+	gap: 0.75rem;
+	padding-top: 1.5rem;
+	border-top: 1px solid var(--wp--preset--color--divider);
+}
+
+.tothiq-service > * {
+	margin: 0 !important;
+}
+
+.tothiq-service p,
+.tothiq-service ul {
+	color: var(--wp--preset--color--muted);
+	font-size: 0.9375rem;
+}
+
+.tothiq-service ul {
+	padding: 0;
+	list-style: none;
+}
+
+.tothiq-service li {
+	margin-bottom: 0.3rem;
+}
+
+.tothiq-service .wp-block-buttons {
+	margin-top: auto !important;
+	padding-top: 0.5rem;
+}
+
+/* ---------- About ---------- */
+
+.tothiq-about__cols {
+	gap: clamp(2rem, 5vw, 4rem) !important;
+}
+
+.tothiq-about h2 {
+	margin: 0;
+}
+
+.tothiq-about .tothiq-lead {
+	margin-block: 0 1rem;
+}
+
+.tothiq-stats {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+	gap: clamp(1.25rem, 2.5vw, 1.75rem);
+	margin-top: clamp(2rem, 4vw, 3rem) !important;
+	padding-top: clamp(2rem, 4vw, 3rem);
+	border-top: 1px solid var(--wp--preset--color--divider);
+}
+
+.tothiq-stats > *,
+.tothiq-stat > * {
+	margin: 0 !important;
+}
+
+.tothiq-stat__num {
+	color: var(--wp--preset--color--accent);
+	font-size: clamp(1.75rem, 3vw, 2.25rem);
+	font-weight: 700;
+	letter-spacing: -0.02em;
+	line-height: 1.1;
+}
+
+.tothiq-stat__label {
+	font-size: 0.9375rem;
+	font-weight: 700;
+}
+
+/* ---------- Process ---------- */
+
+.tothiq-steps {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+	gap: clamp(1.5rem, 3vw, 2.5rem);
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	counter-reset: tothiq-step;
+}
+
+.tothiq-steps li {
+	margin: 0;
+	color: var(--wp--preset--color--muted);
+	font-size: 0.9375rem;
+	counter-increment: tothiq-step;
+}
+
+.tothiq-steps li::before {
+	content: counter(tothiq-step, decimal-leading-zero);
+	display: block;
+	margin-bottom: 1rem;
+	padding-bottom: 1rem;
+	border-bottom: 1px solid var(--wp--preset--color--divider);
+	color: var(--wp--preset--color--accent);
+	font-size: clamp(1.75rem, 3vw, 2.25rem);
+	font-weight: 700;
+	line-height: 1;
+}
+
+.tothiq-steps strong {
+	display: block;
+	margin-bottom: 0.4rem;
+	color: var(--wp--preset--color--ink);
+	font-size: var(--wp--preset--font-size--x-large);
+	line-height: 1.3;
+}
+
+/* ---------- Results ---------- */
+
+.tothiq-results {
+	padding-top: 0;
+}
+
+.tothiq-quotes {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+	gap: clamp(1.25rem, 2.5vw, 1.75rem);
+}
+
+.tothiq-quote {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	gap: 1.5rem;
+	padding: clamp(1.5rem, 3vw, 2rem);
+	border: 1px solid var(--wp--preset--color--divider);
+	border-radius: var(--tothiq-radius);
+	background: var(--wp--preset--color--surface);
+	box-shadow: var(--wp--preset--shadow--card);
+}
+
+.tothiq-quote > * {
+	margin: 0 !important;
+}
+
+.tothiq-quote__text {
+	font-size: 1.0625rem;
+	line-height: 1.6;
+}
+
+.tothiq-quote__by {
+	color: var(--wp--preset--color--muted);
+	font-size: 0.875rem;
+	line-height: 1.5;
+}
+
+.tothiq-quote__by strong {
+	color: var(--wp--preset--color--ink);
+}
+
+/* ---------- FAQ ---------- */
+
+.tothiq-faq__cols {
+	gap: clamp(2rem, 5vw, 4rem) !important;
+}
+
+.tothiq-faq h2 {
+	margin-block: 0 1rem;
+}
+
+.tothiq-faq__item {
+	margin: 0 !important;
+	padding-block: 1.2rem;
+	border-bottom: 1px solid var(--wp--preset--color--divider);
+}
+
+.tothiq-faq__item summary {
+	display: flex;
+	justify-content: space-between;
+	gap: 1rem;
+	font-size: 1.0625rem;
+	font-weight: 700;
+	list-style: none;
+	cursor: pointer;
+}
+
+.tothiq-faq__item summary::-webkit-details-marker {
+	display: none;
+}
+
+.tothiq-faq__item summary::after {
+	content: "+";
+	color: var(--wp--preset--color--accent);
+	font-size: 1.5rem;
+	line-height: 1;
+}
+
+.tothiq-faq__item[open] summary::after {
+	content: "–";
+}
+
+.tothiq-faq__item p {
+	margin-block-start: 0.6rem;
+	color: var(--wp--preset--color--muted);
+}
+
+/* ---------- Closing band ---------- */
+
+.tothiq-cta__band {
+	padding: clamp(2.5rem, 6vw, 4.5rem) clamp(1.5rem, 5vw, 4rem) !important;
+	border-radius: var(--tothiq-radius);
+}
+
+.tothiq-cta__band h2 {
+	max-width: 18ch;
+	margin-inline: auto !important;
+}
+
+.tothiq-cta__text {
+	color: rgb(255 255 255 / 0.72);
+}
+
+.tothiq-cta__phone {
+	margin-top: 1rem !important;
+	font-size: 0.9375rem;
+}
+
+.tothiq-cta__phone a {
+	color: rgb(255 255 255 / 0.72);
+	text-decoration: none;
+}
+
+.tothiq-cta__phone a:hover {
+	color: #fff;
+}
+
+/* ---------- Footer ---------- */
+
+.tothiq-footer {
+	padding-block: 4rem 1.5rem;
+	border-top: 1px solid var(--wp--preset--color--divider);
+	font-size: 0.9375rem;
+}
+
+.tothiq-footer__cols {
+	gap: 2rem !important;
+}
+
+.tothiq-footer__text,
+.tothiq-footer__nav,
+.tothiq-socials {
+	color: var(--wp--preset--color--muted);
+}
+
+.tothiq-footer a:where(:not(.wp-element-button)) {
+	color: inherit;
+	text-decoration: none;
+}
+
+.tothiq-footer a:where(:not(.wp-element-button)):hover {
+	color: var(--wp--preset--color--accent);
+}
+
+.tothiq-footer__title {
+	font-size: 0.9375rem !important;
+	font-weight: 700;
+	letter-spacing: 0;
+}
+
+.tothiq-footer__bottom {
+	margin-top: 3rem !important;
+	padding-top: 1.5rem;
+	border-top: 1px solid var(--wp--preset--color--divider);
+	color: var(--wp--preset--color--muted);
+	font-size: 0.875rem;
+}
+
+.tothiq-footer__bottom p {
+	margin: 0;
+}
+
+.tothiq-footer__bottom a {
+	text-decoration: underline !important;
+	text-underline-offset: 3px;
+}
+
+/* ---------- Inner pages ---------- */
+
+.tothiq-page {
+	padding-block: clamp(2.5rem, 5vw, 4rem);
+}
+
+.tothiq-posts .wp-block-post {
+	padding-block: 1.5rem;
+	border-bottom: 1px solid var(--wp--preset--color--divider);
+}
+
+.tothiq-posts .wp-block-post-title a {
+	color: inherit;
+	text-decoration: none;
+}
+
+.tothiq-posts .wp-block-post-title a:hover {
+	color: var(--wp--preset--color--accent);
+}
+
+/* ---------- Phone bar ---------- */
+
+.wp-block-template-part:has(> .tothiq-actions) {
+	display: contents;
+}
+
+.tothiq-actions {
+	position: sticky;
+	bottom: 0;
+	z-index: 20;
+	gap: 0.6rem !important;
+	padding: 0.6rem 0.75rem calc(0.6rem + env(safe-area-inset-bottom));
+	border-top: 1px solid var(--wp--preset--color--divider);
+	background: rgb(250 251 252 / 0.94);
+	-webkit-backdrop-filter: blur(12px);
+	backdrop-filter: blur(12px);
+}
+
+.tothiq-actions .wp-block-buttons {
+	margin: 0;
+}
+
+.tothiq-actions .wp-block-button,
+.tothiq-actions .wp-block-button__link {
+	width: 100%;
+	justify-content: center;
+}
+
+.tothiq-actions .wp-block-button__link::after {
+	display: none;
+}
+
+@media (min-width: 782px) {
+	body .tothiq-actions {
+		display: none;
+	}
+}
+
+/* ---------- Motion ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+	.tothiq-btn .wp-block-button__link::after {
+		transition: none;
+	}
+}
+
+/* ---------- Small screens ---------- */
+
+@media (max-width: 960px) {
+	.tothiq-header__cta {
+		display: none !important;
+	}
+}
+
+@media (max-width: 900px) {
+	.tothiq-hero__inner {
+		grid-template-columns: 1fr;
+		grid-template-rows: none;
+		row-gap: 1.25rem;
+	}
+
+	.tothiq-hero__eyebrow,
+	.tothiq-hero__copy,
+	.tothiq-hero__portrait {
+		grid-column: auto;
+		grid-row: auto;
+	}
+
+	.tothiq-hero__eyebrow {
+		margin-bottom: 0 !important;
+	}
+
+	.tothiq-hero__portrait {
+		order: -1;
+		margin-top: 0 !important;
+	}
+
+	.tothiq-hero__portrait img {
+		max-width: 300px;
+		margin-inline: auto;
+	}
+
+	.tothiq-hero__title {
+		max-width: none;
+	}
+}
+
+@media (max-width: 781px) {
+	.tothiq-statement__body {
+		padding-inline-start: 0;
+		border-inline-start: 0;
+	}
+
+	.tothiq-services__grid {
+		grid-template-columns: 1fr;
+	}
+
+	.tothiq-footer__bottom {
+		flex-direction: column;
+		align-items: flex-start !important;
+		padding-bottom: 4.5rem;
+	}
+}
+
+@media (max-width: 600px) {
+	.tothiq-hero__portrait img {
+		max-width: 230px;
+	}
+}
+
+@media (max-width: 480px) {
+	.tothiq-hero .tothiq-actions-row .wp-block-button,
+	.tothiq-hero .tothiq-actions-row .wp-block-button__link {
+		width: 100%;
+		justify-content: center;
+	}
+
+	.tothiq-brand__role {
+		display: none;
+	}
+}
+
+/* Grid containers: children are placed by the grid, never by block gap. */
+.tothiq-services__grid > *,
+.tothiq-quotes > *,
+.tothiq-facts > *,
+.tothiq-stats > * {
+	margin-block: 0 !important;
+}
+
+/* Phone bar: hidden while the hero's own buttons are on screen. */
+.tothiq-actions {
+	transition: transform 0.25s ease, visibility 0.25s;
+}
+
+html.tothiq-hero-cta-visible:not(.has-modal-open) .tothiq-actions {
+	visibility: hidden;
+	transform: translateY(100%);
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.tothiq-actions {
+		transition: none;
+	}
+}
+
+/* Phones: compact footer. Brand on its own row, the two link columns side by
+   side, tighter spacing (same treatment as the Real Estate theme). */
+@media (max-width: 781px) {
+	.tothiq-footer {
+		padding-block: 2.5rem 1rem;
+	}
+
+	.tothiq-footer__cols {
+		flex-wrap: wrap !important;
+		gap: 1.75rem 1.25rem !important;
+	}
+
+	.tothiq-footer__cols > .wp-block-column:first-child {
+		flex-basis: 100% !important;
+	}
+
+	.tothiq-footer__cols > .wp-block-column:not(:first-child) {
+		flex-basis: calc(50% - 0.625rem) !important;
+		flex-grow: 1;
+		min-width: 0;
+	}
+
+	.tothiq-footer__nav .wp-block-navigation__container {
+		gap: 0.45rem !important;
+	}
+
+	.tothiq-footer .wp-block-button__link {
+		white-space: nowrap;
+		padding-inline: 1em;
+	}
+
+	.tothiq-footer__bottom {
+		margin-top: 1.75rem !important;
+		padding-top: 1rem;
+	}
+}
