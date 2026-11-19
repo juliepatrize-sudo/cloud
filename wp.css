@@ -13,7 +13,8 @@
   --border: #e2e8f0;
   --white: #ffffff;
   --accent: #2563eb;
-  --padding-side: 8%;
+  --padding-side: 4%;
+--section-y: 5rem; 
 }
 
 html {
@@ -21,6 +22,7 @@ html {
 }
 
 body {
+
   background: var(--white);
   color: var(--primary);
   line-height: 1.6;
@@ -82,8 +84,8 @@ body {
   display: none;
   animation: fadeIn 0.5s ease;
   width: 100%;
-}
 
+}
 .page-container.active {
   display: block;
 }
@@ -100,28 +102,96 @@ body {
   }
 }
 
-/* HERO */
+
+/* =========================
+   HERO / HOME
+========================= */
+
 .hero {
-  padding: 10rem var(--padding-side) 8rem;
-  text-align: center;
-  border-bottom: 1px solid var(--border);
+  position: relative;
   width: 100%;
+  min-height: calc(100vh - 80px);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+
+  background: rgba(15, 23, 42, 0.18);
 }
 
-.hero h1 {
-  font-size: 5rem;
-  font-weight: 800;
-  letter-spacing: -0.05em;
-  margin-bottom: 1.5rem;
-  color: var(--primary);
+/* TEAM PHOTO BACKGROUND */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background-image: url("http://localhost/wordpresslaragon/wp-content/uploads/2026/11/Beige-Blue-Minimalist-Summer-Photo-Collage-Facebook-Cover-3-edited-e1795024041176.png");
+
+  /*
+    Show the whole width of the collage
+    without cutting the four people.
+  */
+  background-size: 100% auto;
+  background-position: center center;
+  background-repeat: no-repeat;
+
+  z-index: 0;
 }
 
-.hero p {
-  font-size: 1.8rem;
-  color: var(--secondary);
-  max-width: 800px;
-  margin: 0 auto;
-  font-weight: 400;
+/* DARK OVERLAY */
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background: rgba(15, 23, 42, 0.18);
+
+  z-index: 1;
+}
+
+/* HERO TEXT */
+.hero-content {
+  position: relative;
+  z-index: 2;
+
+  text-align: center;
+
+  padding: 2rem 3rem;
+
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(1px);
+  -webkit-backdrop-filter: blur(1px);
+
+  border-radius: 20px;
+}
+
+/* TITLE */
+.hero-content h1 {
+  margin: 0;
+
+  font-size: clamp(3rem, 7vw, 6rem);
+  font-weight: 900;
+  letter-spacing: 0.04em;
+
+  color: #ffffff;
+
+  text-shadow:
+    0 4px 15px rgba(0, 0, 0, 0.5),
+    0 8px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* SUBTITLE */
+.hero-content p {
+  margin: 1rem 0 0;
+
+  font-size: clamp(1.1rem, 2vw, 1.5rem);
+  font-weight: 500;
+
+  color: #ffffff;
+
+  text-shadow: 0 3px 12px rgba(0, 0, 0, 0.5);
 }
 
 /* TEAM SHOWCASE */
@@ -130,8 +200,7 @@ body {
   grid-template-columns: repeat(4, 1fr);
   gap: 2.5rem;
   width: 100%;
-  padding: 0 var(--padding-side);
-  margin: -4rem auto 0;
+  
   position: relative;
   z-index: 10;
 }
@@ -161,7 +230,7 @@ body {
   aspect-ratio: 1 / 1;
   border-radius: 1rem;
   overflow: hidden;
-  margin-bottom: 1.5rem;
+  margin-top: 0.5rem;
   background: #e2e8f0;
 }
 
@@ -176,7 +245,7 @@ body {
 .showcase-card h3 {
   font-size: 1.4rem;
   font-weight: 700;
-  margin-bottom: 0.3rem;
+  margin-bottom: 0.7rem;
   color: var(--primary);
 }
 
@@ -203,7 +272,7 @@ body {
 
 /* SECTIONS */
 .section {
-  padding: 8rem var(--padding-side);
+  padding: var(--section-y) var(--padding-side);
   width: 100%;
 }
 
@@ -216,7 +285,7 @@ body {
 
 .section-header {
   text-align: center;
-  margin-bottom: 5rem;
+  margin-top: 0rem;
 }
 
 .section-header h2 {
@@ -239,7 +308,7 @@ body {
 }
 
 .section-header p {
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   color: var(--secondary);
 }
 
@@ -304,7 +373,7 @@ body {
   color: var(--secondary);
 }
 
-/* HOBBIES / PROJECT */
+/* PROJECT */
 .project-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -586,7 +655,7 @@ body {
 
 /* PROJECT PAGE */
 .project-page {
-  padding: 2rem var(--padding-side);
+  padding: 1.5rem var(--padding-side);
   width: 100%;
   min-height: 80vh;
 }
@@ -860,162 +929,418 @@ body {
 }
 
 
-/* CUSTOM NAVBAR - MAIN WEBSITE HEADER */
+/* =========================
+   FIXED NAVBAR
+========================= */
+
 .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100vw;
-    max-width: none;
-    margin-left: calc(50% - 50vw);
-    margin-right: calc(50% - 50vw);
-    padding: 22px 6%;
-    background: #ffffff;
-    position: sticky;
-    top: 0;
-    z-index: 9999;
-    box-shadow: none;
-    border: none;
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+
+  position: fixed !important;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+
+  width: 100vw !important;
+  max-width: 100vw !important;
+
+  margin: 0 !important;
+  padding: 22px 6% !important;
+
+  background: #ffffff !important;
+  opacity: 1 !important;
+
+  z-index: 99999 !important;
+
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  border: none !important;
+
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
 }
 
 .nav-logo {
-    color: #0f172a;
-    font-size: 25px;
-    font-weight: 800;
+  color: #0f172a !important;
+  font-size: 25px;
+  font-weight: 800;
 }
 
 .nav-links {
-    display: flex;
-    align-items: center;
-    gap: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 40px;
 }
 
 .nav-links a {
-    color: #0f172a;
-    font-size: 16px;
-    font-weight: 600;
-    text-decoration: none;
-    cursor: pointer;
-    transition: color 0.3s ease;
+  position: relative;
+  color: #0f172a !important;
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: color 0.3s ease;
 }
 
 .nav-links a:hover {
-    color: #2563eb;
+  color: #2563eb !important;
 }
 
-
-/* FIXED NAVBAR - ALWAYS VISIBLE */
-.navbar {
-    position: fixed !important;
-    top: 0;
-    left: 0;
-    width: 100% !important;
-    z-index: 99999;
-
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    padding: 22px 6%;
-    margin: 0 !important;
-
-    background: #ffffff;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
-    border: none;
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -7px;
+  width: 0;
+  height: 2px;
+  background: #0f172a;
+  transition: width 0.3s ease;
 }
 
-/* WORDPRESS ADMIN BAR */
-body.admin-bar .navbar {
-    top: 32px;
+.nav-links a:hover::after {
+  width: 100%;
 }
 
-/* PREVENT CONTENT FROM HIDING UNDER NAVBAR */
-.page-container {
-    padding-top: 85px;
+.nav-links a.active::after {
+  width: 100%;
+}
+
+.nav-links a.active {
+  color: #0f172a !important;
+}
+
+.navbar-disabled {
+  pointer-events: none;
+  opacity: 1 !important;
 }
 
 /* MOBILE */
+
 @media (max-width: 768px) {
-    body.admin-bar .navbar {
-        top: 46px;
-    }
+  .navbar {
+    flex-direction: column;
+    gap: 15px;
+    padding: 15px 5% !important;
+  }
 
-    .navbar {
-        flex-direction: column;
-        gap: 15px;
-        padding: 15px 5%;
-    }
+  .nav-links {
+    gap: 20px;
+  }
+}
+/* HOBBY PHOTO BUTTON */
 
-    .page-container {
-        padding-top: 110px;
-    }
+.hobby-photo-btn {
+  margin-top: 1rem;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  background: #111;
+  color: white;
+  cursor: pointer;
+  font-size: 14px;
+  transition: 0.3s ease;
+}
+
+.hobby-photo-btn:hover {
+  transform: translateY(-2px);
+  opacity: 0.85;
 }
 
 
-    .nav-links {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 20px;
-    }
+/* HOBBY PHOTO MODAL */
+
+.hobby-gallery-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  padding: 30px;
+}
+
+.hobby-gallery-modal.active {
+  display: flex;
+}
+
+.hobby-gallery-box {
+  position: relative;
+  background: white;
+  width: min(900px, 95%);
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: 30px;
+  border-radius: 15px;
+}
+
+.hobby-gallery-box h2 {
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+.hobby-gallery-close {
+  position: absolute;
+  top: 12px;
+  right: 18px;
+  border: none;
+  background: none;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.hobby-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.hobby-gallery img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 10px;
+  background: #eee;
 }
 
 
-/* KEEP CUSTOM NAVBAR */
-.navbar {
-    display: flex !important;
-    justify-content: space-between !important;
-    align-items: center !important;
-    width: 100% !important;
-    margin: 0 !important;
-    padding: 22px 6% !important;
-    background: #ffffff !important;
-    box-shadow: none !important;
-    border: none !important;
-    position: relative;
-    z-index: 999;
+/* MOBILE */
+
+@media (max-width: 600px) {
+  .hobby-gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .hobby-gallery img {
+    height: 200px;
+  }
 }
 
-/* NAVBAR LOGO */
-.nav-logo {
-    color: #0f172a !important;
+/* HOBBY PHOTO BUTTON */
+
+.hobby-photo-btn {
+  margin-top: 1rem;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  background: #111;
+  color: white;
+  cursor: pointer;
+  font-size: 14px;
+  transition: 0.3s ease;
 }
 
-/* NAVIGATION LINKS */
-.nav-links a {
-    color: #0f172a !important;
+.hobby-photo-btn:hover {
+  transform: translateY(-2px);
+  opacity: 0.85;
 }
 
 
-/* NAVBAR UNDERLINE EFFECT */
-.nav-links a {
-    position: relative;
-    text-decoration: none;
-    cursor: pointer;
+.hobby-photo-btn {
+  margin-top: 15px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  background: #111;
+  color: white;
+  cursor: pointer;
+  font-size: 14px;
+  transition: 0.3s ease;
 }
 
-/* UNDERLINE */
-.nav-links a::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: -7px;
-    width: 0;
-    height: 2px;
-    background: #0f172a;
-    transition: width 0.3s ease;
+.hobby-photo-btn:hover {
+  transform: translateY(-2px);
+  opacity: 0.85;
 }
 
-/* HOVER EFFECT */
-.nav-links a:hover::after {
-    width: 100%;
+.hobby-photo-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  margin-top: 20px;
+  
 }
 
-/* ACTIVE PAGE */
-.nav-links a.active::after {
-    width: 100%;
+.hobby-photo-container img {
+  width: 100%;
+  height: 650px;
+  object-fit: cover;
+  border-radius: 10px;
+  display: block;
 }
 
-/* ACTIVE TEXT COLOR */
-.nav-links a.active {
-    color: #0f172a;
+
+@media (max-width: 600px) {
+  .hobby-photo-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =========================
+   GALLERY SECTION
+========================= */
+
+.gallery-section {
+  background: var(--white);
+  width: 100%;
+}
+
+.gallery-grid {
+  width: 100%;
+  max-width: 1400px;
+  margin: 4rem auto 0;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  
+}
+.gallery-item {
+  position: relative;
+  width: 100%;
+   height: fit-content;
+  min-height: 0;
+ 
+
+  overflow: hidden;
+  align-self: start;
+
+  border-radius: 1.5rem;
+  background: transparent;
+  border: 1px solid var(--border);
+
+  box-shadow: 0 15px 35px -15px rgba(0, 0, 0, 0.15);
+
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-item:hover {
+  transform: translateY(-8px);
+
+  box-shadow: 0 25px 45px -15px rgba(0, 0, 0, 0.2);
+}
+
+
+/* =========================
+   PHOTOS
+========================= */
+
+.gallery-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.06);
+}
+
+
+/* =========================
+   PHOTO OVERLAY
+========================= */
+
+.gallery-overlay {
+  position: absolute;
+
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  padding: 1.5rem;
+
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+
+  color: white;
+
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.75),
+    transparent
+  );
+
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.gallery-overlay i {
+  font-size: 1.2rem;
+}
+
+
+/* =========================
+   VIDEOS
+========================= */
+
+.gallery-video {
+  background: #000;
+}
+
+.gallery-video video {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+}
+
+
+/* VIDEO LABEL */
+
+.video-label {
+  position: absolute;
+
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  padding: 1.2rem 1.5rem;
+
+  color: white;
+
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.8),
+    transparent
+  );
+
+  font-size: 1rem;
+  font-weight: 700;
+
+  pointer-events: none;
+}
+
+.video-label i {
+  margin-right: 0.5rem;
+}
+
+
+/* =========================
+   GALLERY RESPONSIVE
+========================= */
+
+@media (max-width: 1024px) {
+
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+}
+
+
+@media (max-width: 768px) {
+
+  .gallery-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-top: 3rem;
+  }
+
+ 
+
 }

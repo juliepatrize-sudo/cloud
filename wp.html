@@ -14,115 +14,141 @@
   </div>
 
   <!-- NAVIGATION LINKS -->
-  <div class="nav-links">
-    <a onclick="showPage('home')">Home</a>
-    <a onclick="goToSection('about')">About</a>
-    <a onclick="goToSection('project')">Project</a>
-    <a onclick="goToSection('contact')">Contact</a>
-  </div>
+<div class="nav-links">
+  <a onclick="showPage('home')">Home</a>
+  <a onclick="goToSection('about')">About</a>
+  <a onclick="goToSection('team')">Team</a>
+  <a onclick="goToSection('project')">Project</a>
+  <a onclick="goToSection('gallery')">Gallery</a>
+  <a onclick="goToSection('contact')">Contact</a>
+</div>
 
 </nav>
 
   <!-- HOME PAGE -->
   <div id="page-home" class="page-container active">
 
-    <!-- HERO SECTION -->
     <header class="hero">
-      <h1>THE HUBAGANG</h1>
-      <p>Four minds. One vision.</p>
-    </header>
 
-    <!-- TEAM SHOWCASE -->
-    <div class="team-showcase">
+  <div class="hero-content">
+    <h1>THE HUBAGANG</h1>
+    <p>Four minds. One vision.</p>
+  </div>
 
-      <div class="showcase-card" onclick="showProject('charls')">
-        <div class="showcase-img">
-          <img src="http://wordpresslaragon.test/wp-content/uploads/2026/11/charls-Photoroom.png" alt="Charls">
-        </div>
-        <h3>Charls Sylwen L. Bernales</h3>
-        <span>Project Analyst</span>
-        <span class="click-hint">
-          <i class="fas fa-folder-open"></i> View Details
-        </span>
-      </div>
+</header>
 
-      <div class="showcase-card" onclick="showProject('jerwin')">
-        <div class="showcase-img">
-          <img src="http://wordpresslaragon.test/wp-content/uploads/2026/11/jerwin.jpg" alt="Jerwin">
-        </div>
-        <h3>Jerwin G. Buray</h3>
-        <span>Programmer</span>
-        <span class="click-hint">
-          <i class="fas fa-folder-open"></i> View Details
-        </span>
-      </div>
-
-      <div class="showcase-card" onclick="showProject('kharrel')">
-        <div class="showcase-img">
-          <img src="http://wordpresslaragon.test/wp-content/uploads/2026/11/kharrel.jpg" alt="Kharrel">
-        </div>
-        <h3>Kharrel Jhaiane N. Mugot</h3>
-        <span>Project Manager</span>
-        <span class="click-hint">
-          <i class="fas fa-folder-open"></i> View Details
-        </span>
-      </div>
-
-      <div class="showcase-card" onclick="showProject('julie')">
-        <div class="showcase-img">
-          <img src="http://wordpresslaragon.test/wp-content/uploads/2026/11/julie.jpg" alt="Julie">
-        </div>
-        <h3>Julie Patrize Edralin</h3>
-        <span>Technical Writer</span>
-        <span class="click-hint">
-          <i class="fas fa-folder-open"></i> View Details
-        </span>
-      </div>
-
-    </div>
-
+    
     <!-- ABOUT SECTION -->
     <section id="about" class="section">
       <div class="section-header">
         <h2><i class="fas fa-users"></i> About Us</h2>
         <p>Who we are and what drives us</p>
       </div>
-
       <div class="about-content">
         <div class="about-text">
-          <p>We are a group of four passionate creators, developers, and strategists who came together through a shared vision: to build meaningful digital experiences.</p>
-          <p>Our collaboration started in 2023 during a hackathon, and we’ve been creating side-by-side ever since. We believe in open communication, rapid iteration, and the power of interdisciplinary thinking.</p>
+          <p>We are a team of four Information Technology students brought together by a shared passion for technology, creativity, and continuous learning. As students, we work together to develop ideas, improve our skills, and create meaningful digital solutions.</p>
+
+<p>Throughout our journey, we have learned the importance of teamwork, communication, problem-solving, and supporting one another. Each member brings different skills, ideas, and perspectives that contribute to our growth as a team.</p>
         </div>
 
         <div class="about-stats">
 
           <div class="stat-box">
-            <i class="fas fa-code"></i>
-            <h4>4 Experts</h4>
-            <span>Developers &amp; Designers</span>
-          </div>
-
-          <div class="stat-box">
-            <i class="fas fa-rocket"></i>
-            <h4>12+ Projects</h4>
-            <span>Successfully Shipped</span>
+            <i class="fas fa-users"></i>
+             <h4>4 IT Students</h4>
+    <span>United by technology and creativity</span>
           </div>
 
           <div class="stat-box">
             <i class="fas fa-handshake"></i>
-            <h4>100%</h4>
-            <span>Collaborative</span>
+            <h4>Strong Collaboration</h4>
+            <span>Working together toward common goals</span>
           </div>
 
           <div class="stat-box">
-            <i class="fas fa-globe"></i>
-            <h4>Remote</h4>
-            <span>First Team</span>
+            <i class="fas fa-lightbulb"></i>
+            <h4>Shared Skills</h4>
+            <span>Combining different strengths and ideas</span>
+          </div>
+
+          <div class="stat-box">
+            <i class="fas fa-rocket"></i>
+            <h4>Future Ready</h4>
+            <span>Learning today, building for tomorrow</span>
           </div>
 
         </div>
       </div>
     </section>
+
+<!-- TEAM SECTION -->
+<section id="team" class="section section-alt">
+
+  <div class="section-header">
+    <h2><i class="fas fa-users"></i> Our Team</h2>
+    <p>Meet the people behind The Hubagang</p>
+  </div>
+
+  <div class="team-showcase">
+
+    <div class="showcase-card" onclick="showProject('charls')">
+      <div class="showcase-img">
+        <img src="http://wordpresslaragon.test/wp-content/uploads/2026/11/charls-Photoroom.png" alt="Charls">
+      </div>
+
+      <h3>Charls Sylwen L. Bernales</h3>
+      <span>Project Analyst</span>
+
+      <span class="click-hint">
+        <i class="fas fa-folder-open"></i> View Details
+      </span>
+    </div>
+
+
+    <div class="showcase-card" onclick="showProject('jerwin')">
+      <div class="showcase-img">
+        <img src="http://wordpresslaragon.test/wp-content/uploads/2026/11/jerwin.jpg" alt="Jerwin">
+      </div>
+
+      <h3>Jerwin G. Buray</h3>
+      <span>Programmer</span>
+
+      <span class="click-hint">
+        <i class="fas fa-folder-open"></i> View Details
+      </span>
+    </div>
+
+
+    <div class="showcase-card" onclick="showProject('kharrel')">
+      <div class="showcase-img">
+        <img src="http://wordpresslaragon.test/wp-content/uploads/2026/11/kharrel.jpg" alt="Kharrel">
+      </div>
+
+      <h3>Kharrel Jhaiane N. Mugot</h3>
+      <span>Project Manager</span>
+
+      <span class="click-hint">
+        <i class="fas fa-folder-open"></i> View Details
+      </span>
+    </div>
+
+
+    <div class="showcase-card" onclick="showProject('julie')">
+      <div class="showcase-img">
+        <img src="http://wordpresslaragon.test/wp-content/uploads/2026/11/julie.jpg" alt="Julie">
+      </div>
+
+      <h3>Julie Patrize Edralin</h3>
+      <span>Technical Writer</span>
+
+      <span class="click-hint">
+        <i class="fas fa-folder-open"></i> View Details
+      </span>
+    </div>
+
+  </div>
+
+</section>
 
     <!-- PROJECT SECTION -->
 <section id="project" class="section section-alt">
@@ -138,7 +164,7 @@
   <div class="project-slide">
 
 <div class="slide-image">
-  <img id="slide-image" src="http://wordpresslaragon.test/wp-content/uploads/2026/11/charls-project.jpg" alt="Project">
+  <img id="slide-image" src="http://localhost/wordpresslaragon/wp-content/uploads/2026/11/jproj1-scaled-e1795059826375-300x235.jpeg" alt="Project">
 </div>
 
 <div class="slide-content">
@@ -174,6 +200,92 @@
 <span class="dot" onclick="goToSlide(4)"></span>
 
 </div>
+</section>
+
+<!-- GALLERY SECTION -->
+<section id="gallery" class="section gallery-section">
+
+  <div class="section-header">
+    <h2>
+      <i class="fas fa-images"></i> Gallery
+    </h2>
+    <p>Moments, memories, and highlights from The Hubagang</p>
+  </div>
+
+  <div class="gallery-grid">
+
+    <!-- PHOTO -->
+    <div class="gallery-item">
+      <img src="http://localhost/wordpresslaragon/wp-content/uploads/2026/11/Black-and-White-Photographic-Collage-Instagram-Post-.png" alt="The Hubagang Photo">
+
+      <div class="gallery-overlay">
+        <i class="fas fa-image"></i>
+        <span>Team Moment</span>
+      </div>
+    </div>
+
+    <!-- PHOTO -->
+    <div class="gallery-item">
+      <img src="http://localhost/wordpresslaragon/wp-content/uploads/2026/11/825310019_1126287576415326_5446271458987047102_n.jpg" alt="The Hubagang Photo">
+
+      <div class="gallery-overlay">
+        <i class="fas fa-image"></i>
+        <span>Capstone Picturial</span>
+      </div>
+    </div>
+
+    <!-- VIDEO -->
+    <div class="gallery-item gallery-video">
+
+      <video controls="">
+        <source src="http://localhost/wordpresslaragon/wp-content/uploads/2026/11/AQNHp5EWP2x89kx87yzBKmU4j5-2v7IR7C4kahI0vbGtdp7y7Ja9ChvCYlcNHkoudS4OgzckPIEv6lZFOZCQ1k2pQjDSusJFscVBTi5KBQ.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+
+      <div class="video-label">
+        <i class="fas fa-video"></i>
+        CUSTOMIZE CAKE (CAPSTONE)
+      </div>
+
+    </div>
+
+    <!-- PHOTO -->
+    <div class="gallery-item">
+      <img src="http://localhost/wordpresslaragon/wp-content/uploads/2026/11/825309983_1728823378376785_7988632301525074919_n.jpg" alt="The Hubagang Photo">
+
+      <div class="gallery-overlay">
+        <i class="fas fa-image"></i>
+        <span>Testing</span>
+      </div>
+    </div>
+
+    <!-- VIDEO -->
+    <div class="gallery-item gallery-video">
+
+      <video controls="">
+        <source src="http://localhost/wordpresslaragon/wp-content/uploads/2026/11/AQOFA78NWRhaY5Wk4lD88iCfdZRZM-u6Y-K31JxMUBAPdkq0_Q6oeVVwS1KuPuebcQtC4AqM01MNmXKY81Nkm3mP_UCE0SstQRVTp_R0sQ.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+
+      <div class="video-label">
+        <i class="fas fa-video"></i>
+        IOT
+      </div>
+
+    </div>
+
+    <!-- PHOTO -->
+    <div class="gallery-item">
+      <img src="http://localhost/wordpresslaragon/wp-content/uploads/2026/11/743965928_27601481949480867_6664927427939002753_n.jpg" alt="The Hubagang Photo">
+
+      <div class="gallery-overlay">
+        <i class="fas fa-image"></i>
+        <span>With Adviser</span>
+      </div>
+    </div>
+
+  </div>
+
 </section>
 
     <!-- CONTACT SECTION -->
@@ -224,10 +336,9 @@
 
     <div class="project-page">
 
-      <button class="back-btn" onclick="showPage('home')">
-        <i class="fas fa-arrow-left"></i> Back to Home
-      </button>
-
+      <button class="back-btn" onclick="backToTeam()">
+  <i class="fas fa-arrow-left"></i> Back to Team
+</button>
       <div class="project-header">
 
   <img id="project-img" src="" alt="Member Image" class="project-header-img">
@@ -242,15 +353,23 @@
 </div>
 
 <!-- PERSONAL DETAILS -->
-<div class="project-list" id="project-list"></div>
+<div class="project-list" id="project-list"></div></div></div>
 
+<div id="hobby-gallery-modal" class="hobby-gallery-modal">
+  <div class="hobby-gallery-box">
 
-      <div class="project-list" id="project-list"></div>
+    <button class="hobby-gallery-close" onclick="closeHobbyGallery()">
+      ×
+    </button>
 
+    <h2 id="hobby-gallery-title">Hobbies &amp; Interests</h2>
+
+    <div id="hobby-gallery" class="hobby-gallery">
+      <!-- Placeholder photos will appear here -->
     </div>
 
- 
-
   </div>
+</div>
+
 
   <script src="script.js"></script>
