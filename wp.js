@@ -30,10 +30,14 @@ const memberData = {
   title: "Hobbies & Interests",
   desc: "Gaming, watching movies, and playing football. These are some of the things I enjoy doing during my free time.",
   photos: [
-    "https://via.placeholder.com/300x200?text=Hobby+Photo+1",
-    "https://via.placeholder.com/300x200?text=Hobby+Photo+2",
-    "https://via.placeholder.com/300x200?text=Hobby+Photo+3",
-    "https://via.placeholder.com/300x200?text=Hobby+Photo+4"
+    "http://localhost/wordpresslaragon/wp-content/uploads/2026/11/9f7cb833-0fe6-49fc-9362-8adbaa30589d.jpg",
+    "http://localhost/wordpresslaragon/wp-content/uploads/2026/11/2f06c4c0-17a3-41fd-960c-c88255715454.jpg",
+    "http://localhost/wordpresslaragon/wp-content/uploads/2026/11/c9b5f0ec-7479-422d-bc7b-7ca55088a45b-1.jpg",
+    "http://localhost/wordpresslaragon/wp-content/uploads/2026/11/a088ca37-52a3-4778-bfa3-304ab0fe3d2f.jpg",
+ "http://localhost/wordpresslaragon/wp-content/uploads/2026/11/94e6a65f-853c-4bc3-acb2-dcb6fd79ba5f.jpg",
+ "http://localhost/wordpresslaragon/wp-content/uploads/2026/11/afa48aac-2044-43f1-a862-0c700aa311c5.jpg",
+ "http://localhost/wordpresslaragon/wp-content/uploads/2026/11/bb2cac96-6bc4-4569-ae94-f2bf2ae6e8dc.jpg", 
+"http://localhost/wordpresslaragon/wp-content/uploads/2026/11/c4e1d3af-5fe2-4c57-b778-24ffb76c56a7.jpg"
   ]
 }
     
@@ -50,30 +54,30 @@ const memberData = {
     projects: [
        {
       title: "About Me",
-      desc: "Hi! I'm Jerwin G. Buray. I'm a laid-back and curious person who enjoys spending time doing things that make me happy. I like discovering new things, experiencing different activities, and spending time with the people around me. I believe that every experience, whether big or small, can teach me something new and help me grow as a person."
+      desc: "Hi! I'm Jerwin G. Buray.  I'm a jolly and happy person with big dreams and ambitions in life. I enjoy staying positive, making good memories, and learning new things. I'm a hardworking person who believes that every effort I make today will help me build a better future. I know that achieving my dreams takes time, patience, and determination, so I always try my best to move forward."
     },
  
     {
       title: "Personal Strengths",
-      desc: "Curious, adaptable, determined, and willing to learn. I try to stay open to new experiences, learn from my mistakes, and do my best when faced with challenges."
+      desc: "Understanding, considerate, responsible, and willing to accept challenges. I always try to understand other people's feelings, respect their opinions, and treat everyone with kindness. I believe that every challenge is an opportunity to learn, grow, and become a better version of myself."
     },
     {
       title: "Goals & Aspirations",
-      desc: "My goal is to become a successful IT professional. I want to continuously improve my technical skills, gain valuable experience, and learn more about the field of technology. I also hope to build a stable career, achieve my personal goals, and make my family proud through my efforts and dedication."
+      desc: "My main goal is to become financially stable and build a successful future. I dream of having my own house, building a beautiful dream house for my parents as a way of giving back for everything they have done for me, and establishing my own business. I want to achieve these dreams through hard work, patience, and determination."
     },
     {
       title: "Personal Motto",
-      desc: "\"Enjoy the journey, not just the destination.\" I believe that success is not only about reaching your goals but also about appreciating the experiences, lessons, and memories you gain along the way."
+      desc: "\"Everything in this world is temporary, so don't be afraid of failure. Failing is not a loss, but a lesson.\" I believe that life is full of challenges, and not everything will go as planned. What matters is that we learn from our mistakes, never give up, and continue moving forward. Every failure teaches us something valuable that brings us one step closer to our dreams."
     },
   {
       title: "Hobbies & Interests",
       desc: "Watching movies, thrifting, playing video games, and traveling. I enjoy watching movies during my free time, looking for unique finds while thrifting, playing video games for entertainment and relaxation, and traveling to explore new places and experience different things.",
    
   photos: [
-    "https://via.placeholder.com/300x200?text=Hobby+Photo+1",
-    "https://via.placeholder.com/300x200?text=Hobby+Photo+2",
-    "https://via.placeholder.com/300x200?text=Hobby+Photo+3",
-    "https://via.placeholder.com/300x200?text=Hobby+Photo+4"
+    "http://localhost/wordpresslaragon/wp-content/uploads/2026/11/Movie-night.jpg",
+    "http://localhost/wordpresslaragon/wp-content/uploads/2026/11/CDO-Gaisano-road.jpg",
+    "http://localhost/wordpresslaragon/wp-content/uploads/2026/11/666603182378289043.jpg",
+    "http://localhost/wordpresslaragon/wp-content/uploads/2026/11/ml.jpg"
   ]
  }
     ]
@@ -104,17 +108,17 @@ const memberData = {
     },
     {
       title: "Personal Motto",
-      desc: "\"It is what it is\". I believe that not everything is according to plan, things happen beyond my control where I cannot change anything. I choose to accept reality because life goes on no matter what happens"
+      desc: "\"It is what it is.\" I believe that not everything is according to plan, things happen beyond my control where I cannot change anything. I choose to accept reality because life goes on no matter what happens"
     },
   {
       title: "Hobbies & Interests",
       desc: "Online gaming, drinking coffee, watching movies at the cinema, and going out. I enjoy playing online games during my free time, relaxing with a good cup of coffee, watching movies at the cinema, and going out to explore new places and spend time with friends.",
     
    photos: [
-    "https://via.placeholder.com/300x200?text=Hobby+Photo+1",
-    "https://via.placeholder.com/300x200?text=Hobby+Photo+2",
-    "https://via.placeholder.com/300x200?text=Hobby+Photo+3",
-    "https://via.placeholder.com/300x200?text=Hobby+Photo+4"
+    "http://localhost/wordpresslaragon/wp-content/uploads/2026/11/Sm-downtown-cdo💙.jpg",
+    "http://localhost/wordpresslaragon/wp-content/uploads/2026/11/download-4.jpg",
+    "http://localhost/wordpresslaragon/wp-content/uploads/2026/11/download-3.jpg",
+    "http://localhost/wordpresslaragon/wp-content/uploads/2026/11/1130192469023647288.jpg"
   ]
 }
     ]
@@ -335,12 +339,12 @@ const projectSlides = [
   {
     name: "Charls' Individual Project",
     role: "Individual Project",
-    image: "http://wordpresslaragon.test/wp-content/uploads/2026/11/charls.jpg"
+    image: "http://localhost/wordpresslaragon/wp-content/uploads/2026/11/sylwen.jpg"
   },
   {
     name: "Jerwin's Individual Project",
     role: "Individual Project",
-    image: "http://wordpresslaragon.test/wp-content/uploads/2026/11/jerwin.jpg"
+    image: "http://localhost/wordpresslaragon/wp-content/uploads/2026/11/j.png"
   },
   {
     name: "Kharrel's Individual Project",
@@ -355,7 +359,7 @@ const projectSlides = [
   {
     name: "Our Team Project",
     role: "Team Project · 4 Members",
-    image: "http://wordpresslaragon.test/wp-content/uploads/2026/11/charls.jpg"
+    image: "http://localhost/wordpresslaragon/wp-content/uploads/2026/11/nc.jpg"
   }
 ];
 
@@ -477,3 +481,29 @@ slider.addEventListener('mouseenter', () => clearInterval(autoSlide));
 slider.addEventListener('mouseleave', () => {
   autoSlide = setInterval(() => changeSlide(1), 4000);
 });
+
+
+
+
+function sendMessage() {
+    let Fullname = document.getElementById("fullname").value.trim();
+    let email = document.getElementById("email").value.trim();
+    let phone = document.getElementById("Pnumber").value.trim();
+    let subjects = document.getElementById("subs").value.trim();
+    let message = document.getElementById("message").value.trim();
+    // let sendmessage = document.getElementById("Sendmessage").value.trim();
+
+    if (Fullname === "" || email === "" || phone === "" || subjects === "" || message === "" ) {
+      alert("Please fill out all fields before sending.");
+      return;
+    }else{
+        alert("Message sent successfully!");
+        // clearing The data that inputted
+        document.getElementById("fullname").value = "";
+        document.getElementById("email").value = "";
+        document.getElementById("Pnumber").value = "";
+        document.getElementById("subs").value = "";
+        document.getElementById("message").value = "";
+    }
+
+  }
