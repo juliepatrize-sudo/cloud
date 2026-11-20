@@ -20,7 +20,7 @@ const memberData = {
     },
     {
       title: "Goals & Aspirations",
-      desc: "My goal is to become a successful IT professional. I want to improve my technical skills, gain more knowledge and experience, and build a career that I can be proud of. I also want to make my family proud and achieve my dreams through hard work and determination."
+      desc: "My goal is to have a good and stable job with a decent salary, build a comfortable life, and become financially independent. I also want to have a successful career that will allow me to enjoy life, help my family, and achieve the things I dream of."
     },
     {
       title: "Personal Motto",
@@ -44,7 +44,7 @@ const memberData = {
   ]
 },
   jerwin: {
-    name: "Jerwin",
+    name: "Jerwin G. Buray",
     role: "Programmer",
     img: "http://wordpresslaragon.test/wp-content/uploads/2026/11/jerwin.jpg",
 
@@ -84,7 +84,7 @@ const memberData = {
   },
 
   kharrel: {
-    name: "Kharrel",
+    name: "Kharrel Jhaiane N. Mugot",
     role: "Project Manager",
     img: "http://wordpresslaragon.test/wp-content/uploads/2026/11/kharrel.jpg",
 
@@ -359,7 +359,7 @@ const projectSlides = [
   {
     name: "Our Team Project",
     role: "Team Project · 4 Members",
-    image: "http://localhost/wordpresslaragon/wp-content/uploads/2026/11/nc.jpg"
+    image: "http://localhost/wordpresslaragon/wp-content/uploads/2026/11/790710639_2507803959705975_352217687923632386_n.jpg"
   }
 ];
 
@@ -405,9 +405,6 @@ function goToSlide(index) {
   updateSlide();
 }
 
-setInterval(() => {
-  changeSlide(1);
-}, 5000);
 
 /* NAVBAR ACTIVE UNDERLINE */
 
@@ -475,35 +472,124 @@ function backToTeam() {
     }
   }, 50);
 }
-const slider = document.querySelector('.project-slider');
-let autoSlide = setInterval(() => changeSlide(1), 4000);
-slider.addEventListener('mouseenter', () => clearInterval(autoSlide));
-slider.addEventListener('mouseleave', () => {
-  autoSlide = setInterval(() => changeSlide(1), 4000);
+/* PROJECT SLIDER AUTO PLAY + HOVER PAUSE */
+
+document.addEventListener("DOMContentLoaded", () => {
+
+  const slider = document.querySelector(".project-slide");
+
+  if (!slider) return;
+
+  let isSliderHovered = false;
+
+  // Pause when hovering the card
+  slider.addEventListener("mouseenter", () => {
+    isSliderHovered = true;
+  });
+
+  // Resume when mouse leaves the card
+  slider.addEventListener("mouseleave", () => {
+    isSliderHovered = false;
+  });
+
+  // Auto slide every 4 seconds
+  setInterval(() => {
+    if (!isSliderHovered) {
+      changeSlide(1);
+    }
+  }, 4000);
+
 });
 
 
 
 
 function sendMessage() {
-    let Fullname = document.getElementById("fullname").value.trim();
-    let email = document.getElementById("email").value.trim();
-    let phone = document.getElementById("Pnumber").value.trim();
-    let subjects = document.getElementById("subs").value.trim();
-    let message = document.getElementById("message").value.trim();
-    // let sendmessage = document.getElementById("Sendmessage").value.trim();
 
-    if (Fullname === "" || email === "" || phone === "" || subjects === "" || message === "" ) {
-      alert("Please fill out all fields before sending.");
-      return;
-    }else{
-        alert("Message sent successfully!");
-        // clearing The data that inputted
-        document.getElementById("fullname").value = "";
-        document.getElementById("email").value = "";
-        document.getElementById("Pnumber").value = "";
-        document.getElementById("subs").value = "";
-        document.getElementById("message").value = "";
+  const fullname = document.getElementById("name").value.trim();
+  const email = document.getElementById("email").value.trim();
+  const phone = document.getElementById("phone").value.trim();
+  const subject = document.getElementById("subject").value.trim();
+  const message = document.getElementById("message").value.trim();
+
+  if (
+    fullname === "" ||
+    email === "" ||
+    phone === "" ||
+    subject === "" ||
+    message === ""
+  ) {
+    alert("Please fill out all fields before sending.");
+    return;
+  }
+
+  alert("Message sent successfully!");
+
+  document.getElementById("name").value = "";
+  document.getElementById("email").value = "";
+  document.getElementById("phone").value = "";
+  document.getElementById("subject").value = "";
+  document.getElementById("message").value = "";
+}
+
+/* ================================
+   GALLERY FULLSCREEN
+================================ */
+
+document.addEventListener("DOMContentLoaded", function () {
+
+  const galleryLightbox = document.getElementById("gallery-lightbox");
+  const lightboxImage = document.getElementById("lightbox-image");
+
+  if (!galleryLightbox || !lightboxImage) return;
+
+  const galleryImages = document.querySelectorAll(".gallery-item img");
+
+  galleryImages.forEach(function (image) {
+
+    image.addEventListener("click", function () {
+
+      lightboxImage.src = this.src;
+      lightboxImage.alt = this.alt;
+
+      galleryLightbox.classList.add("show");
+
+      document.body.style.overflow = "hidden";
+    });
+
+  });
+
+  /* CLICK OUTSIDE IMAGE */
+  galleryLightbox.addEventListener("click", function (e) {
+
+    if (e.target === galleryLightbox) {
+      closeGallery();
     }
 
-  }
+  });
+
+  /* ESC KEY */
+  document.addEventListener("keydown", function (e) {
+
+    if (e.key === "Escape") {
+      closeGallery();
+    }
+
+  });
+
+});
+
+
+function closeGallery() {
+
+  const galleryLightbox = document.getElementById("gallery-lightbox");
+  const lightboxImage = document.getElementById("lightbox-image");
+
+  if (!galleryLightbox || !lightboxImage) return;
+
+  galleryLightbox.classList.remove("show");
+
+  document.body.style.overflow = "";
+
+  lightboxImage.src = "";
+}

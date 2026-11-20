@@ -52,7 +52,6 @@
         </div>
 
         <div class="about-stats">
-
           <div class="stat-box">
             <i class="fas fa-users"></i>
              <h4>4 IT Students</h4>
@@ -164,7 +163,7 @@
   <div class="project-slide">
 
 <div class="slide-image">
-  <img id="slide-image" src="http://localhost/wordpresslaragon/wp-content/uploads/2026/11/jproj1-scaled-e1795059826375-300x235.jpeg" alt="Project">
+  <img id="slide-image" src="" alt="Project">
 </div>
 
 <div class="slide-content">
@@ -235,9 +234,6 @@
     </div>
 
    
-
-      
-
     <!-- PHOTO -->
     <div class="gallery-item">
       <img src="http://localhost/wordpresslaragon/wp-content/uploads/2026/11/825309983_1728823378376785_7988632301525074919_n.jpg" alt="The Hubagang Photo">
@@ -288,82 +284,91 @@
       </div>
     </div>
 
+
+
   </div>
 
 </section>
 
     <!-- CONTACT SECTION -->
-    <section id="contact" class="section">
-      <div class="section-header">
-        <h2><i class="fas fa-envelope"></i> Contact Us</h2>
-        <p>Have a project, a question, or just want to say hi?</p>
-      </div>
+  <section id="contact" class="section">
 
-      <div class="contact-layout">
-        <div class="contact-info">
-          <h3>Let's connect</h3>
+  <div class="section-header">
+    <h2><i class="fas fa-envelope"></i> Contact Us</h2>
+    <p>Have a project, a question, or just want to say hi?</p>
+  </div>
 
-          <div class="contact-item">
-            <i class="fas fa-envelope"></i>
-            <div>
-              <strong>Email</strong>
-              <span>occ.edralin.juliepatrize@gmail.com</span>
-            </div>
-          </div>
+  <div class="contact-layout">
 
-          <div class="contact-item">
-            <i class="fas fa-phone-alt"></i>
-            <div>
-              <strong>Phone</strong>
-              <span>+63 9532764097</span>
-            </div>
-          </div>
+    <!-- LEFT -->
+    <div class="contact-info">
+      <h3>Let's connect</h3>
 
-          <div class="contact-item">
-            <i class="fas fa-map-pin"></i>
-            <div>
-              <strong>Location</strong>
-              <span>Citihome, Malanang Opol</span>
-            </div>
-          </div>
-
+      <div class="contact-item">
+        <i class="fas fa-envelope"></i>
+        <div>
+          <strong>Email</strong>
+          <span>occ.edralin.juliepatrize@gmail.com</span>
         </div>
       </div>
 
-<div class="contact-form">
-    <div class="form-group">
+      <div class="contact-item">
+        <i class="fas fa-phone-alt"></i>
+        <div>
+          <strong>Phone</strong>
+          <span>+63 9532764097</span>
+        </div>
+      </div>
+
+      <div class="contact-item">
+        <i class="fas fa-map-pin"></i>
+        <div>
+          <strong>Location</strong>
+          <span>Citihomes, Malanang Opol</span>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- RIGHT -->
+    <div class="contact-form">
+
+      <div class="form-group">
         <label for="name">Full Name</label>
         <input type="text" id="name" name="name" placeholder="Enter your full name">
-    </div>
+      </div>
 
-    <div class="form-group">
+      <div class="form-group">
         <label for="email">Email</label>
         <input type="email" id="email" name="email" placeholder="Enter your email">
-    </div>
+      </div>
 
-    <div class="form-group">
+      <div class="form-group">
         <label for="phone">Phone Number</label>
         <input type="tel" id="phone" name="phone" placeholder="Enter your phone number">
-    </div>
+      </div>
 
-    <div class="form-group">
+      <div class="form-group">
         <label for="subject">Subject</label>
         <input type="text" id="subject" name="subject" placeholder="Enter your subject">
-    </div>
+      </div>
 
-    <div class="form-group">
+      <div class="form-group">
         <label for="message">Your Message</label>
         <textarea id="message" name="message" placeholder="Write your message"></textarea>
+      </div>
+
+      <button type="button" onclick="sendMessage()">
+        Send Message
+      </button>
+
     </div>
 
-    <button type="submit">Send Message</button>
-</div>
-
-    </section>
-
-    
-
   </div>
+
+</section>
+
+</div>
 
   <!-- PROJECT PAGE -->
   <div id="page-project" class="page-container">
@@ -403,6 +408,15 @@
     </div>
 
   </div>
+</div>
+
+<!-- FULLSCREEN GALLERY -->
+<div id="gallery-lightbox" class="gallery-lightbox">
+  <button class="lightbox-close" onclick="closeGallery()">
+    <i class="fas fa-times"></i>
+  </button>
+
+  <img id="lightbox-image" src="" alt="Gallery Preview">
 </div>
 
 

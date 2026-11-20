@@ -14,7 +14,7 @@
   --white: #ffffff;
   --accent: #2563eb;
   --padding-side: 4%;
---section-y: 5rem; 
+  --section-y: 3rem;
 }
 
 html {
@@ -38,7 +38,7 @@ body {
   padding: 1.5rem var(--padding-side);
   background: var(--primary);
   position: sticky;
-  top: 0;
+  
   z-index: 1000;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
   width: 100%;
@@ -118,7 +118,7 @@ body {
 
   overflow: hidden;
 
-  background: rgba(15, 23, 42, 0.18);
+  background: #ffffff;
 }
 
 /* TEAM PHOTO BACKGROUND */
@@ -277,8 +277,7 @@ body {
 }
 
 .section-alt {
-  background: var(--light-bg);
-  border-top: 1px solid var(--border);
+  background: #ffffff;  border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
   width: 100%;
 }
@@ -316,7 +315,7 @@ body {
 .about-content {
   display: flex;
   flex-direction: column;
-  gap: 4rem;
+  gap: 1.0rem;
   width: 100%;
 }
 
@@ -330,8 +329,8 @@ body {
 .about-text p {
   font-size: 1.4rem;
   color: var(--secondary);
-  margin-bottom: 1.8rem;
-  line-height: 1.8;
+  
+ 
 }
 
 .about-stats {
@@ -353,12 +352,16 @@ body {
 
 .stat-box:hover {
   transform: translateY(-8px);
-  box-shadow: 0 15px 30px -10px rgba(0, 0, 0, 0.08);
+
+  box-shadow:
+    0 20px 40px rgba(15, 23, 42, 0.15);
+
+  border-color: #cbd5e1;
 }
 
 .stat-box i {
   font-size: 3rem;
-  color: var(--accent);
+  color: var(--primary);
   margin-bottom: 1.2rem;
 }
 
@@ -456,6 +459,12 @@ body {
   overflow: hidden;
   box-shadow: 0 20px 50px -20px rgba(0, 0, 0, 0.15);
   animation: slideFade 0.5s ease;
+transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.project-slide:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 25px 55px rgba(15, 23, 42, 0.20);
 }
 
 @keyframes slideFade {
@@ -472,14 +481,18 @@ body {
 
 .slide-image {
   width: 100%;
-  height: 450px;
+  height: auto;
   overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f8fafc;
 }
 
 .slide-image img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 .slide-content {
@@ -607,8 +620,12 @@ body {
 /* CONTACT */
 .contact-layout {
   display: grid;
+  grid-template-columns: 1fr 1fr;
   gap: 6rem;
   width: 100%;
+  max-width: 1200px;
+  margin: 3rem auto 0;
+  align-items: start;
 }
 
 .contact-info h3 {
@@ -639,19 +656,7 @@ body {
   font-size: 1.1rem;
 }
 
-/* FOOTER */
-.footer {
-  background: var(--primary);
-  color: var(--white);
-  padding: 5rem var(--padding-side);
-  text-align: center;
-  width: 100%;
-}
 
-.footer p {
-  opacity: 0.7;
-  font-size: 1.1rem;
-}
 
 /* PROJECT PAGE */
 .project-page {
@@ -728,9 +733,12 @@ body {
 }
 
 .project-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.1);
-  border-top: 4px solid var(--accent);
+  transform: translateY(-5px) scale(1.02);
+
+  box-shadow:
+    0 20px 40px rgba(15, 23, 42, 0.15);
+
+  border-color: #cbd5e1;
 }
 
 .project-card h3 {
@@ -843,63 +851,405 @@ body {
   }
 }
 
-/* PERSONAL PROFILE - NO CARDS */
-
-.project-list {
-  display: flex;
-  flex-direction: column;
-  grid-template-columns: none;
-  gap: 0;
-  max-width: 950px;
-  margin: 0 auto;
-}
-
-.project-card {
-  background: transparent;
-  padding: 2rem 0;
-  border: none;
-  border-bottom: 1px solid var(--border);
-  border-radius: 0;
-  box-shadow: none;
-  transition: none;
-}
-
-.project-card:hover {
-  transform: none;
-  box-shadow: none;
-  border-top: none;
-}
-
-.project-card h3 {
-  font-size: 1.5rem;
-  font-weight: 800;
-  margin-bottom: 0.8rem;
-  color: var(--primary);
-}
-
-.project-card p {
-  font-size: 1.1rem;
-  color: var(--secondary);
-  line-height: 1.8;
-  max-width: 850px;
-}
+/* ================================
+   PERSONAL PROFILE DETAILS
+================================ */
 
 .project-page {
   max-width: 1200px;
   margin: 0 auto;
+  padding: 85px 40px 70px;
+  min-height: 100vh;
+padding-top: 1rem;
 }
 
+/* BACK BUTTON */
+
+.back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  padding: 10px 18px;
+
+  border: 1px solid var(--border);
+  border-radius: 8px;
+
+  background: white;
+  color: var(--secondary);
+
+  font-size: 14px;
+  font-weight: 700;
+
+  cursor: pointer;
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+
+  transition: all 0.25s ease;
+}
+
+.back-btn:hover {
+  background: var(--primary);
+  color: white;
+  border-color: var(--primary);
+  transform: translateX(-3px);
+}
+
+
+/* ================================
+   PROFILE HEADER
+================================ */
+
+.project-header {
+  display: flex;
+  align-items: center;
+  gap: 35px;
+
+  padding: 35px;
+
+  margin-bottom: 45px;
+
+  background: white;
+
+  border: 1px solid var(--border);
+  border-radius: 20px;
+
+  box-shadow:
+    0 10px 30px rgba(15, 23, 42, 0.07);
+}
+
+.project-header-img {
+  width: 150px;
+  height: 150px;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  object-fit: cover;
+
+  border: 6px solid #f8fafc;
+
+  box-shadow:
+    0 10px 25px rgba(15, 23, 42, 0.15);
+}
+
+.project-header-info h1 {
+  font-size: 2.8rem;
+  font-weight: 800;
+
+  margin-bottom: 5px;
+
+  color: var(--primary);
+}
+
+.project-header-info p {
+  font-size: 1rem;
+
+  color: var(--accent);
+
+  font-weight: 700;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.08em;
+}
+
+
+/* ================================
+   SOCIAL ICONS
+================================ */
+
+.profile-socials {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  margin-top: 18px;
+}
+
+.profile-socials a {
+  width: 38px;
+  height: 38px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #f1f5f9;
+
+  color: var(--secondary);
+
+  font-size: 1rem;
+
+  text-decoration: none;
+
+  transition: all 0.25s ease;
+}
+
+.profile-socials a:hover {
+  background: var(--primary);
+  color: white;
+
+  transform: translateY(-3px);
+}
+
+
+/* ================================
+   DETAILS GRID
+================================ */
+
+.project-list {
+  display: grid;
+
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: 22px;
+
+  width: 100%;
+
+  max-width: 1100px;
+
+  margin: 0 auto;
+}
+
+
+/* ================================
+   DETAIL CARDS
+================================ */
+
+.project-card {
+  position: relative;
+
+  background: white;
+
+  padding: 28px;
+
+  border: 1px solid var(--border);
+
+  border-radius: 16px;
+
+  box-shadow:
+    0 6px 20px rgba(15, 23, 42, 0.05);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+
+  box-shadow:
+    0 15px 30px rgba(15, 23, 42, 0.10);
+
+  border-color: #cbd5e1;
+}
+
+
+/* CARD TITLE */
+
+.project-card h3 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  font-size: 1.35rem;
+
+  font-weight: 800;
+
+  margin-bottom: 14px;
+
+  color: var(--primary);
+}
+
+
+/* TITLE ACCENT */
+
+.project-card h3::before {
+  content: "";
+
+  width: 5px;
+  height: 24px;
+
+  flex-shrink: 0;
+
+  background: var(--accent);
+
+  border-radius: 10px;
+}
+
+
+/* CARD TEXT */
+
+.project-card p {
+  font-size: 1rem;
+
+  color: var(--secondary);
+
+  line-height: 1.8;
+
+  margin: 0;
+}
+
+
+/* ================================
+   GOALS CARD
+================================ */
+
+.project-card:nth-child(3) {
+  background: #f8fafc;
+}
+
+
+/* ================================
+   PERSONAL MOTTO
+================================ */
+
+.project-card:nth-child(4) {
+  background: var(--primary);
+
+  border-color: var(--primary);
+}
+
+.project-card:nth-child(4) h3 {
+  color: white;
+}
+
+.project-card:nth-child(4) h3::before {
+  background: white;
+}
+
+.project-card:nth-child(4) p {
+  color: #cbd5e1;
+}
+
+
+/* ================================
+   HOBBIES
+================================ */
+
+.project-card:has(.hobby-photo-btn) {
+  grid-column: 1 / -1;
+
+  background:
+    linear-gradient(
+      135deg,
+      #ffffff,
+      #f8fafc
+    );
+}
+
+.hobby-photo-btn {
+  margin-top: 20px;
+
+  padding: 10px 20px;
+
+  border: none;
+
+  border-radius: 8px;
+
+  background: var(--primary);
+
+  color: white;
+
+  cursor: pointer;
+
+  font-size: 14px;
+
+  font-weight: 600;
+
+  transition: all 0.25s ease;
+}
+
+.hobby-photo-btn:hover {
+  background: #334155;
+
+  transform: translateY(-2px);
+}
+
+
+/* ================================
+   HOBBY PHOTOS
+================================ */
+
+.hobby-photo-container {
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 12px;
+
+  margin-top: 20px;
+}
+
+.hobby-photo-container img {
+  width: 100%;
+  height: 160px;
+
+  object-fit: cover;
+
+  border-radius: 10px;
+
+  display: block;
+
+  transition: transform 0.25s ease;
+}
+
+.hobby-photo-container img:hover {
+  transform: scale(1.03);
+}
+
+
+/* ================================
+   PROFILE MOBILE
+================================ */
+
 @media (max-width: 768px) {
+
+  .project-page {
+    padding: 100px 20px 50px;
+  }
+
+  .project-header {
+    flex-direction: column;
+
+    text-align: center;
+
+    padding: 30px 20px;
+
+    gap: 20px;
+  }
+
+  .project-header-img {
+    width: 130px;
+    height: 130px;
+  }
+
+  .project-header-info h1 {
+    font-size: 2rem;
+  }
+
+  .profile-socials {
+    justify-content: center;
+  }
+
+  .project-list {
+    grid-template-columns: 1fr;
+  }
+
   .project-card {
-    padding: 1.5rem 0;
+    padding: 24px;
   }
 
-  .project-card h3 {
-    font-size: 1.25rem;
+  .project-card:has(.hobby-photo-btn) {
+    grid-column: auto;
   }
 
-  .project-card p {
-    font-size: 1rem;
+  .hobby-photo-container {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
@@ -1198,18 +1548,16 @@ body {
   gap: 2rem;
   
 }
+
+
 .gallery-item {
   position: relative;
   width: 100%;
-   height: fit-content;
-  min-height: 0;
- 
-
+  height: 350px;
   overflow: hidden;
-  align-self: start;
 
   border-radius: 1.5rem;
-  background: transparent;
+  background: #f8fafc;
   border: 1px solid var(--border);
 
   box-shadow: 0 15px 35px -15px rgba(0, 0, 0, 0.15);
@@ -1230,9 +1578,12 @@ body {
 
 .gallery-item img {
   width: 100%;
-  height: auto;
+  height: 100%;
   display: block;
-  object-fit: contain;
+  object-fit: cover;
+  object-position: center;
+  cursor: pointer;
+  transition: transform 0.3s ease;
 }
 
 .gallery-item:hover img {
@@ -1284,9 +1635,10 @@ body {
 
 .gallery-video video {
   width: 100%;
-  height: auto;
+  height: 100%;
   display: block;
   object-fit: contain;
+  background: #000;
 }
 
 
@@ -1402,4 +1754,100 @@ body {
 
 .contact-form button:hover {
     background: #2563eb;
+}
+
+/* ================================
+   GALLERY FULLSCREEN
+================================ */
+
+.gallery-item img {
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.gallery-lightbox {
+  display: none;
+
+  position: fixed;
+  inset: 0;
+
+  width: 100vw;
+  height: 100vh;
+
+  background: rgba(15, 23, 42, 0.50);
+
+  z-index: 999999;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 25px;
+}
+
+.gallery-lightbox.show {
+  display: flex;
+}
+
+.gallery-lightbox img {
+  display: block;
+
+  max-width: 95vw;
+  max-height: 90vh;
+
+  width: auto;
+  height: auto;
+
+  object-fit: contain;
+
+  border-radius: 8px;
+
+  box-shadow: 0 20px 70px rgba(0, 0, 0, 0.6);
+
+  animation: lightboxZoom 0.25s ease;
+}
+
+@keyframes lightboxZoom {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.lightbox-close {
+  position: absolute;
+
+  top: 25px;
+  right: 30px;
+
+  width: 48px;
+  height: 48px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: none;
+  border-radius: 50%;
+
+  background: rgba(255, 255, 255, 0.15);
+  color: white;
+
+  font-size: 22px;
+
+  cursor: pointer;
+
+  z-index: 1000000;
+
+  transition: all 0.25s ease;
+}
+
+.lightbox-close:hover {
+  background: white;
+  color: #0f172a;
+  transform: scale(1.08);
 }
