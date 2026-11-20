@@ -1,0 +1,1356 @@
+/**
+ * Seos Football Club – club styles.
+ *
+ * Table of contents
+ *  1. Tokens
+ *  2. Base / parent refinements
+ *  3. Buttons, headings, utilities
+ *  4. Crest
+ *  5. Results ticker
+ *  6. Stats
+ *  8. Table & fixtures
+ *  9. News
+ * 10. CTA
+ * 11. Sponsors
+ * 12. Footer demo widgets
+ * 13. Reveal animations
+ * 14. Keyframes
+ * 15. Responsive
+ * 16. Reduced motion
+ */
+
+/* 0. Bundled font (SIL OFL 1.1, see assets/fonts/OFL.txt) ------------- */
+@font-face {
+	font-family: 'Jockey One';
+	font-style: normal;
+	font-weight: 400;
+	font-display: swap;
+	src: url("../fonts/jockey-one-latin-ext-400-normal.woff2") format("woff2");
+	unicode-range: U+0100-02AF, U+0304, U+0308, U+0329, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+@font-face {
+	font-family: 'Jockey One';
+	font-style: normal;
+	font-weight: 400;
+	font-display: swap;
+	src: url("../fonts/jockey-one-latin-400-normal.woff2") format("woff2");
+	unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* 1. Tokens ---------------------------------------------------------- */
+:root {
+	--sfc-primary: #c8102e;
+	--sfc-accent: #f2c230;
+	--sfc-dark: #0b0e13;
+	--sfc-pitch: #0e6b3a;
+	--sfc-ink: #f4f6f8;
+	--sfc-muted: #a9b1bc;
+	--sfc-line: rgba(255, 255, 255, .09);
+	--sfc-card: #141922;
+	--sfc-radius: 16px;
+	--sfc-ease: cubic-bezier(.2, .8, .2, 1);
+	--sfc-display: 'Jockey One', Impact, 'Arial Narrow Bold', sans-serif;
+}
+
+/* 2. Base / parent refinements ---------------------------------------
+ * Each block is switched on by a body class from
+ * Customize > Football Club Options > Theme Enhancements.
+ */
+
+/* Sticky, semi-transparent menu (sfc-enh-sticky) */
+.sfc-enh-sticky #page {
+	overflow: hidden;
+	overflow: clip;
+}
+
+.sfc-enh-sticky .nav-center {
+	position: sticky;
+	top: 0;
+	z-index: 1000;
+	background: rgba(8, 10, 14, .86);
+	-webkit-backdrop-filter: blur(12px);
+	backdrop-filter: blur(12px);
+	border-top: 0;
+	border-bottom: 1px solid var(--sfc-line);
+}
+
+.sfc-enh-sticky.admin-bar .nav-center {
+	top: 32px;
+}
+
+/* Underline on menu hover (sfc-enh-underline) */
+.sfc-enh-underline .main-navigation ul li a {
+	background-image: linear-gradient(var(--sfc-accent), var(--sfc-accent));
+	background-repeat: no-repeat;
+	background-position: 50% calc(100% - 6px);
+	background-size: 0 3px;
+	transition: background-size .35s var(--sfc-ease), color .25s ease;
+}
+
+.sfc-enh-underline .main-navigation ul li a:hover,
+.sfc-enh-underline .main-navigation ul li a:focus,
+.sfc-enh-underline .main-navigation .current-menu-item > a {
+	color: #fff;
+	background-size: calc(100% - 24px) 3px;
+}
+
+/* Club colour on sidebar titles and pagination (sfc-enh-colors) */
+.sfc-enh-colors #content aside h2,
+.sfc-enh-colors .pagination .current,
+.sfc-enh-colors .pagination a:hover {
+	background: var(--sfc-primary);
+}
+
+.sfc-enh-colors .pagination a,
+.sfc-enh-colors .pagination span {
+	background-color: var(--sfc-primary);
+}
+
+.home.page .site-content {
+	margin-top: 0;
+}
+
+.sfc-container {
+	width: 100%;
+	max-width: 1240px;
+	margin: 0 auto;
+	padding: 0 24px;
+	box-sizing: border-box;
+}
+
+.sfc-section {
+	position: relative;
+	padding: 96px 0;
+	background: var(--sfc-dark);
+	color: var(--sfc-ink);
+}
+
+.sfc-section,
+.sfc-ticker,
+.sfc-cta,
+.sfc-sponsors {
+	clear: both;
+}
+
+#content .sfc-card,
+#content .sfc-prose {
+	display: flex;
+	width: auto;
+	margin: 0;
+	padding: 0;
+	background: var(--sfc-card);
+}
+
+#content .sfc-prose {
+	display: block;
+	max-width: 820px;
+	margin: 0 auto;
+	background: transparent;
+	color: var(--sfc-ink);
+}
+
+.sfc-blog {
+	display: flow-root;
+	max-width: none;
+	padding: 40px 0 60px;
+	background: var(--sfc-dark);
+}
+
+.sfc-section * {
+	box-sizing: border-box;
+}
+
+/* 3. Buttons, headings ---------------------------------------------- */
+.sfc-btn {
+	position: relative;
+	display: inline-flex;
+	align-items: center;
+	gap: .5em;
+	padding: 15px 30px;
+	border-radius: 999px;
+	font-family: var(--sfc-display);
+	font-size: 17px;
+	letter-spacing: .06em;
+	text-transform: uppercase;
+	text-decoration: none;
+	line-height: 1;
+	overflow: hidden;
+	isolation: isolate;
+	transition: transform .3s var(--sfc-ease), box-shadow .3s ease, color .3s ease;
+}
+
+.sfc-btn::before {
+	content: "";
+	position: absolute;
+	inset: 0;
+	z-index: -1;
+	transform: translateX(-101%);
+	transition: transform .45s var(--sfc-ease);
+}
+
+.sfc-btn:hover,
+.sfc-btn:focus-visible {
+	transform: translateY(-3px);
+}
+
+.sfc-btn:hover::before,
+.sfc-btn:focus-visible::before {
+	transform: translateX(0);
+}
+
+.sfc-btn--primary {
+	background: var(--sfc-primary);
+	color: #fff;
+	box-shadow: 0 12px 30px -10px var(--sfc-primary);
+}
+
+.sfc-btn--primary::before {
+	background: var(--sfc-accent);
+}
+
+.sfc-btn--primary:hover,
+.sfc-btn--primary:focus-visible {
+	color: var(--sfc-dark);
+}
+
+.sfc-btn--ghost {
+	color: #fff;
+	box-shadow: inset 0 0 0 2px rgba(255, 255, 255, .55);
+}
+
+.sfc-btn--ghost::before {
+	background: #fff;
+}
+
+.sfc-btn--ghost:hover,
+.sfc-btn--ghost:focus-visible {
+	color: var(--sfc-dark);
+}
+
+.sfc-btn--light {
+	background: #fff;
+	color: var(--sfc-primary);
+}
+
+.sfc-btn--light::before {
+	background: var(--sfc-dark);
+}
+
+.sfc-btn--light:hover,
+.sfc-btn--light:focus-visible {
+	color: #fff;
+}
+
+.sfc-btn:hover,
+.sfc-btn:focus,
+.sfc-btn:visited {
+	text-decoration: none;
+}
+
+.sfc-heading {
+	text-align: center;
+	margin: 0 auto 56px;
+	max-width: 720px;
+}
+
+.sfc-heading__kicker {
+	display: inline-block;
+	margin-bottom: 14px;
+	padding: 6px 14px;
+	border-radius: 999px;
+	background: rgba(255, 255, 255, .06);
+	color: var(--sfc-accent);
+	font-size: 12px;
+	font-weight: 700;
+	letter-spacing: .2em;
+	text-transform: uppercase;
+}
+
+.sfc-heading__title {
+	position: relative;
+	margin: 0;
+	padding-bottom: 22px;
+	font-family: var(--sfc-display);
+	font-size: clamp(32px, 4.4vw, 54px);
+	font-weight: 400;
+	line-height: 1.05;
+	letter-spacing: .02em;
+	text-transform: uppercase;
+	color: #fff;
+}
+
+.sfc-heading__title::after {
+	content: "";
+	position: absolute;
+	left: 50%;
+	bottom: 0;
+	width: 80px;
+	height: 4px;
+	margin-left: -40px;
+	border-radius: 4px;
+	background: linear-gradient(90deg, var(--sfc-primary) 0 50%, var(--sfc-accent) 50% 100%);
+	transform-origin: left;
+}
+
+.sfc-heading.is-visible .sfc-heading__title::after {
+	animation: sfc-grow .8s .3s var(--sfc-ease) both;
+}
+
+.sfc-heading__subtitle {
+	margin: 18px 0 0;
+	color: var(--sfc-muted);
+	font-size: 17px;
+}
+
+.sfc-badge {
+	display: inline-block;
+	padding: 3px 9px;
+	border-radius: 6px;
+	font-size: 11px;
+	font-weight: 700;
+	letter-spacing: .08em;
+	text-transform: uppercase;
+}
+
+.sfc-badge--home {
+	background: var(--sfc-primary);
+	color: #fff;
+}
+
+.sfc-badge--away {
+	background: rgba(255, 255, 255, .1);
+	color: var(--sfc-ink);
+}
+
+/* 4. Crest -----------------------------------------------------------*/
+.sfc-crest {
+	display: block;
+	width: 100%;
+	height: auto;
+	overflow: visible;
+}
+
+.sfc-crest__shield { fill: var(--sfc-accent); }
+.sfc-crest__inner { fill: var(--sfc-primary); }
+.sfc-crest__band { fill: var(--sfc-dark); opacity: .85; }
+.sfc-crest__stars path { fill: var(--sfc-accent); }
+.sfc-crest__ball circle { fill: #fff; }
+.sfc-crest__ball path { fill: var(--sfc-dark); }
+
+.sfc-crest__initial {
+	fill: #fff;
+	font-family: var(--sfc-display);
+	font-size: 26px;
+}
+
+.sfc-crest__year {
+	fill: var(--sfc-accent);
+	font-family: var(--sfc-display);
+	font-size: 10px;
+	letter-spacing: 1px;
+}
+
+/* 5. Ticker ---------------------------------------------------------- */
+.sfc-ticker {
+	position: relative;
+	z-index: 2;
+	display: flex;
+	align-items: stretch;
+	background: var(--sfc-primary);
+	color: #fff;
+	overflow: hidden;
+	box-shadow: 0 10px 30px -12px rgba(0, 0, 0, .6);
+}
+
+.sfc-ticker__label {
+	position: relative;
+	z-index: 1;
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	flex-shrink: 0;
+	padding: 16px 30px 16px 24px;
+	background: var(--sfc-dark);
+	color: var(--sfc-accent);
+	font-family: var(--sfc-display);
+	font-size: 17px;
+	letter-spacing: .08em;
+	text-transform: uppercase;
+	clip-path: polygon(0 0, 100% 0, calc(100% - 16px) 100%, 0 100%);
+}
+
+.sfc-ticker__label .fa {
+	animation: sfc-spin 3s linear infinite;
+}
+
+.sfc-ticker__viewport {
+	flex: 1;
+	overflow: hidden;
+	-webkit-mask-image: linear-gradient(90deg, transparent, #000 5%, #000 95%, transparent);
+	mask-image: linear-gradient(90deg, transparent, #000 5%, #000 95%, transparent);
+}
+
+.sfc-ticker__track {
+	display: flex;
+	width: max-content;
+	animation: sfc-marquee 32s linear infinite;
+}
+
+.sfc-ticker:hover .sfc-ticker__track,
+.sfc-ticker:focus-within .sfc-ticker__track {
+	animation-play-state: paused;
+}
+
+.sfc-ticker__list {
+	display: flex;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.sfc-ticker__list li {
+	display: flex;
+	align-items: center;
+	padding: 16px 0;
+	white-space: nowrap;
+	font-weight: 700;
+	font-size: 15px;
+	letter-spacing: .03em;
+}
+
+.sfc-ticker__list li::after {
+	content: "";
+	width: 8px;
+	height: 8px;
+	margin: 0 32px;
+	border-radius: 50%;
+	background: var(--sfc-accent);
+}
+
+/* 6. Stats ----------------------------------------------------------- */
+.sfc-stats {
+	background:
+		repeating-linear-gradient(90deg, rgba(255, 255, 255, .03) 0 90px, transparent 90px 180px),
+		linear-gradient(180deg, color-mix(in srgb, var(--sfc-pitch) 70%, #000), color-mix(in srgb, var(--sfc-pitch) 35%, #000));
+	overflow: hidden;
+}
+
+.sfc-stats::before {
+	content: "";
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 420px;
+	height: 420px;
+	margin: -210px 0 0 -210px;
+	border: 2px solid rgba(255, 255, 255, .08);
+	border-radius: 50%;
+	pointer-events: none;
+}
+
+.sfc-stats::after {
+	content: "";
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 50%;
+	width: 2px;
+	background: rgba(255, 255, 255, .08);
+	pointer-events: none;
+}
+
+.sfc-stats__grid {
+	position: relative;
+	z-index: 1;
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 22px;
+}
+
+.sfc-stat {
+	position: relative;
+	padding: 36px 20px 30px;
+	border-radius: var(--sfc-radius);
+	background: rgba(6, 10, 14, .55);
+	border: 1px solid rgba(255, 255, 255, .08);
+	text-align: center;
+	-webkit-backdrop-filter: blur(6px);
+	backdrop-filter: blur(6px);
+	transition: transform .4s var(--sfc-ease), border-color .4s ease;
+}
+
+.sfc-stat:hover {
+	transform: translateY(-8px);
+	border-color: var(--sfc-accent);
+}
+
+.sfc-stat__icon {
+	display: inline-grid;
+	place-items: center;
+	width: 58px;
+	height: 58px;
+	margin-bottom: 16px;
+	border-radius: 50%;
+	background: var(--sfc-primary);
+	color: #fff;
+	font-size: 24px;
+	box-shadow: 0 0 0 8px rgba(255, 255, 255, .05);
+	transition: transform .6s var(--sfc-ease);
+}
+
+.sfc-stat:hover .sfc-stat__icon {
+	transform: rotateY(360deg);
+}
+
+.sfc-stat__number {
+	display: block;
+	font-family: var(--sfc-display);
+	font-size: clamp(38px, 4vw, 54px);
+	line-height: 1;
+	color: var(--sfc-accent);
+	font-variant-numeric: tabular-nums;
+}
+
+.sfc-stat__label {
+	display: block;
+	margin-top: 8px;
+	color: rgba(255, 255, 255, .8);
+	font-size: 13px;
+	font-weight: 700;
+	letter-spacing: .16em;
+	text-transform: uppercase;
+}
+
+/* 8. Table & fixtures ------------------------------------------------ */
+.sfc-table {
+	padding-top: 40px;
+	background: var(--sfc-dark);
+}
+
+.sfc-table__grid {
+	display: grid;
+	grid-template-columns: 1.15fr .85fr;
+	gap: 28px;
+	align-items: start;
+}
+
+.sfc-panel {
+	padding: 30px;
+	border-radius: 20px;
+	background: var(--sfc-card);
+	border: 1px solid var(--sfc-line);
+}
+
+.sfc-panel__title {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	margin: 0 0 20px;
+	font-family: var(--sfc-display);
+	font-size: 26px;
+	font-weight: 400;
+	text-transform: uppercase;
+	color: #fff;
+}
+
+.sfc-panel__title .fa {
+	display: inline-grid;
+	place-items: center;
+	width: 40px;
+	height: 40px;
+	border-radius: 12px;
+	background: var(--sfc-primary);
+	font-size: 17px;
+}
+
+.sfc-table__scroll {
+	overflow-x: auto;
+}
+
+.sfc-standings {
+	width: 100%;
+	margin: 0;
+	border: 0;
+	border-collapse: collapse;
+	font-size: 15px;
+	color: var(--sfc-ink);
+}
+
+.sfc-standings th,
+.sfc-standings td {
+	padding: 13px 8px;
+	border: 0;
+	border-bottom: 1px solid var(--sfc-line);
+	text-align: center;
+	background: transparent;
+}
+
+.sfc-standings thead th {
+	color: var(--sfc-muted);
+	font-size: 12px;
+	letter-spacing: .12em;
+	text-transform: uppercase;
+}
+
+.sfc-standings abbr {
+	border: 0;
+	text-decoration: none;
+	cursor: help;
+}
+
+.sfc-standings .sfc-standings__team {
+	text-align: left;
+	font-weight: 700;
+}
+
+.sfc-standings__pos {
+	display: inline-grid;
+	place-items: center;
+	width: 28px;
+	height: 28px;
+	border-radius: 8px;
+	background: rgba(255, 255, 255, .06);
+	font-weight: 700;
+}
+
+.sfc-standings tbody tr {
+	transition: background-color .25s ease;
+}
+
+.sfc-standings tbody tr:hover {
+	background: rgba(255, 255, 255, .04);
+}
+
+.sfc-standings tbody tr:nth-child(-n+3) .sfc-standings__pos {
+	background: var(--sfc-pitch);
+	color: #fff;
+}
+
+.sfc-standings tr.is-club {
+	background: linear-gradient(90deg, color-mix(in srgb, var(--sfc-primary) 40%, transparent), transparent);
+}
+
+.sfc-standings tr.is-club .sfc-standings__pos {
+	background: var(--sfc-primary);
+}
+
+.sfc-standings__pts {
+	font-family: var(--sfc-display);
+	font-size: 19px;
+	color: var(--sfc-accent);
+}
+
+.sfc-fixtures {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.sfc-fixture {
+	display: grid;
+	grid-template-columns: 1fr auto;
+	grid-template-areas: "date badge" "teams time";
+	gap: 6px 12px;
+	margin-bottom: 12px;
+	padding: 16px 18px;
+	border-radius: 14px;
+	background: rgba(255, 255, 255, .04);
+	border-left: 4px solid var(--sfc-primary);
+	transition: transform .3s var(--sfc-ease), background-color .3s ease;
+}
+
+.sfc-fixture:hover {
+	transform: translateX(6px);
+	background: rgba(255, 255, 255, .07);
+}
+
+.sfc-fixture__date {
+	grid-area: date;
+	color: var(--sfc-accent);
+	font-size: 12px;
+	font-weight: 700;
+	letter-spacing: .12em;
+	text-transform: uppercase;
+}
+
+.sfc-fixture .sfc-badge {
+	grid-area: badge;
+	justify-self: end;
+}
+
+.sfc-fixture__teams {
+	grid-area: teams;
+	font-size: 16px;
+}
+
+.sfc-fixture__teams em {
+	margin: 0 4px;
+	color: var(--sfc-muted);
+	font-style: normal;
+	font-size: 13px;
+}
+
+.sfc-fixture__time {
+	grid-area: time;
+	font-family: var(--sfc-display);
+	font-size: 19px;
+	color: #fff;
+}
+
+/* 9. News ------------------------------------------------------------ */
+.sfc-page-content {
+	padding: 80px 0 0;
+}
+
+.sfc-prose {
+	max-width: 820px;
+	margin: 0 auto;
+	font-size: 17px;
+	line-height: 1.7;
+}
+
+.sfc-prose .sfc-heading__title {
+	margin-bottom: 24px;
+	text-align: center;
+}
+
+.sfc-prose a {
+	color: var(--sfc-accent);
+}
+
+.sfc-news__grid {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 26px;
+}
+
+.sfc-card {
+	display: flex;
+	flex-direction: column;
+	margin: 0;
+	border-radius: 20px;
+	background: var(--sfc-card);
+	border: 1px solid var(--sfc-line);
+	overflow: hidden;
+	transition: transform .45s var(--sfc-ease), box-shadow .45s ease, border-color .45s ease;
+}
+
+.sfc-card:hover {
+	transform: translateY(-10px);
+	border-color: color-mix(in srgb, var(--sfc-primary) 60%, transparent);
+	box-shadow: 0 30px 60px -30px var(--sfc-primary);
+}
+
+.sfc-card__media {
+	position: relative;
+	display: block;
+	aspect-ratio: 16 / 10;
+	overflow: hidden;
+	background: linear-gradient(150deg, var(--sfc-primary), var(--sfc-dark));
+}
+
+.sfc-card__media img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	transition: transform 1.2s var(--sfc-ease);
+}
+
+.sfc-card:hover .sfc-card__media img {
+	transform: scale(1.08) rotate(.5deg);
+}
+
+.sfc-card__placeholder {
+	display: grid;
+	place-items: center;
+	height: 100%;
+}
+
+.sfc-card__placeholder .sfc-crest {
+	width: 90px;
+}
+
+.sfc-card__body {
+	display: flex;
+	flex: 1;
+	flex-direction: column;
+	padding: 24px;
+}
+
+.sfc-card__date {
+	color: var(--sfc-accent);
+	font-size: 12px;
+	font-weight: 700;
+	letter-spacing: .14em;
+	text-transform: uppercase;
+}
+
+.sfc-card__title {
+	margin: 10px 0 10px;
+	font-family: var(--sfc-display);
+	font-size: 24px;
+	font-weight: 400;
+	line-height: 1.15;
+	text-transform: uppercase;
+}
+
+.sfc-card__title a {
+	color: #fff;
+	text-decoration: none;
+	background-image: linear-gradient(var(--sfc-primary), var(--sfc-primary));
+	background-repeat: no-repeat;
+	background-position: 0 100%;
+	background-size: 0 2px;
+	transition: background-size .4s var(--sfc-ease);
+}
+
+.sfc-card:hover .sfc-card__title a {
+	background-size: 100% 2px;
+}
+
+.sfc-card__excerpt {
+	margin: 0 0 18px;
+	color: var(--sfc-muted);
+	font-size: 15px;
+	line-height: 1.6;
+}
+
+.sfc-card__more {
+	margin-top: auto;
+	color: #fff;
+	font-weight: 700;
+	text-decoration: none;
+}
+
+.sfc-card__more span[aria-hidden] {
+	display: inline-block;
+	margin-left: 6px;
+	color: var(--sfc-primary);
+	transition: transform .3s var(--sfc-ease);
+}
+
+.sfc-card:hover .sfc-card__more span[aria-hidden] {
+	transform: translateX(6px);
+}
+
+.sfc-news__all {
+	margin: 44px 0 0;
+	text-align: center;
+}
+
+/* 10. CTA ------------------------------------------------------------ */
+.sfc-cta {
+	position: relative;
+	padding: 90px 0;
+	overflow: hidden;
+	color: #fff;
+	background:
+		linear-gradient(120deg, var(--sfc-primary), color-mix(in srgb, var(--sfc-primary) 55%, #000));
+}
+
+.sfc-cta::before {
+	content: "";
+	position: absolute;
+	inset: 0;
+	background: repeating-linear-gradient(-45deg, rgba(255, 255, 255, .05) 0 2px, transparent 2px 22px);
+	animation: sfc-stripes 20s linear infinite;
+}
+
+.sfc-cta__ball {
+	position: absolute;
+	right: -80px;
+	top: 50%;
+	width: 340px;
+	height: 340px;
+	margin-top: -170px;
+	background: url("../images/ball.svg") center / contain no-repeat;
+	opacity: .16;
+	animation: sfc-spin 30s linear infinite;
+}
+
+.sfc-cta__inner {
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 40px;
+}
+
+.sfc-cta__title {
+	margin: 0 0 10px;
+	font-family: var(--sfc-display);
+	font-size: clamp(32px, 4vw, 51px);
+	font-weight: 400;
+	line-height: 1.05;
+	text-transform: uppercase;
+	color: #fff;
+}
+
+.sfc-cta__text p {
+	max-width: 640px;
+	margin: 0;
+	color: rgba(255, 255, 255, .88);
+	font-size: 17px;
+	line-height: 1.6;
+}
+
+.sfc-cta .sfc-btn {
+	flex-shrink: 0;
+	animation: sfc-glow 2.6s ease-in-out infinite;
+}
+
+/* 11. Sponsors ------------------------------------------------------- */
+.sfc-sponsors {
+	padding: 54px 0;
+	background: #fff;
+	color: #1a1f27;
+	text-align: center;
+}
+
+.sfc-sponsors__title {
+	margin: 0 0 26px;
+	color: #69717d;
+	font-size: 13px;
+	font-weight: 700;
+	letter-spacing: .3em;
+	text-transform: uppercase;
+}
+
+.sfc-sponsors__viewport {
+	overflow: hidden;
+	-webkit-mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent);
+	mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent);
+}
+
+.sfc-sponsors__track {
+	display: flex;
+	width: max-content;
+	animation: sfc-marquee 38s linear infinite reverse;
+}
+
+.sfc-sponsors:hover .sfc-sponsors__track {
+	animation-play-state: paused;
+}
+
+.sfc-sponsors__list {
+	display: flex;
+	gap: 22px;
+	margin: 0;
+	padding: 0 11px;
+	list-style: none;
+}
+
+.sfc-sponsors__list li {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	padding: 18px 30px;
+	border-radius: 14px;
+	border: 1px solid #e6e8ec;
+	font-family: var(--sfc-display);
+	font-size: 22px;
+	letter-spacing: .04em;
+	text-transform: uppercase;
+	white-space: nowrap;
+	color: #8a929e;
+	filter: grayscale(1);
+	transition: color .3s ease, filter .3s ease, transform .3s var(--sfc-ease), border-color .3s ease;
+}
+
+.sfc-sponsors__list li:hover {
+	color: #11151b;
+	filter: none;
+	transform: translateY(-4px);
+	border-color: var(--sfc-primary);
+}
+
+.sfc-sponsors__mark {
+	width: 22px;
+	height: 22px;
+	border-radius: 6px;
+	background: linear-gradient(135deg, var(--sfc-primary) 50%, var(--sfc-accent) 50%);
+	transform: rotate(45deg);
+}
+
+/* 12. Footer demo widgets (the theme's original footer is untouched) */
+.sfc-demo-widget ul,
+.sfc-demo-widget ol {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.sfc-demo-widget li {
+	padding: 7px 0;
+	border-bottom: 1px solid rgba(255, 255, 255, .08);
+}
+
+.sfc-demo-widget p {
+	margin: 0 0 10px;
+}
+
+.sfc-demo-widget__brand {
+	display: flex;
+	align-items: flex-start;
+	gap: 12px;
+}
+
+.sfc-crest--footer {
+	width: 48px;
+	flex-shrink: 0;
+}
+
+.sfc-demo-widget__fixtures li {
+	display: grid;
+	grid-template-columns: 1fr auto;
+	gap: 2px 10px;
+}
+
+.sfc-demo-widget__fixtures .sfc-badge {
+	grid-row: 1 / span 2;
+	grid-column: 2;
+	align-self: center;
+}
+
+.sfc-demo-widget__date {
+	font-size: 12px;
+	letter-spacing: .1em;
+	text-transform: uppercase;
+	color: var(--sfc-accent);
+}
+
+.sfc-demo-widget__table {
+	counter-reset: sfc-pos;
+}
+
+.sfc-demo-widget__table li {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	counter-increment: sfc-pos;
+}
+
+.sfc-demo-widget__table li::before {
+	content: counter(sfc-pos);
+	display: inline-grid;
+	place-items: center;
+	width: 22px;
+	height: 22px;
+	border-radius: 6px;
+	background: rgba(255, 255, 255, .08);
+	font-size: 12px;
+}
+
+.sfc-demo-widget__table li span {
+	flex: 1;
+}
+
+.sfc-demo-widget__table li.is-club::before {
+	background: var(--sfc-primary);
+	color: #fff;
+}
+
+.sfc-demo-widget__table strong {
+	color: var(--sfc-accent);
+}
+
+.sfc-demo-widget__contact .fa {
+	width: 18px;
+	margin-right: 6px;
+	color: var(--sfc-primary);
+	text-align: center;
+}
+
+.sfc-demo-widget__hint a {
+	font-size: 13px;
+	text-decoration: underline;
+}
+
+/* 13. Reveal --------------------------------------------------------- */
+.sfc-js [data-sfc-reveal] {
+	opacity: 0;
+	transform: translate3d(0, 46px, 0) scale(.98);
+	transition: opacity .9s var(--sfc-ease), transform .9s var(--sfc-ease);
+	transition-delay: var(--d, 0s);
+}
+
+.sfc-js [data-sfc-reveal].is-visible {
+	opacity: 1;
+	transform: none;
+}
+
+.sfc-js .sfc-standings tbody tr,
+.sfc-js .sfc-fixture {
+	opacity: 0;
+	transform: translateX(-24px);
+}
+
+.sfc-js .is-visible .sfc-standings tbody tr,
+.sfc-js .is-visible .sfc-fixture {
+	animation: sfc-row .7s var(--sfc-ease) forwards;
+	animation-delay: calc(.2s + var(--d, 0s));
+}
+
+/* 14. Keyframes ------------------------------------------------------ */
+@keyframes sfc-spin {
+	to { transform: rotate(360deg); }
+}
+
+@keyframes sfc-marquee {
+	to { transform: translateX(-50%); }
+}
+
+@keyframes sfc-grow {
+	from { transform: scaleX(0); }
+	to { transform: scaleX(1); }
+}
+
+@keyframes sfc-row {
+	to { opacity: 1; transform: none; }
+}
+
+@keyframes sfc-stripes {
+	to { background-position: 400px 0; }
+}
+
+@keyframes sfc-glow {
+	0%, 100% { box-shadow: 0 0 0 0 rgba(255, 255, 255, .5); }
+	50% { box-shadow: 0 0 0 14px rgba(255, 255, 255, 0); }
+}
+
+/* 15. Responsive ----------------------------------------------------- */
+@media (max-width: 1024px) {
+	.sfc-table__grid {
+		grid-template-columns: 1fr;
+	}
+
+	.sfc-stats__grid {
+		grid-template-columns: repeat(2, 1fr);
+	}
+
+	.sfc-news__grid {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+@media (max-width: 782px) {
+	.sfc-enh-sticky.admin-bar .nav-center {
+		top: 0;
+		position: relative;
+	}
+}
+
+@media (max-width: 680px) {
+	.sfc-section {
+		padding: 70px 0;
+	}
+
+	.sfc-container {
+		padding: 0 16px;
+	}
+
+	.sfc-stats__grid {
+		grid-template-columns: 1fr 1fr;
+		gap: 12px;
+	}
+
+	.sfc-stat {
+		padding: 26px 10px 22px;
+	}
+
+	.sfc-news__grid {
+		grid-template-columns: 1fr;
+	}
+
+	.sfc-cta__inner {
+		flex-direction: column;
+		align-items: flex-start;
+	}
+
+	.sfc-ticker__label {
+		padding: 14px 22px 14px 14px;
+		font-size: 0;
+	}
+
+	.sfc-ticker__label .fa {
+		font-size: 18px;
+	}
+
+	.sfc-panel {
+		padding: 20px 14px;
+	}
+
+	.sfc-standings th,
+	.sfc-standings td {
+		padding: 11px 5px;
+	}
+}
+
+/* 16. Reduced motion / animations off -------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+	.sfc *,
+	.sfc *::before,
+	.sfc *::after {
+		animation: none !important;
+		transition-duration: .01ms !important;
+	}
+
+	.sfc-js [data-sfc-reveal],
+	.sfc-js .sfc-standings tbody tr,
+	.sfc-js .sfc-fixture {
+		opacity: 1 !important;
+		transform: none !important;
+	}
+
+	.sfc-ticker__viewport,
+	.sfc-sponsors__viewport {
+		overflow-x: auto;
+	}
+}
+
+.sfc-no-anim *,
+.sfc-no-anim *::before,
+.sfc-no-anim *::after {
+	animation: none !important;
+	transition-duration: .01ms !important;
+}
+
+.sfc-no-anim.sfc-js [data-sfc-reveal],
+.sfc-no-anim.sfc-js .sfc-standings tbody tr,
+.sfc-no-anim.sfc-js .sfc-fixture,
+.sfc-no-anim [data-sfc-reveal],
+.sfc-no-anim .sfc-standings tbody tr,
+.sfc-no-anim .sfc-fixture {
+	opacity: 1 !important;
+	transform: none !important;
+}
+
+.sfc-no-anim .sfc-ticker__viewport,
+.sfc-no-anim .sfc-sponsors__viewport {
+	overflow-x: auto;
+}
+
+/* The parent forces `body, p { font-size: 3vw !important }` on small screens. Keep text readable. */
+@media screen and (max-width: 665px) {
+	/* Readable text on phones everywhere (sfc-enh-mobile-text) */
+	body.sfc-enh-mobile-text,
+	.sfc-enh-mobile-text p,
+	.sfc-enh-mobile-text article p {
+		font-size: 15px !important;
+	}
+
+	/* Club sections always keep readable text */
+	.sfc .sfc-section p,
+	.sfc .sfc-cta p,
+	.sfc .sfc-demo-widget p {
+		font-size: 15px !important;
+	}
+
+	.sfc .sfc-cta__text p {
+		font-size: 17px !important;
+	}
+}
+
+/* WordPress core classes -------------------------------------------- */
+.sticky .entry-title::before {
+	content: "\f08d";
+	display: inline-block;
+	margin-right: 8px;
+	font-family: FontAwesome;
+	font-size: .8em;
+	color: var(--sfc-accent);
+	transform: rotate(-30deg);
+}
+
+.gallery-caption {
+	display: block;
+	padding: 6px 0;
+	font-size: 13px;
+	color: var(--sfc-muted);
+	text-align: center;
+}
+
+.bypostauthor > .comment-body .comment-author .fn::after,
+.bypostauthor > article .comment-author .fn::after {
+	content: "★";
+	margin-left: 6px;
+	color: var(--sfc-accent);
+}
+
+/* Block styles ------------------------------------------------------- */
+.is-style-sfc-club-card {
+	padding: 28px;
+	border-radius: var(--sfc-radius);
+	background: var(--sfc-card);
+	border: 1px solid var(--sfc-line);
+	border-left: 4px solid var(--sfc-primary);
+	color: var(--sfc-ink);
+}
+
+.is-style-sfc-club-heading {
+	position: relative;
+	padding-bottom: 14px;
+	font-family: var(--sfc-display);
+	font-weight: 400;
+	text-transform: uppercase;
+}
+
+.is-style-sfc-club-heading::after {
+	content: "";
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 60px;
+	height: 4px;
+	border-radius: 4px;
+	background: linear-gradient(90deg, var(--sfc-primary) 0 50%, var(--sfc-accent) 50% 100%);
+}
+
+.is-style-sfc-club-heading.has-text-align-center::after {
+	left: 50%;
+	margin-left: -30px;
+}
+
+.wp-block-button.is-style-sfc-club-button .wp-block-button__link {
+	padding: 14px 30px;
+	border-radius: 999px;
+	background: var(--sfc-primary);
+	color: #fff;
+	font-family: var(--sfc-display);
+	letter-spacing: .06em;
+	text-transform: uppercase;
+	transition: transform .3s var(--sfc-ease), background-color .3s ease;
+}
+
+.wp-block-button.is-style-sfc-club-button .wp-block-button__link:hover,
+.wp-block-button.is-style-sfc-club-button .wp-block-button__link:focus {
+	background: var(--sfc-accent);
+	color: var(--sfc-dark);
+	transform: translateY(-2px);
+}
+
+.is-style-sfc-club-table table {
+	width: 100%;
+	border-collapse: collapse;
+}
+
+.is-style-sfc-club-table th {
+	background: var(--sfc-primary);
+	color: #fff;
+	text-transform: uppercase;
+	letter-spacing: .08em;
+	font-size: 13px;
+}
+
+.is-style-sfc-club-table th,
+.is-style-sfc-club-table td {
+	padding: 12px;
+	border: 0;
+	border-bottom: 1px solid rgba(127, 127, 127, .25);
+	text-align: left;
+}
+
+.is-style-sfc-club-table tbody tr:nth-child(odd) {
+	background: rgba(127, 127, 127, .08);
+}

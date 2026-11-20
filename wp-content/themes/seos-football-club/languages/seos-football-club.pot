@@ -1,0 +1,723 @@
+# Copyright (C) 2026 seosbg
+# This file is distributed under the GNU General Public License v3 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: Seos Football Club 1.1.1\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/theme/seos-football-club\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2026-11-05T01:42:56+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.11.0\n"
+"X-Domain: seos-football-club\n"
+
+#. Theme Name of the theme
+#: style.css
+msgid "Seos Football Club"
+msgstr ""
+
+#. Theme URI of the theme
+#: style.css
+msgid "https://seosthemes.com/wordpress-football-theme"
+msgstr ""
+
+#. Description of the theme
+#: style.css
+msgid "Seos Football Club is a child theme of Seos Football, built for football clubs, academies and fan sites. It adds an animated results ticker, animated club statistics, a league table and fixtures, the latest club news, a membership call to action, a sponsors strip and demo club content for the footer widget areas. Every section is managed from Appearance > Customize > Football Club Options and is visible with sensible defaults right after activation."
+msgstr ""
+
+#. Author of the theme
+#: style.css
+msgid "seosbg"
+msgstr ""
+
+#. Author URI of the theme
+#: style.css
+msgid "https://seosthemes.com"
+msgstr ""
+
+#: club/inc/blocks.php:24
+msgid "Club card"
+msgstr ""
+
+#: club/inc/blocks.php:32
+msgid "Club button"
+msgstr ""
+
+#: club/inc/blocks.php:40
+msgid "Club heading"
+msgstr ""
+
+#: club/inc/blocks.php:48
+msgid "Club table"
+msgstr ""
+
+#: club/inc/blocks.php:65
+msgid "Football Club"
+msgstr ""
+
+#: club/inc/blocks.php:72
+msgid "Match report"
+msgstr ""
+
+#: club/inc/blocks.php:73
+msgid "Score line, short summary and goal scorers."
+msgstr ""
+
+#: club/inc/blocks.php:76
+#: club/inc/defaults.php:99
+msgid "Seos United 3 – 1 Riverside FC"
+msgstr ""
+
+#: club/inc/blocks.php:77
+msgid "Premier League · Matchday 13 · Riverside Arena"
+msgstr ""
+
+#: club/inc/blocks.php:78
+msgid "Write a short summary of the match here: the key moments, the atmosphere and what the result means for the season."
+msgstr ""
+
+#: club/inc/blocks.php:79
+msgid "12' Adrian Costa"
+msgstr ""
+
+#: club/inc/blocks.php:79
+msgid "54' Luka Petrov"
+msgstr ""
+
+#: club/inc/blocks.php:79
+msgid "81' Adrian Costa"
+msgstr ""
+
+#: club/inc/blocks.php:87
+msgid "Membership call to action"
+msgstr ""
+
+#: club/inc/blocks.php:88
+msgid "Heading, text and a join button."
+msgstr ""
+
+#: club/inc/blocks.php:91
+#: club/inc/defaults.php:61
+msgid "Become a Club Member"
+msgstr ""
+
+#: club/inc/blocks.php:92
+msgid "Priority tickets, exclusive behind-the-scenes content and a vote at the annual fan assembly."
+msgstr ""
+
+#: club/inc/blocks.php:93
+#: club/inc/defaults.php:63
+msgid "Join the Club"
+msgstr ""
+
+#: club/inc/blocks.php:101
+msgid "Fixtures table"
+msgstr ""
+
+#: club/inc/blocks.php:102
+msgid "A table of upcoming matches."
+msgstr ""
+
+#: club/inc/blocks.php:104
+#: club/inc/defaults.php:51
+msgid "Upcoming Fixtures"
+msgstr ""
+
+#: club/inc/blocks.php:105
+msgid "Date"
+msgstr ""
+
+#: club/inc/blocks.php:105
+msgid "Opponent"
+msgstr ""
+
+#: club/inc/blocks.php:105
+msgid "Venue"
+msgstr ""
+
+#: club/inc/blocks.php:105
+msgid "Kick-off"
+msgstr ""
+
+#: club/inc/blocks.php:106
+msgid "Sat 21 Nov"
+msgstr ""
+
+#: club/inc/blocks.php:106
+msgid "Northbridge City"
+msgstr ""
+
+#: club/inc/blocks.php:106
+#: club/inc/blocks.php:108
+#: club/inc/defaults.php:90
+msgid "Home"
+msgstr ""
+
+#: club/inc/blocks.php:107
+msgid "Sat 28 Nov"
+msgstr ""
+
+#: club/inc/blocks.php:107
+msgid "Harbor Town"
+msgstr ""
+
+#: club/inc/blocks.php:107
+#: club/inc/defaults.php:91
+msgid "Away"
+msgstr ""
+
+#: club/inc/blocks.php:108
+msgid "Wed 2 Dec"
+msgstr ""
+
+#: club/inc/blocks.php:108
+msgid "Oakvale Rovers"
+msgstr ""
+
+#: club/inc/customizer.php:56
+msgid "Football Club Options"
+msgstr ""
+
+#: club/inc/customizer.php:57
+msgid "Everything on the club front page. All sections are visible with demo values until you change them."
+msgstr ""
+
+#: club/inc/customizer.php:114
+msgid "Club Details, Colours & Animations"
+msgstr ""
+
+#: club/inc/customizer.php:119
+msgid "Club name"
+msgstr ""
+
+#: club/inc/customizer.php:119
+msgid "Used in the fixtures, the footer and the news placeholder. Leave empty to use the Site Title."
+msgstr ""
+
+#: club/inc/customizer.php:120
+msgid "Year founded"
+msgstr ""
+
+#: club/inc/customizer.php:121
+msgid "Stadium"
+msgstr ""
+
+#: club/inc/customizer.php:122
+msgid "Primary club colour"
+msgstr ""
+
+#: club/inc/customizer.php:123
+msgid "Accent colour"
+msgstr ""
+
+#: club/inc/customizer.php:124
+msgid "Dark background"
+msgstr ""
+
+#: club/inc/customizer.php:125
+msgid "Pitch green"
+msgstr ""
+
+#: club/inc/customizer.php:129
+msgid "Enable animations"
+msgstr ""
+
+#: club/inc/customizer.php:133
+msgid "Visitors who prefer reduced motion never see animations."
+msgstr ""
+
+#: club/inc/customizer.php:141
+msgid "Theme Enhancements"
+msgstr ""
+
+#: club/inc/customizer.php:144
+msgid "Improvements to the theme menu, sidebar and text outside the club sections. Switch any of them off to keep the original look."
+msgstr ""
+
+#: club/inc/customizer.php:148
+msgid "Enable theme enhancements (switch off to disable all below)"
+msgstr ""
+
+#: club/inc/customizer.php:149
+msgid "Sticky, semi-transparent menu"
+msgstr ""
+
+#: club/inc/customizer.php:150
+msgid "Underline under menu items on hover"
+msgstr ""
+
+#: club/inc/customizer.php:151
+msgid "Club colour on sidebar widget titles and pagination"
+msgstr ""
+
+#: club/inc/customizer.php:152
+msgid "Readable text size on phones (all pages)"
+msgstr ""
+
+#: club/inc/customizer.php:158
+msgid "Results Ticker"
+msgstr ""
+
+#: club/inc/customizer.php:163
+msgid "Show results ticker"
+msgstr ""
+
+#: club/inc/customizer.php:164
+msgid "Label"
+msgstr ""
+
+#. translators: %d: result number.
+#: club/inc/customizer.php:167
+msgid "Result %d"
+msgstr ""
+
+#: club/inc/customizer.php:174
+msgid "Club in Numbers"
+msgstr ""
+
+#: club/inc/customizer.php:179
+msgid "Show statistics"
+msgstr ""
+
+#: club/inc/customizer.php:180
+#: club/inc/customizer.php:224
+#: club/inc/customizer.php:252
+#: club/inc/customizer.php:267
+msgid "Title"
+msgstr ""
+
+#. translators: %d: counter number.
+#: club/inc/customizer.php:183
+msgid "Counter %d – number"
+msgstr ""
+
+#. translators: %d: counter number.
+#: club/inc/customizer.php:185
+msgid "Counter %d – label"
+msgstr ""
+
+#: club/inc/customizer.php:192
+msgid "League Table & Fixtures"
+msgstr ""
+
+#: club/inc/customizer.php:197
+msgid "Show table and fixtures"
+msgstr ""
+
+#: club/inc/customizer.php:198
+msgid "Table title"
+msgstr ""
+
+#: club/inc/customizer.php:199
+msgid "Table rows"
+msgstr ""
+
+#: club/inc/customizer.php:199
+msgid "One team per line: Team, Played, Won, Drawn, Lost, Points"
+msgstr ""
+
+#: club/inc/customizer.php:200
+msgid "Highlight team"
+msgstr ""
+
+#: club/inc/customizer.php:200
+msgid "Exact team name to highlight in the table."
+msgstr ""
+
+#: club/inc/customizer.php:201
+msgid "Fixtures title"
+msgstr ""
+
+#: club/inc/customizer.php:202
+msgid "Fixtures"
+msgstr ""
+
+#: club/inc/customizer.php:202
+msgid "One per line: Date | Opponent | H or A | Time"
+msgstr ""
+
+#: club/inc/customizer.php:203
+msgid "Table heading: Team"
+msgstr ""
+
+#: club/inc/customizer.php:204
+msgid "Table heading: Played"
+msgstr ""
+
+#: club/inc/customizer.php:205
+msgid "Table heading: Won"
+msgstr ""
+
+#: club/inc/customizer.php:206
+msgid "Table heading: Drawn"
+msgstr ""
+
+#: club/inc/customizer.php:207
+msgid "Table heading: Lost"
+msgstr ""
+
+#: club/inc/customizer.php:208
+msgid "Table heading: Points"
+msgstr ""
+
+#: club/inc/customizer.php:209
+msgid "Fixtures: vs"
+msgstr ""
+
+#: club/inc/customizer.php:210
+msgid "Label: Home"
+msgstr ""
+
+#: club/inc/customizer.php:211
+msgid "Label: Away"
+msgstr ""
+
+#: club/inc/customizer.php:217
+#: club/inc/defaults.php:56
+msgid "Club News"
+msgstr ""
+
+#: club/inc/customizer.php:220
+msgid "Shown when the homepage is set to a static page. With \"Your latest posts\" the blog is displayed instead."
+msgstr ""
+
+#: club/inc/customizer.php:223
+msgid "Show latest news"
+msgstr ""
+
+#: club/inc/customizer.php:228
+msgid "Number of posts"
+msgstr ""
+
+#: club/inc/customizer.php:238
+msgid "Small label above the title"
+msgstr ""
+
+#: club/inc/customizer.php:239
+msgid "Read more text"
+msgstr ""
+
+#: club/inc/customizer.php:240
+msgid "\"All news\" button text"
+msgstr ""
+
+#: club/inc/customizer.php:246
+msgid "Membership Call to Action"
+msgstr ""
+
+#: club/inc/customizer.php:251
+msgid "Show call to action"
+msgstr ""
+
+#: club/inc/customizer.php:253
+msgid "Text"
+msgstr ""
+
+#: club/inc/customizer.php:254
+msgid "Button text"
+msgstr ""
+
+#: club/inc/customizer.php:255
+msgid "Button link"
+msgstr ""
+
+#: club/inc/customizer.php:261
+#: club/inc/customizer.php:268
+msgid "Sponsors"
+msgstr ""
+
+#: club/inc/customizer.php:266
+msgid "Show sponsors"
+msgstr ""
+
+#: club/inc/customizer.php:268
+msgid "One sponsor per line."
+msgstr ""
+
+#: club/inc/customizer.php:274
+msgid "Club Footer"
+msgstr ""
+
+#: club/inc/customizer.php:282
+msgid "Show demo club content while the footer widget areas are empty"
+msgstr ""
+
+#: club/inc/customizer.php:286
+msgid "As soon as you add a widget to Footer 1–4, your widgets are shown instead."
+msgstr ""
+
+#: club/inc/customizer.php:289
+msgid "Column 1: title (empty = club name)"
+msgstr ""
+
+#: club/inc/customizer.php:290
+msgid "Column 1: text"
+msgstr ""
+
+#: club/inc/customizer.php:291
+msgid "Column 2: title"
+msgstr ""
+
+#: club/inc/customizer.php:292
+msgid "Column 3: title"
+msgstr ""
+
+#: club/inc/customizer.php:293
+msgid "Column 4: title"
+msgstr ""
+
+#: club/inc/customizer.php:294
+msgid "Column 4: address (empty = stadium)"
+msgstr ""
+
+#: club/inc/customizer.php:295
+msgid "Column 4: opening hours"
+msgstr ""
+
+#: club/inc/customizer.php:296
+msgid "Column 4: email"
+msgstr ""
+
+#: club/inc/defaults.php:34
+#: club/inc/starter-content.php:17
+msgid "Seos United FC"
+msgstr ""
+
+#: club/inc/defaults.php:36
+#: club/inc/starter-content.php:52
+msgid "Riverside Arena"
+msgstr ""
+
+#: club/inc/defaults.php:40
+msgid "Latest Results"
+msgstr ""
+
+#: club/inc/defaults.php:44
+msgid "The Club in Numbers"
+msgstr ""
+
+#: club/inc/defaults.php:48
+msgid "League Table"
+msgstr ""
+
+#: club/inc/defaults.php:50
+msgid "Seos United"
+msgstr ""
+
+#: club/inc/defaults.php:62
+msgid "Priority tickets, exclusive behind-the-scenes content and a vote at the annual fan assembly. Join thousands of supporters today."
+msgstr ""
+
+#: club/inc/defaults.php:68
+msgid "Official Partners"
+msgstr ""
+
+#: club/inc/defaults.php:74
+msgid "Seos United FC has been the pride of the city since 1923. Join us on match day and be part of the story."
+msgstr ""
+
+#: club/inc/defaults.php:75
+#: club/inc/starter-content.php:39
+msgid "Next Fixtures"
+msgstr ""
+
+#: club/inc/defaults.php:76
+msgid "Standings"
+msgstr ""
+
+#: club/inc/defaults.php:77
+#: club/inc/starter-content.php:51
+msgid "Stadium & Contact"
+msgstr ""
+
+#: club/inc/defaults.php:79
+#: club/inc/starter-content.php:52
+msgid "Ticket office: Mon–Sat, 10:00–18:00"
+msgstr ""
+
+#: club/inc/defaults.php:83
+msgid "Team"
+msgstr ""
+
+#: club/inc/defaults.php:84
+msgid "P"
+msgstr ""
+
+#: club/inc/defaults.php:85
+msgid "W"
+msgstr ""
+
+#: club/inc/defaults.php:86
+msgid "D"
+msgstr ""
+
+#: club/inc/defaults.php:87
+msgid "L"
+msgstr ""
+
+#: club/inc/defaults.php:88
+msgid "Pts"
+msgstr ""
+
+#: club/inc/defaults.php:89
+msgid "vs"
+msgstr ""
+
+#: club/inc/defaults.php:92
+msgid "From the dressing room"
+msgstr ""
+
+#: club/inc/defaults.php:93
+msgid "Read story"
+msgstr ""
+
+#: club/inc/defaults.php:94
+msgid "All news"
+msgstr ""
+
+#: club/inc/defaults.php:100
+msgid "Harbor Town 0 – 2 Seos United"
+msgstr ""
+
+#: club/inc/defaults.php:101
+msgid "Seos United 1 – 1 Oakvale Rovers"
+msgstr ""
+
+#: club/inc/defaults.php:102
+msgid "Eastport Athletic 1 – 4 Seos United"
+msgstr ""
+
+#: club/inc/defaults.php:103
+msgid "Seos United 2 – 0 Kingsford"
+msgstr ""
+
+#: club/inc/defaults.php:111
+msgid "Trophies Won"
+msgstr ""
+
+#: club/inc/defaults.php:112
+msgid "Years of History"
+msgstr ""
+
+#: club/inc/defaults.php:113
+msgid "Stadium Seats"
+msgstr ""
+
+#: club/inc/defaults.php:114
+msgid "Club Members"
+msgstr ""
+
+#: club/inc/starter-content.php:31
+msgid "The pride of the city since 1923. Twenty-seven trophies, one badge and the loudest fans in the league."
+msgstr ""
+
+#: club/inc/starter-content.php:40
+msgid "Sat 21 Nov – Northbridge City (H)"
+msgstr ""
+
+#: club/inc/starter-content.php:40
+msgid "Sat 28 Nov – Harbor Town (A)"
+msgstr ""
+
+#: club/inc/starter-content.php:40
+msgid "Wed 2 Dec – Oakvale Rovers (H)"
+msgstr ""
+
+#: club/inc/starter-content.php:60
+msgctxt "Theme starter content"
+msgid "Match night"
+msgstr ""
+
+#: club/inc/starter-content.php:64
+msgctxt "Theme starter content"
+msgid "Training"
+msgstr ""
+
+#: club/inc/starter-content.php:68
+msgctxt "Theme starter content"
+msgid "Academy"
+msgstr ""
+
+#: club/inc/starter-content.php:76
+msgctxt "Theme starter content"
+msgid "Home"
+msgstr ""
+
+#: club/inc/starter-content.php:81
+msgctxt "Theme starter content"
+msgid "The Club"
+msgstr ""
+
+#: club/inc/starter-content.php:82
+msgctxt "Theme starter content"
+msgid "Founded in 1923 by a group of dock workers, the club has grown into the beating heart of the city. Tell your own story here."
+msgstr ""
+
+#: club/inc/starter-content.php:86
+msgctxt "Theme starter content"
+msgid "News"
+msgstr ""
+
+#: club/inc/starter-content.php:90
+msgctxt "Theme starter content"
+msgid "Tickets & Contact"
+msgstr ""
+
+#: club/inc/starter-content.php:91
+msgctxt "Theme starter content"
+msgid "Ticket office opening hours, stadium directions and contact details go here."
+msgstr ""
+
+#: club/inc/starter-content.php:95
+msgctxt "Theme starter content"
+msgid "Late winner seals derby victory under the lights"
+msgstr ""
+
+#: club/inc/starter-content.php:96
+msgctxt "Theme starter content"
+msgid "A packed Riverside Arena roared as the captain struck in the 89th minute to keep the club top of the table."
+msgstr ""
+
+#: club/inc/starter-content.php:101
+msgctxt "Theme starter content"
+msgid "Inside training: preparing for Northbridge"
+msgstr ""
+
+#: club/inc/starter-content.php:102
+msgctxt "Theme starter content"
+msgid "The coaching staff opened the training ground doors ahead of the top-of-the-table clash."
+msgstr ""
+
+#: club/inc/starter-content.php:107
+msgctxt "Theme starter content"
+msgid "Academy trials open for the new season"
+msgstr ""
+
+#: club/inc/starter-content.php:108
+msgctxt "Theme starter content"
+msgid "Young players aged 8 to 16 can register for open trials at the club academy."
+msgstr ""
+
+#: club/inc/starter-content.php:121
+msgid "Primary"
+msgstr ""
+
+#: club/inc/template-functions.php:359
+msgid "Replace this demo content with your own widgets"
+msgstr ""
+
+#: club/template-parts/front-page.php:29
+msgid "Pages:"
+msgstr ""
+
+#: functions.php:36
+msgid "Default Image 1"
+msgstr ""
+
+#: functions.php:41
+msgid "Default Image 2"
+msgstr ""

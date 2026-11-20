@@ -1,0 +1,25 @@
+/*
+Theme Name: Seos Football Club
+Theme URI: https://seosthemes.com/wordpress-football-theme
+Author: seosbg
+Author URI: https://seosthemes.com
+Description: Seos Football Club is a child theme of Seos Football, built for football clubs, academies and fan sites. It adds an animated results ticker, animated club statistics, a league table and fixtures, the latest club news, a membership call to action, a sponsors strip and demo club content for the footer widget areas. Every section is managed from Appearance > Customize > Football Club Options and is visible with sensible defaults right after activation.
+Template: seos-football
+Version: 1.1.1
+Requires at least: 5.6
+Tested up to: 6.9
+Requires PHP: 7.0
+License: GNU General Public License v3 or later
+License URI: https://www.gnu.org/licenses/gpl-3.0.html
+Text Domain: seos-football-club
+Tags: one-column, two-columns, left-sidebar, right-sidebar, custom-colors, custom-header, custom-logo, custom-menu, featured-images, footer-widgets, full-width-template, theme-options, threaded-comments, translation-ready, sticky-post, blog, news, entertainment
+
+Seos Football Club WordPress Theme, Copyright 2026 seosbg
+Seos Football Club is distributed under the terms of the GNU GPL v3 or later.
+*/
+
+/*
+ * The parent stylesheet is enqueued from functions.php.
+ * Club styles live in assets/css/club.css.
+ * Add small custom overrides below this comment.
+ */
